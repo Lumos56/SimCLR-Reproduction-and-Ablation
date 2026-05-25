@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+.conda/
+
+# Data and generated artifacts
+data/*
+!data/
+!data/README.md
+datasets/
+results/checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+wandb/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large/generated logs
+*.log

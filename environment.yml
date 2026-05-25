@@ -1,0 +1,21 @@
+name: simclr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - pytest
+  - tensorboard
+  - pip:
+      # PyTorch / torchvision should be installed using the official PyTorch selector.
+      # Do not guess CUDA wheel versions here.
+      # Add exact torch/torchvision entries only after Gate 0 is verified.
