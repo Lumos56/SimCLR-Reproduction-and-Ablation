@@ -2,38 +2,30 @@
 
 ## Date
 
-2026-05-22
+2026-05-26
 
-## Machine
+## Status
 
-- OS:
-- WSL distro:
-- GPU:
-- NVIDIA driver:
-- nvidia-smi CUDA Version:
+PASS
 
-## Conda
+The storage and environment checks were run by the Human Owner. Codex only recorded the verified results in this file.
 
-```bash
-conda info --envs
-conda activate simclr
-python --version
-which python
-```
+## Repository
+
+- Repo path: `/home/yeyee/projects/SimCLR-Reproduction-and-Ablation`
+- Branch for this record: `env/gate0-check`
 
 ## Storage Path Check
 
-Before downloading datasets or saving checkpoints, verify that `/home/yeyee/research` points to the intended external research storage area.
+Storage check result: PASS
 
-```bash
-pwd
-df -h .
-ls -ld ~/research || true
-readlink -f ~/research || true
-df -h ~/research || true
-```
+Verified storage facts:
 
-Expected external paths:
+- `~/research` resolves to `/mnt/f/Research`
+- `/mnt/f` is the F drive
+- F drive available space: about 1.9T
+
+External storage policy:
 
 ```text
 Raw datasets:
@@ -46,59 +38,78 @@ Large exports:
 /home/yeyee/research/05_exports/SimCLR-Reproduction-and-Ablation
 ```
 
-Storage verification result:
+Repository policy:
 
-- `/home/yeyee/research` exists: yes/no
-- `/home/yeyee/research` resolved path:
-- Filesystem / mount:
-- Data root approved by Human Owner: yes/no
-- Checkpoint directory approved by Human Owner: yes/no
+- No datasets are stored in the repository.
+- No checkpoints or model weights are stored in the repository.
+- Small Markdown notes and selected small CSV logs may stay in the repository.
 
-## PyTorch Install Source
+## Machine and Driver
 
-- Official PyTorch selector checked: yes/no
-- Selected build:
-- Install command used:
+- GPU: NVIDIA GeForce RTX 5080
+- NVIDIA-SMI: 595.58.04
+- NVIDIA Driver Version: 596.21
+- nvidia-smi CUDA Version: 13.2
+- `nvidia-smi` works: yes
 
-## Verification Commands
+## Conda and Python
+
+- Conda environment: `simclr`
+- Python: 3.10.20
+- Python path: `/home/yeyee/miniconda3/envs/simclr/bin/python`
+
+## PyTorch Stack
+
+- torch: 2.11.0+cu128
+- torch.version.cuda: 12.8
+- torch.cuda.is_available(): True
+- torchvision: 0.26.0+cu128
+- pytest: 9.0.3
+- PyYAML import: ok
+
+## Verification Commands Used by Human Owner
+
+Storage:
 
 ```bash
+pwd
+df -h .
+ls -ld ~/research || true
+readlink -f ~/research || true
+df -h ~/research || true
+```
+
+Environment:
+
+```bash
+conda activate simclr
+python --version
+which python
+nvidia-smi
 python - <<'PY'
 import sys
 print("python:", sys.version)
 
-try:
-    import torch
-    print("torch:", torch.__version__)
-    print("torch.version.cuda:", torch.version.cuda)
-    print("cuda available:", torch.cuda.is_available())
-    if torch.cuda.is_available():
-        print("device:", torch.cuda.get_device_name(0))
-except Exception as e:
-    print("torch import failed:", repr(e))
+import torch
+print("torch:", torch.__version__)
+print("torch.version.cuda:", torch.version.cuda)
+print("cuda available:", torch.cuda.is_available())
+if torch.cuda.is_available():
+    print("device:", torch.cuda.get_device_name(0))
 
-try:
-    import torchvision
-    print("torchvision:", torchvision.__version__)
-except Exception as e:
-    print("torchvision import failed:", repr(e))
+import torchvision
+print("torchvision:", torchvision.__version__)
 
-try:
-    import pytest
-    print("pytest:", pytest.__version__)
-except Exception as e:
-    print("pytest import failed:", repr(e))
+import pytest
+print("pytest:", pytest.__version__)
 
-try:
-    import yaml
-    print("pyyaml import: ok")
-except Exception as e:
-    print("pyyaml import failed:", repr(e))
+import yaml
+print("pyyaml import: ok")
 PY
 ```
 
 ## Result
 
-- Status: PASS / FAIL / PARTIAL
-- Blocking issue:
-- Next action:
+- Status: PASS
+- Blocking issue: none for Gate 0
+- Next action: commit the Gate 0 record, then proceed to Gate 1 module setup after review

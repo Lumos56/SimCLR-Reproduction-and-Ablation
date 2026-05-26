@@ -1,4 +1,11 @@
 name: simclr
+# Gate 0 verified by the Human Owner on 2026-05-26:
+# Python 3.10.20
+# torch 2.11.0+cu128
+# torchvision 0.26.0+cu128
+# torch.version.cuda 12.8
+# GPU: NVIDIA GeForce RTX 5080
+# CUDA available: True
 channels:
   - pytorch
   - nvidia

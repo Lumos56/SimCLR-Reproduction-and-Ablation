@@ -132,3 +132,41 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Add `PROJECT_STATUS.md` and prepare initial commit readiness in Task 04.
+
+### 2026-05-26
+
+#### Task
+
+- Task 06: Record Gate 0 environment check results.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record Human Owner-verified storage and environment check results without installing packages, downloading data, or implementing dataset/model/loss/training/evaluation/visualization code.
+
+#### Output
+
+- Recorded Gate 0 PASS results in `experiments/exp00_environment_check.md`.
+- Updated `PROJECT_STATUS.md` to show Gate 0 checks passed and next gate is Gate 1 module setup.
+- Recorded verified storage mapping: `~/research` resolves to `/mnt/f/Research`, `/mnt/f` is the F drive, and available space is about 1.9T.
+- Recorded verified environment: `simclr`, Python 3.10.20, torch 2.11.0+cu128, CUDA available, RTX 5080, torchvision 0.26.0+cu128, pytest 9.0.3, PyYAML import ok, and nvidia-smi works.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- Gate 0 evidence is recorded as Human Owner-verified output.
+- The task stayed documentation-only.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit the Gate 0 record before starting Gate 1 module setup.

@@ -3,16 +3,16 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Gate 0 / Environment Check |
-| Current Task | Prepare Gate 0 environment check |
-| Last Completed Task | Initial setup commit |
-| Git State | Initial commit created and working tree clean |
-| Branch | `main` |
-| Next Gate | Gate 0 environment check |
-| Do Not Start Yet | dataset, model, loss, training, evaluation, environment installation, data download |
-| Blockers | `/home/yeyee/research` mapping to F-drive is not verified; PyTorch/CUDA is not checked |
-| Next Owner Decision | run or approve Gate 0 environment check |
+| Current Task | Record Gate 0 results |
+| Last Completed Task | Gate 0 storage and environment checks passed |
+| Git State | Working on branch `env/gate0-check` |
+| Branch | `env/gate0-check` |
+| Next Gate | Gate 1 module setup |
+| Do Not Start Yet | dataset, model, loss, training until Gate 0 record is committed and reviewed |
+| Blockers | none for Gate 0; next step is commit Gate 0 record |
+| Next Owner Decision | review and commit Gate 0 record |
 
-## First Commit Readiness
+## Gate 0 Status
 
 - [x] Repository skeleton exists.
 - [x] Agent rules exist in `AGENTS.md`.
@@ -21,4 +21,6 @@
 - [x] No dataset/model/loss/training code has been added.
 - [x] No dataset, checkpoint, model weight, or large artifact is present.
 - [x] Initial setup commit has been created.
-- [ ] Gate 0 environment check has not been run.
+- [x] Storage check passed.
+- [x] Environment check passed.
+- [ ] Gate 0 record has not yet been committed and reviewed.
