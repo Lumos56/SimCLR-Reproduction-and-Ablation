@@ -12,7 +12,8 @@ This file is a concise index of completed setup and Gate 0 tasks. It is for work
 | Task 05: Update project status for Gate 0 | 2026-05-26 | Completed | `9bbadb4` | Updated project status to reflect transition toward Gate 0. | `PROJECT_STATUS.md` |
 | Task 06: Record Gate 0 environment check results | 2026-05-26 | Completed | `9903378` | Recorded Human Owner-verified storage and environment check results. | `experiments/exp00_environment_check.md`, `PROJECT_STATUS.md`, `notes/agent_workflow_log.md`, `environment.yml` |
 | Gate 0 merge status update | 2026-05-26 | Completed | `b167915` | Recorded that Gate 0 was merged into `main` and moved project status to Gate 1 preparation. | `PROJECT_STATUS.md`, `notes/agent_workflow_log.md` |
-| Task 07: Add task registry and decision log | 2026-05-27 | Completed, pending commit | - | Added lightweight task and decision tracking before Gate 1 implementation. | `notes/task_registry.md`, `notes/decision_log.md`, `PROJECT_STATUS.md`, `notes/agent_workflow_log.md` |
+| Task 07: Add task registry and decision log | 2026-05-27 | Completed | `59ca071` | Added lightweight task and decision tracking before Gate 1 implementation. | `notes/task_registry.md`, `notes/decision_log.md`, `PROJECT_STATUS.md`, `notes/agent_workflow_log.md` |
+| Task 08: Implement CIFAR-10 dataset utilities and TwoCropTransform | 2026-05-27 | Completed, pending review | - | Added CIFAR-10 transform builders, dataset builder, and synthetic transform tests. | `src/augmentations.py`, `src/datasets.py`, `tests/test_dataset.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 
 ## Current Workflow Position
 

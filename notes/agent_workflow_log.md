@@ -235,3 +235,47 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 07 tracking files, then approve the first Gate 1 dataset + augmentation task.
+
+### 2026-05-27
+
+#### Task
+
+- Task 08: Implement CIFAR-10 dataset utilities and TwoCropTransform.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Implement CIFAR-10 transform builders, two-crop contrastive augmentation, dataset builder utilities, and lightweight tests without downloading data or starting model/loss/training work.
+
+#### Output
+
+- Added `src/augmentations.py` with CIFAR-10 normalization constants, strong SimCLR transform, weak transform, eval transform, and `TwoCropTransform`.
+- Added `src/datasets.py` with a CIFAR-10 dataset builder that accepts external `data_root` and defaults `download=False`.
+- Added `tests/test_dataset.py` using synthetic PIL images and monkeypatching, with no real CIFAR-10 dependency.
+- Follow-up refined the strong transform with CIFAR-10-safe Gaussian blur and added non-contrastive train/eval dataset builder tests.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md` for Task 08.
+
+#### Validation
+
+- `python -m pytest -q tests/test_dataset.py`: passed, 10 tests.
+- Dataset import check: passed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The tests do not require CIFAR-10 files or internet access.
+- No data files, checkpoints, model weights, model code, loss code, or training code were added.
+
+#### What Was Wrong
+
+- The bare non-interactive WSL shell still has no `python` command unless the `simclr` environment is activated or the environment Python path is used.
+
+#### Follow-up
+
+- Review and commit Task 08, then continue Gate 1 with the next approved module task.

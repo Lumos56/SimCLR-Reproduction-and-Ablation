@@ -3,14 +3,14 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Gate 1 / Module Setup |
-| Current Task | Task 07 add task registry and decision log |
-| Last Completed Task | Gate 0 environment check merged to main |
-| Git State | main is clean after Gate 0 merge |
-| Branch | `main` |
+| Current Task | Task 08 dataset and augmentation implementation |
+| Last Completed Task | Task 07 add task registry and decision log |
+| Git State | working on branch `data/cifar10-two-crop` |
+| Branch | `data/cifar10-two-crop` |
 | Next Gate | Gate 1 module checks |
 | Do Not Start Yet | model, loss, training, evaluation, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | approve first Gate 1 task, starting with dataset + augmentation |
+| Next Owner Decision | review Task 08 dataset and augmentation implementation |
 
 ## Gate 0 Status
 
@@ -27,6 +27,6 @@
 
 ## Gate 1 Readiness
 
-- [ ] First Gate 1 task has not yet been approved.
-- [ ] Dataset and augmentation issue is not started yet.
+- [x] First Gate 1 task has been approved.
+- [x] Dataset and augmentation issue is in progress.
 - [ ] Model, loss, training, evaluation, ablation, and long runs must not start yet.
