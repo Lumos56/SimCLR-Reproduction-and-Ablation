@@ -170,3 +170,31 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit the Gate 0 record before starting Gate 1 module setup.
+
+### 2026-05-26
+
+#### Task
+
+- Gate 0 merge summary.
+
+#### Agent Used
+
+- Human Owner / Codex record update
+
+#### Prompt Summary
+
+- Gate 0 storage and environment record was merged into `main`; update project status for Gate 1 preparation.
+
+#### Output
+
+- Gate 0 environment check is now merged to `main`.
+- Project status moved to Gate 1 / Module Setup.
+- Next owner decision is to approve the first Gate 1 task, starting with dataset and augmentation.
+
+#### Human Review
+
+- Gate 0 merge completed by Human Owner.
+
+#### Follow-up
+
+- Prepare and review the dataset + augmentation issue before implementation begins.
