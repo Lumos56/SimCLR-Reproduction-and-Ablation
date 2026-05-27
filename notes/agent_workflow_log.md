@@ -198,3 +198,40 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Prepare and review the dataset + augmentation issue before implementation begins.
+
+### 2026-05-27
+
+#### Task
+
+- Task 07: Add task registry and decision log.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add lightweight workflow tracking files before Gate 1 implementation and update project status.
+
+#### Output
+
+- Added `notes/task_registry.md` as a concise index of completed setup and Gate 0 tasks.
+- Added `notes/decision_log.md` with key project decisions made so far.
+- Updated `PROJECT_STATUS.md` current task to Task 07.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The task stayed documentation-only.
+- No dataset, model, loss, training, evaluation, ablation, package installation, or data download was started.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 07 tracking files, then approve the first Gate 1 dataset + augmentation task.

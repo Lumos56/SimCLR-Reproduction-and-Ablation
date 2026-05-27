@@ -1,0 +1,21 @@
+# Decision Log
+
+This file records project workflow decisions made before Gate 1 implementation.
+
+| Date | Decision | Rationale | Status |
+|---|---|---|---|
+| 2026-05-22 | Use WSL repository location `/home/yeyee/projects/SimCLR-Reproduction-and-Ablation`. | Keep project files in the Linux filesystem and avoid the Windows empty repo path. | Active |
+| 2026-05-22 | Do not use `C:\Users\ye\Documents\SimCLR` as the official project root. | Avoid split-brain project state between Windows and WSL. | Active |
+| 2026-05-26 | Store large external artifacts under `/home/yeyee/research`, mapped to `/mnt/f/Research`. | Keep datasets, checkpoints, and large exports outside the Git repository while using F-drive capacity. | Active |
+| 2026-05-26 | Use a separate Conda environment named `simclr`. | Isolate project dependencies from base/system environments. | Active |
+| 2026-05-22 | Require Codex Task Completion Reports and Blocked Reports. | Make every task reviewable with files changed, commands run, validation, risks, and next steps. | Active |
+| 2026-05-26 | Add `PROJECT_STATUS.md`. | Provide a quick, reusable status table for stage, task, branch, blockers, and next decision. | Active |
+| 2026-05-26 | Complete Gate 0 before implementation. | Verify storage, Python, PyTorch, CUDA, GPU, torchvision, pytest, and PyYAML before writing dataset/model/loss/training code. | Completed |
+| 2026-05-26 | Use branch/report/review/commit workflow. | Keep each task scoped, reviewable, and traceable before moving to the next gate. | Active |
+
+## Guardrails Carried Into Gate 1
+
+- Do not download data into the repository.
+- Do not commit checkpoints, weights, TensorBoard event files, W&B runs, or large artifacts.
+- Do not start model, loss, training, evaluation, ablation, or long runs before the approved Gate 1 task scope.
+- Record commands actually run; do not report planned commands as completed validation.

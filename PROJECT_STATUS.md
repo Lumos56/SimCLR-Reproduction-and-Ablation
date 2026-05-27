@@ -3,7 +3,7 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Gate 1 / Module Setup |
-| Current Task | Prepare dataset and augmentation issue |
+| Current Task | Task 07 add task registry and decision log |
 | Last Completed Task | Gate 0 environment check merged to main |
 | Git State | main is clean after Gate 0 merge |
 | Branch | `main` |
