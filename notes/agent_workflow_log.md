@@ -323,3 +323,46 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 09 before starting NT-Xent loss or training tasks.
+
+### 2026-05-28
+
+#### Task
+
+- Task 10: Implement NT-Xent contrastive loss with tests.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add NT-Xent loss module and tests without implementing training, evaluation, linear probe, supervised baseline, data download, or checkpointing.
+
+#### Output
+
+- Added `src/losses/nt_xent.py` with `NTXentLoss` and `build_positive_pair_targets`.
+- Added `src/losses/__init__.py`.
+- Added `tests/test_nt_xent.py` covering scalar output, finite loss, backward gradients, validation errors, positive-pair targets, and a deterministic matched-vs-mismatched behavior check.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md`.
+
+#### Validation
+
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_nt_xent.py`: passed, 9 tests.
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py`: passed, 25 tests.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The task stayed within Gate 1 loss scope.
+- No training, evaluation, checkpoint, data download, or model changes were added.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 10 before starting training or evaluation tasks.

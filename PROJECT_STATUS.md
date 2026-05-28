@@ -3,12 +3,12 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Gate 1 / Module Setup |
-| Current Task | Task 09 model encoder and projection head |
-| Last Completed Task | Task 08 dataset and augmentation merged to main |
-| Git State | working on branch `model/resnet18-projection-head` |
-| Branch | `model/resnet18-projection-head` |
+| Current Task | Task 10 NT-Xent loss implementation |
+| Last Completed Task | Task 09 model encoder and projection head merged to main |
+| Git State | working on branch `loss/nt-xent` |
+| Branch | `loss/nt-xent` |
 | Next Gate | Gate 1 module checks |
-| Do Not Start Yet | loss, training, evaluation, ablation, long runs |
+| Do Not Start Yet | training, evaluation, ablation, long runs |
 | Blockers | none for Gate 0 |
 | Next Owner Decision | review Task 08 dataset and augmentation implementation |
 
@@ -29,5 +29,6 @@
 
 - [x] First Gate 1 task has been approved.
 - [x] Dataset and augmentation issue has been merged.
-- [x] Model encoder and projection head issue is in progress.
-- [ ] Loss, training, evaluation, ablation, and long runs must not start yet.
+- [x] Model encoder and projection head issue has been merged.
+- [x] NT-Xent loss issue is in progress.
+- [ ] Training, evaluation, ablation, and long runs must not start yet.
