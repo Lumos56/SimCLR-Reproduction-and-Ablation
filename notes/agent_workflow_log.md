@@ -500,3 +500,47 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 13, then decide whether to run the real CIFAR-10 smoke test.
+
+### 2026-05-28
+
+#### Task
+
+- Task 14: Record CIFAR-10 smoke preflight result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's read-only preflight check for `configs/cifar10_simclr_smoke.yaml` without downloading CIFAR-10, running training, creating checkpoints, or modifying code/config/tests/results.
+
+#### Output
+
+- Added `experiments/exp02_cifar10_smoke_preflight.md` with observed config values, storage mapping, missing CIFAR-10 data, readiness assessment, and owner-approval requirement before download.
+- Updated `PROJECT_STATUS.md` for Gate 2 / CIFAR-10 Smoke Preflight.
+- Updated `notes/task_registry.md` to mark Task 13 as commit `29f497b` and add Task 14.
+- Updated `notes/decision_log.md` to record that CIFAR-10 download requires explicit owner approval.
+
+#### Validation
+
+- Confirmed branch `run/cifar10-smoke-preflight`.
+- Confirmed initial repository status was clean before edits.
+- No training, download, checkpoint creation, code edits, config edits, test edits, or results/log edits were performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The preflight result is recorded as not ready for real CIFAR-10 smoke because data is missing.
+- The config is documented as safe because `download: false` and checkpoint path is external.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 14, then decide whether to approve CIFAR-10 download to external storage.

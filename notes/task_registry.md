@@ -18,10 +18,11 @@ This file is a concise index of completed setup and Gate 0 tasks. It is for work
 | Task 10: Implement NT-Xent contrastive loss | 2026-05-28 | Completed | `87bb041` | Added NT-Xent loss module, positive-pair target helper, and loss tests. | `src/losses/__init__.py`, `src/losses/nt_xent.py`, `tests/test_nt_xent.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 11: Add synthetic SimCLR forward-backward integration test | 2026-05-28 | Completed | `48ff1fc` | Added a lightweight synthetic integration test for SimCLR model forward pass, NT-Xent loss, and backward gradients before training-loop work. | `tests/test_simclr_integration.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 12: Implement minimal SimCLR smoke training setup | 2026-05-28 | Completed | `db4791b` | Added config-driven fake/CIFAR-10 smoke training, utility helpers, smoke configs, and fake-data training test. | `src/utils.py`, `src/train_simclr.py`, `configs/simclr_fake_smoke.yaml`, `configs/cifar10_simclr_smoke.yaml`, `tests/test_train_simclr_smoke.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
-| Task 13: Record fake smoke CLI run result | 2026-05-28 | Completed, pending review | - | Recorded the manual fake-data smoke CLI run, module-style command fix, small CSV log, and external checkpoint location. | `experiments/exp01_fake_smoke_cli.md`, `results/logs/simclr_fake_smoke.csv`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/errors_and_fixes.md` |
+| Task 13: Record fake smoke CLI run result | 2026-05-28 | Completed | `29f497b` | Recorded the manual fake-data smoke CLI run, module-style command fix, small CSV log, and external checkpoint location. | `experiments/exp01_fake_smoke_cli.md`, `results/logs/simclr_fake_smoke.csv`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/errors_and_fixes.md` |
+| Task 14: Record CIFAR-10 smoke preflight result | 2026-05-28 | Completed, pending review | - | Recorded that the CIFAR-10 smoke config is safe but the real smoke run is not ready because CIFAR-10 files are missing and download needs owner approval. | `experiments/exp02_cifar10_smoke_preflight.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
 
 ## Current Workflow Position
 
-- Current stage: Gate 2 / Smoke Training
-- Next owner decision: review Task 13 fake smoke CLI record and decide whether to run real CIFAR-10 smoke
+- Current stage: Gate 2 / CIFAR-10 Smoke Preflight
+- Next owner decision: decide whether to approve CIFAR-10 download to external storage
 - Do not start yet: real CIFAR-10 training, linear probe, supervised baseline, evaluation, ablation, long runs

@@ -1,6 +1,6 @@
 # Decision Log
 
-This file records project workflow decisions made before Gate 1 implementation.
+This file records project workflow decisions.
 
 | Date | Decision | Rationale | Status |
 |---|---|---|---|
@@ -12,6 +12,7 @@ This file records project workflow decisions made before Gate 1 implementation.
 | 2026-05-26 | Add `PROJECT_STATUS.md`. | Provide a quick, reusable status table for stage, task, branch, blockers, and next decision. | Active |
 | 2026-05-26 | Complete Gate 0 before implementation. | Verify storage, Python, PyTorch, CUDA, GPU, torchvision, pytest, and PyYAML before writing dataset/model/loss/training code. | Completed |
 | 2026-05-26 | Use branch/report/review/commit workflow. | Keep each task scoped, reviewable, and traceable before moving to the next gate. | Active |
+| 2026-05-28 | Require explicit owner approval before downloading CIFAR-10. | The CIFAR-10 smoke config is safe with `download: false`, but the dataset was missing during preflight; any download must be an owner-approved action to the external dataset directory. | Active |
 
 ## Guardrails Carried Into Gate 1
 
