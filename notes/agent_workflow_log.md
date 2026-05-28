@@ -455,3 +455,48 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 12 before running a real CIFAR-10 smoke test.
+
+### 2026-05-28
+
+#### Task
+
+- Task 13: Record fake smoke CLI run result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's manual fake-data smoke CLI run, including the failed direct script invocation, the fixed module-style command, the successful output, the small CSV log, and the external checkpoint path.
+
+#### Output
+
+- Added `experiments/exp01_fake_smoke_cli.md` with the purpose, failed command, fixed command, result, CSV log path, external checkpoint path, repository safety confirmation, and fake-data limitation.
+- Included `results/logs/simclr_fake_smoke.csv` as the small repository log from the successful fake smoke run.
+- Updated `notes/errors_and_fixes.md` with the `ModuleNotFoundError: No module named 'src'` symptom, cause, fix, and reusable lesson.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md` for Task 13.
+
+#### Validation
+
+- Read `results/logs/simclr_fake_smoke.csv`; contents matched the Human Owner-provided smoke log.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The successful CLI result was recorded without rerunning training.
+- The external checkpoint path was documented without moving, deleting, or copying the checkpoint.
+- No code, config, dataset, model, loss, or test files were modified.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 13, then decide whether to run the real CIFAR-10 smoke test.
