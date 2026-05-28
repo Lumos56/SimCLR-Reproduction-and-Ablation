@@ -366,3 +366,47 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 10 before starting training or evaluation tasks.
+
+### 2026-05-28
+
+#### Task
+
+- Task 11: Add synthetic SimCLR forward-backward integration test.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add a lightweight synthetic integration test for SimCLR model + NT-Xent loss before any training-loop implementation.
+
+#### Output
+
+- Added `tests/test_simclr_integration.py` using two synthetic `[4, 3, 32, 32]` views.
+- Verified SimCLR output shapes for `h` and `z`, scalar finite NT-Xent loss, backward pass, and nonzero gradients in both encoder and projection head.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md` for Task 11.
+
+#### Validation
+
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_simclr_integration.py`: passed, 1 test.
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py tests/test_simclr_integration.py`: passed, 26 tests.
+- No files over 10MB were found.
+- No dataset files beyond `data/README.md`, checkpoints, or model weight files were found.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The task stayed within the requested integration-test scope.
+- No training loop, evaluation code, data download, checkpoint, or model weight file was added.
+
+#### What Was Wrong
+
+- One preliminary artifact-check command failed because PowerShell parsed `find` grouping syntax; it was rerun successfully through `bash -lc`.
+
+#### Follow-up
+
+- Review and commit Task 11 before starting Gate 2 smoke training.

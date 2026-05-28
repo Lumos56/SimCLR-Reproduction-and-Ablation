@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 1 / Module Setup |
-| Current Task | Task 10 NT-Xent loss implementation |
-| Last Completed Task | Task 09 model encoder and projection head merged to main |
-| Git State | working on branch `loss/nt-xent` |
-| Branch | `loss/nt-xent` |
-| Next Gate | Gate 1 module checks |
-| Do Not Start Yet | training, evaluation, ablation, long runs |
+| Current Stage | Gate 1 / Module Integration |
+| Current Task | Task 11 synthetic SimCLR forward-backward integration test |
+| Last Completed Task | Task 10 NT-Xent loss merged to main |
+| Git State | working on branch `test/simclr-forward-backward` |
+| Branch | `test/simclr-forward-backward` |
+| Next Gate | Gate 2 smoke training |
+| Do Not Start Yet | training loop, evaluation, linear probe, supervised baseline, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | review Task 08 dataset and augmentation implementation |
+| Next Owner Decision | review Task 11 synthetic integration test |
 
 ## Gate 0 Status
 
@@ -30,5 +30,6 @@
 - [x] First Gate 1 task has been approved.
 - [x] Dataset and augmentation issue has been merged.
 - [x] Model encoder and projection head issue has been merged.
-- [x] NT-Xent loss issue is in progress.
-- [ ] Training, evaluation, ablation, and long runs must not start yet.
+- [x] NT-Xent loss issue has been merged.
+- [x] Synthetic model + loss forward-backward integration test has been added and is pending review.
+- [ ] Training loop, evaluation, linear probe, supervised baseline, ablation, and long runs must not start yet.
