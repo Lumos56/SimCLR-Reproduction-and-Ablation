@@ -279,3 +279,47 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 08, then continue Gate 1 with the next approved module task.
+
+### 2026-05-28
+
+#### Task
+
+- Task 09: Implement CIFAR ResNet18 encoder, projection head, and SimCLR model shape tests.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add CIFAR-adapted ResNet18 encoder, projection head, SimCLR wrapper, and lightweight synthetic shape tests without implementing loss, training, evaluation, ablation, or data download.
+
+#### Output
+
+- Added `src/models/encoder.py` with a torchvision ResNet18 adapted for CIFAR-10 input shape `[B, 3, 32, 32]`.
+- Added `src/models/projection_head.py` with a Linear -> ReLU -> Linear projection head.
+- Added `src/models/simclr.py` returning encoder features `h` and projection `z`.
+- Added `tests/test_model_shapes.py` for encoder, projection head, wrapper, CIFAR conv1 settings, and maxpool replacement.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md`.
+
+#### Validation
+
+- `python -m pytest -q tests/test_model_shapes.py`: passed, 6 tests.
+- `python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py`: passed, 16 tests.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The task stayed within Gate 1 model-shape scope.
+- No loss, training, evaluation, checkpoint, or data download code was added.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 09 before starting NT-Xent loss or training tasks.

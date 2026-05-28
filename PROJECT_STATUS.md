@@ -3,12 +3,12 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Gate 1 / Module Setup |
-| Current Task | Task 08 dataset and augmentation implementation |
-| Last Completed Task | Task 07 add task registry and decision log |
-| Git State | working on branch `data/cifar10-two-crop` |
-| Branch | `data/cifar10-two-crop` |
+| Current Task | Task 09 model encoder and projection head |
+| Last Completed Task | Task 08 dataset and augmentation merged to main |
+| Git State | working on branch `model/resnet18-projection-head` |
+| Branch | `model/resnet18-projection-head` |
 | Next Gate | Gate 1 module checks |
-| Do Not Start Yet | model, loss, training, evaluation, ablation, long runs |
+| Do Not Start Yet | loss, training, evaluation, ablation, long runs |
 | Blockers | none for Gate 0 |
 | Next Owner Decision | review Task 08 dataset and augmentation implementation |
 
@@ -28,5 +28,6 @@
 ## Gate 1 Readiness
 
 - [x] First Gate 1 task has been approved.
-- [x] Dataset and augmentation issue is in progress.
-- [ ] Model, loss, training, evaluation, ablation, and long runs must not start yet.
+- [x] Dataset and augmentation issue has been merged.
+- [x] Model encoder and projection head issue is in progress.
+- [ ] Loss, training, evaluation, ablation, and long runs must not start yet.
