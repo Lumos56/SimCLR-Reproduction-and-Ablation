@@ -544,3 +544,50 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 14, then decide whether to approve CIFAR-10 download to external storage.
+
+### 2026-05-29
+
+#### Task
+
+- Task 15: Record CIFAR-10 external download result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner-approved CIFAR-10 download to external F-drive research storage without downloading again, running training, creating checkpoints, moving external data, or modifying code/config/tests/results logs.
+
+#### Output
+
+- Added `experiments/exp03_cifar10_download.md` with owner approval, external data root, sample counts, downloaded archive, extracted files, data directory size, and repository safety checks.
+- Updated `PROJECT_STATUS.md` for Gate 2 / CIFAR-10 Smoke Preparation.
+- Updated `notes/task_registry.md` to mark Task 14 as commit `4b99a85` and add Task 15.
+- Updated `notes/decision_log.md` to record that CIFAR-10 download was approved only to external F-drive research storage.
+
+#### Validation
+
+- Confirmed branch `data/download-cifar10`.
+- Confirmed initial repository status was clean before edits.
+- Checked that no files under repository `data/` exist except `data/README.md`.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The record clearly distinguishes data availability from training results.
+- No dataset files were added to the repository.
+- No training, checkpoint creation, code changes, config changes, test changes, or results/log changes were performed.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 15, then approve and run the real CIFAR-10 smoke command if ready.

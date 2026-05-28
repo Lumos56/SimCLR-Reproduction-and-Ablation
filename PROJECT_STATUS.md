@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 2 / CIFAR-10 Smoke Preflight |
-| Current Task | Task 14 CIFAR-10 smoke preflight recorded |
-| Last Completed Task | Task 13 fake smoke CLI result merged to main |
-| Git State | working on branch `run/cifar10-smoke-preflight` |
-| Branch | `run/cifar10-smoke-preflight` |
-| Next Gate | Owner decision on CIFAR-10 download |
-| Do Not Start Yet | real CIFAR-10 training, linear probe, supervised baseline, evaluation, ablation, long runs |
+| Current Stage | Gate 2 / CIFAR-10 Smoke Preparation |
+| Current Task | Task 15 CIFAR-10 external download recorded |
+| Last Completed Task | Task 14 CIFAR-10 smoke preflight recorded |
+| Git State | working on branch `data/download-cifar10` |
+| Branch | `data/download-cifar10` |
+| Next Gate | real CIFAR-10 smoke run |
+| Do Not Start Yet | linear probe, supervised baseline, evaluation, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | decide whether to approve CIFAR-10 download to external storage |
+| Next Owner Decision | review Task 15 record and approve real CIFAR-10 smoke run |
 
 ## Gate 0 Status
 
@@ -40,6 +40,7 @@
 - [x] Smoke training config keeps checkpoints outside the repository by default.
 - [x] Fake-data smoke CLI run has been recorded.
 - [x] CIFAR-10 smoke preflight has been recorded.
-- [ ] CIFAR-10 data was not found during preflight.
-- [ ] CIFAR-10 download requires explicit owner approval.
+- [x] CIFAR-10 download was explicitly approved by the Human Owner.
+- [x] CIFAR-10 data is available in external F-drive research storage.
+- [x] Repository safety checks passed after external data download.
 - [ ] Real CIFAR-10 smoke training has not been run.

@@ -13,6 +13,7 @@ This file records project workflow decisions.
 | 2026-05-26 | Complete Gate 0 before implementation. | Verify storage, Python, PyTorch, CUDA, GPU, torchvision, pytest, and PyYAML before writing dataset/model/loss/training code. | Completed |
 | 2026-05-26 | Use branch/report/review/commit workflow. | Keep each task scoped, reviewable, and traceable before moving to the next gate. | Active |
 | 2026-05-28 | Require explicit owner approval before downloading CIFAR-10. | The CIFAR-10 smoke config is safe with `download: false`, but the dataset was missing during preflight; any download must be an owner-approved action to the external dataset directory. | Active |
+| 2026-05-29 | CIFAR-10 download approved only to external F-drive research storage. | The Human Owner explicitly approved the CIFAR-10 download and ran it manually with `torchvision.datasets.CIFAR10`; dataset files remain outside the repository under `/home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation`. | Completed |
 
 ## Guardrails Carried Into Gate 1
 
