@@ -410,3 +410,48 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 11 before starting Gate 2 smoke training.
+
+### 2026-05-28
+
+#### Task
+
+- Task 12: Implement minimal SimCLR smoke training setup.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add the first Gate 2 config-driven SimCLR smoke training setup using fake data for tests, without running real CIFAR-10 training or implementing evaluation/baseline/ablation work.
+
+#### Output
+
+- Added `src/utils.py` with YAML loading, seed, device, directory, and CSV append helpers.
+- Added `src/train_simclr.py` with fake/CIFAR-10 dataset modes, a tiny SimCLR train loop, CSV loss logging, and checkpoint saving to a configured path.
+- Added `configs/simclr_fake_smoke.yaml` and `configs/cifar10_simclr_smoke.yaml`; checkpoint directories point outside the repository by default.
+- Added `tests/test_train_simclr_smoke.py` using fake data and pytest `tmp_path` for logs and checkpoints.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md` for Task 12.
+
+#### Validation
+
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_train_simclr_smoke.py`: passed, 1 test.
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py`: passed, 27 tests.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- Fake-data smoke training completed without requiring CIFAR-10 files or internet access.
+- Test checkpoint was written only under pytest `tmp_path`, not inside the repository.
+- No linear probe, supervised baseline, evaluation, ablation, or long run was added.
+
+#### What Was Wrong
+
+- A read-only `rg --files` command failed because the mixed Windows/WSL PATH selected a Windows app resource without execute permission; file listing was rerun with WSL `find`.
+
+#### Follow-up
+
+- Review and commit Task 12 before running a real CIFAR-10 smoke test.

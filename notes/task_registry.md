@@ -16,10 +16,11 @@ This file is a concise index of completed setup and Gate 0 tasks. It is for work
 | Task 08: Implement CIFAR-10 dataset utilities and TwoCropTransform | 2026-05-27 | Completed | `afd5a55` | Added CIFAR-10 transform builders, dataset builder, and synthetic transform tests. | `src/augmentations.py`, `src/datasets.py`, `tests/test_dataset.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 09: Implement CIFAR ResNet18 encoder and projection head | 2026-05-28 | Completed | `be89e50` | Added CIFAR ResNet18 encoder, projection head, SimCLR wrapper, and model shape tests. | `src/models/__init__.py`, `src/models/encoder.py`, `src/models/projection_head.py`, `src/models/simclr.py`, `tests/test_model_shapes.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 10: Implement NT-Xent contrastive loss | 2026-05-28 | Completed | `87bb041` | Added NT-Xent loss module, positive-pair target helper, and loss tests. | `src/losses/__init__.py`, `src/losses/nt_xent.py`, `tests/test_nt_xent.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
-| Task 11: Add synthetic SimCLR forward-backward integration test | 2026-05-28 | Completed, pending review | - | Added a lightweight synthetic integration test for SimCLR model forward pass, NT-Xent loss, and backward gradients before training-loop work. | `tests/test_simclr_integration.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
+| Task 11: Add synthetic SimCLR forward-backward integration test | 2026-05-28 | Completed | `48ff1fc` | Added a lightweight synthetic integration test for SimCLR model forward pass, NT-Xent loss, and backward gradients before training-loop work. | `tests/test_simclr_integration.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
+| Task 12: Implement minimal SimCLR smoke training setup | 2026-05-28 | Completed, pending review | - | Added config-driven fake/CIFAR-10 smoke training, utility helpers, smoke configs, and fake-data training test. | `src/utils.py`, `src/train_simclr.py`, `configs/simclr_fake_smoke.yaml`, `configs/cifar10_simclr_smoke.yaml`, `tests/test_train_simclr_smoke.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 
 ## Current Workflow Position
 
-- Current stage: Gate 1 / Module Integration
-- Next owner decision: review Task 11 synthetic integration test
-- Do not start yet: training loop, evaluation, linear probe, supervised baseline, ablation, long runs
+- Current stage: Gate 2 / Smoke Training
+- Next owner decision: review Task 12 minimal smoke training setup
+- Do not start yet: linear probe, supervised baseline, evaluation, ablation, long runs

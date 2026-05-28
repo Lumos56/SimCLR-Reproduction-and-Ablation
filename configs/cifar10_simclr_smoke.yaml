@@ -1,0 +1,29 @@
+seed: 0
+device: auto
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: true
+  download: false
+  augmentation_strength: strong
+
+training:
+  epochs: 1
+  batch_size: 32
+  max_train_batches: 10
+  num_workers: 2
+  shuffle: true
+  temperature: 0.5
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+paths:
+  log_dir: results/logs
+  log_filename: cifar10_simclr_smoke.csv
+  # Checkpoints are large artifacts and must stay outside the Git repository.
+  checkpoint_dir: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/checkpoints
+  checkpoint_filename: cifar10_simclr_smoke.pt

@@ -1,0 +1,29 @@
+seed: 0
+device: cpu
+
+dataset:
+  name: fake
+  size: 16
+  image_size: [3, 32, 32]
+  num_classes: 10
+  augmentation_strength: strong
+
+training:
+  epochs: 1
+  batch_size: 4
+  max_train_batches: 2
+  num_workers: 0
+  shuffle: true
+  temperature: 0.5
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0
+
+paths:
+  log_dir: results/logs
+  log_filename: simclr_fake_smoke.csv
+  # Checkpoints are large artifacts and must stay outside the Git repository.
+  checkpoint_dir: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/checkpoints
+  checkpoint_filename: simclr_fake_smoke.pt

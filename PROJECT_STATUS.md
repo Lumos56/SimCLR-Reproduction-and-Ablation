@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 1 / Module Integration |
-| Current Task | Task 11 synthetic SimCLR forward-backward integration test |
-| Last Completed Task | Task 10 NT-Xent loss merged to main |
-| Git State | working on branch `test/simclr-forward-backward` |
-| Branch | `test/simclr-forward-backward` |
-| Next Gate | Gate 2 smoke training |
-| Do Not Start Yet | training loop, evaluation, linear probe, supervised baseline, ablation, long runs |
+| Current Stage | Gate 2 / Smoke Training |
+| Current Task | Task 12 minimal SimCLR smoke training setup |
+| Last Completed Task | Task 11 synthetic integration test merged to main |
+| Git State | working on branch `train/simclr-smoke` |
+| Branch | `train/simclr-smoke` |
+| Next Gate | Gate 2 smoke test |
+| Do Not Start Yet | linear probe, supervised baseline, evaluation, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | review Task 11 synthetic integration test |
+| Next Owner Decision | review Task 12 minimal smoke training setup |
 
 ## Gate 0 Status
 
@@ -31,5 +31,11 @@
 - [x] Dataset and augmentation issue has been merged.
 - [x] Model encoder and projection head issue has been merged.
 - [x] NT-Xent loss issue has been merged.
-- [x] Synthetic model + loss forward-backward integration test has been added and is pending review.
-- [ ] Training loop, evaluation, linear probe, supervised baseline, ablation, and long runs must not start yet.
+- [x] Synthetic model + loss forward-backward integration test has been merged.
+- [ ] Linear probe, supervised baseline, evaluation, ablation, and long runs must not start yet.
+
+## Gate 2 Status
+
+- [x] Minimal fake-data smoke training setup has been added and is pending review.
+- [x] Smoke training config keeps checkpoints outside the repository by default.
+- [ ] Real CIFAR-10 smoke training has not been run.
