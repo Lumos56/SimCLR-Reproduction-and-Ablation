@@ -1,0 +1,36 @@
+seed: 0
+device: cpu
+
+checkpoint:
+  simclr_path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/checkpoints/cifar10_simclr_smoke.pt
+
+model:
+  feature_dim: 512
+  num_classes: 10
+
+dataset:
+  name: fake
+  size: 16
+  image_size: [3, 32, 32]
+  num_classes: 10
+
+training:
+  epochs: 1
+  batch_size: 4
+  max_train_batches: 2
+  num_workers: 0
+  shuffle: true
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0
+
+paths:
+  log_dir: results/logs
+  log_filename: linear_probe_fake_smoke.csv
+  # Disabled by default so scaffold smoke runs do not write model weights.
+  # If enabled, checkpoint_dir must be outside the Git repository.
+  save_checkpoint: false
+  checkpoint_dir: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/linear_probe
+  checkpoint_filename: linear_probe_fake_smoke.pt

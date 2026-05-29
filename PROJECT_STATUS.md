@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 2 / Smoke Training |
-| Current Task | Task 16 real CIFAR-10 smoke result recorded |
-| Last Completed Task | Task 15 CIFAR-10 external download recorded |
-| Git State | working on branch `run/cifar10-smoke-cli` |
-| Branch | `run/cifar10-smoke-cli` |
-| Next Gate | decide next engineering step |
-| Do Not Start Yet | linear probe, supervised baseline, evaluation, ablation, long runs |
+| Current Stage | Gate 3 / Evaluation Scaffold |
+| Current Task | Task 17 linear probe scaffold |
+| Last Completed Task | Task 16 real CIFAR-10 smoke run recorded and merged to main |
+| Git State | working on branch `eval/linear-probe-scaffold` |
+| Branch | `eval/linear-probe-scaffold` |
+| Next Gate | linear probe smoke validation |
+| Do Not Start Yet | full baseline training, supervised baseline, evaluation report, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | review Task 16 real CIFAR-10 smoke record and choose next engineering step |
+| Next Owner Decision | review Task 17 linear probe scaffold |
 
 ## Gate 0 Status
 
@@ -44,4 +44,5 @@
 - [x] CIFAR-10 data is available in external F-drive research storage.
 - [x] Repository safety checks passed after external data download.
 - [x] Real CIFAR-10 smoke training has been run and recorded.
-- [ ] Linear probe, supervised baseline, evaluation, ablation, and long runs have not been started.
+- [x] Linear probe scaffold has been added and is pending review.
+- [ ] Full baseline training, supervised baseline, evaluation report, ablation, and long runs have not been started.

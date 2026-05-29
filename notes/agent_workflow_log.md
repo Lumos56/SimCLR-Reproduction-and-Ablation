@@ -637,3 +637,47 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 16, then choose the next engineering step before starting baseline, evaluation, ablation, or long runs.
+
+### 2026-05-29
+
+#### Task
+
+- Task 17: Implement linear probe scaffold with smoke test.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add a small linear probe scaffold and fake-data smoke test after Gate 2 smoke training, without full linear probe training, supervised baseline, evaluation reports, ablations, downloads, repository checkpoints, or real accuracy claims.
+
+#### Output
+
+- Added `src/train_linear_probe.py` with SimCLR checkpoint loading, frozen encoder setup, trainable CIFAR-10 linear classifier, fake/CIFAR-10 dataset modes, tiny training loop, CSV logging, and optional external/test checkpoint saving.
+- Added `configs/linear_probe_fake_smoke.yaml` and `configs/cifar10_linear_probe_smoke.yaml`.
+- Added `tests/test_linear_probe_smoke.py` using fake data and pytest `tmp_path` for the SimCLR checkpoint, log directory, and optional linear-probe checkpoint.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md` for Task 17.
+
+#### Validation
+
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_linear_probe_smoke.py`: passed, 1 test.
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py tests/test_linear_probe_smoke.py`: passed, 28 tests.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The linear probe test confirms the encoder is frozen, classifier parameters get gradients and update, and CSV logging works.
+- Temporary checkpoints were created only under pytest `tmp_path`, not inside the repository.
+- No real CIFAR-10 linear probe run, full baseline training, supervised baseline, evaluation report, ablation, or long run was performed.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 17 before deciding whether to run a real CIFAR-10 linear-probe smoke command.
