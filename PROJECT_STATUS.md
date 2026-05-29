@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 3 / Evaluation Scaffold |
-| Current Task | Task 17 linear probe scaffold |
-| Last Completed Task | Task 16 real CIFAR-10 smoke run recorded and merged to main |
-| Git State | working on branch `eval/linear-probe-scaffold` |
-| Branch | `eval/linear-probe-scaffold` |
-| Next Gate | linear probe smoke validation |
-| Do Not Start Yet | full baseline training, supervised baseline, evaluation report, ablation, long runs |
+| Current Stage | Gate 3 / Linear Probe Smoke |
+| Current Task | Task 18 fake linear probe CLI result recorded |
+| Last Completed Task | Task 17 linear probe scaffold merged to main |
+| Git State | working on branch `run/fake-linear-probe-cli` |
+| Branch | `run/fake-linear-probe-cli` |
+| Next Gate | real CIFAR-10 linear probe smoke decision |
+| Do Not Start Yet | real CIFAR-10 linear probe, supervised baseline, evaluation report, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | review Task 17 linear probe scaffold |
+| Next Owner Decision | review Task 18 fake linear probe CLI record and decide whether to run real CIFAR-10 linear probe smoke |
 
 ## Gate 0 Status
 
@@ -44,5 +44,6 @@
 - [x] CIFAR-10 data is available in external F-drive research storage.
 - [x] Repository safety checks passed after external data download.
 - [x] Real CIFAR-10 smoke training has been run and recorded.
-- [x] Linear probe scaffold has been added and is pending review.
+- [x] Linear probe scaffold has been merged.
+- [x] Fake-data linear probe CLI smoke run has been recorded.
 - [ ] Full baseline training, supervised baseline, evaluation report, ablation, and long runs have not been started.

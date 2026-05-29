@@ -681,3 +681,49 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 17 before deciding whether to run a real CIFAR-10 linear-probe smoke command.
+
+### 2026-05-29
+
+#### Task
+
+- Task 18: Record fake linear probe CLI smoke result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's manual fake-data linear probe CLI smoke run without rerunning training, running real CIFAR-10 linear probe, downloading data, creating checkpoints, implementing supervised baseline, evaluation report, ablation, or reporting fake train accuracy as real performance.
+
+#### Output
+
+- Added `experiments/exp05_fake_linear_probe_cli.md` with the command, observed output, CSV log, no-checkpoint behavior, repository safety checks, and fake-data-only limitation.
+- Included `results/logs/linear_probe_fake_smoke.csv` as the small repository smoke log from the successful run.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Linear Probe Smoke.
+- Updated `notes/task_registry.md` to mark Task 17 as commit `525d1b5` and add Task 18.
+
+#### Validation
+
+- Read `results/logs/linear_probe_fake_smoke.csv`; contents matched the Human Owner-provided smoke log.
+- Checked that no files under repository `data/` exist except `data/README.md`.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The record clearly states that `final_train_acc=0.25` is fake-data smoke validation only and not real model performance.
+- The run's no-checkpoint behavior is documented as expected because `save_checkpoint: false`.
+- No training, real CIFAR-10 linear probe, download, checkpoint creation, code change, config change, test change, supervised baseline, evaluation report, ablation, or long run was performed by Codex.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 18, then decide whether to run the real CIFAR-10 linear probe smoke command.
