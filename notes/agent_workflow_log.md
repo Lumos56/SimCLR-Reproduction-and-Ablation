@@ -591,3 +591,49 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 15, then approve and run the real CIFAR-10 smoke command if ready.
+
+### 2026-05-29
+
+#### Task
+
+- Task 16: Record real CIFAR-10 smoke run result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's manual real CIFAR-10 smoke CLI run without rerunning training, downloading data, creating checkpoints, modifying external checkpoint files, or changing source/config/test code.
+
+#### Output
+
+- Added `experiments/exp04_cifar10_smoke_cli.md` with the command, observed output, 10-step CSV log, external checkpoint path, repository safety checks, and limitations.
+- Included `results/logs/cifar10_simclr_smoke.csv` as the small repository smoke log from the successful run.
+- Updated `PROJECT_STATUS.md` for Gate 2 / Smoke Training.
+- Updated `notes/task_registry.md` to mark Task 15 as commit `ca44337` and add Task 16.
+
+#### Validation
+
+- Read `results/logs/cifar10_simclr_smoke.csv`; contents matched the Human Owner-provided smoke log.
+- Checked that no files under repository `data/` exist except `data/README.md`.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The record clearly identifies the run as a real CIFAR-10 smoke run, not a baseline experiment.
+- The checkpoint is documented as external and was not moved, deleted, copied, or modified.
+- No training, fake smoke run, data download, code change, config change, test change, evaluation, baseline, ablation, or long run was performed by Codex.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 16, then choose the next engineering step before starting baseline, evaluation, ablation, or long runs.

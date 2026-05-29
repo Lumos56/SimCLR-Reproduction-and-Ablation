@@ -20,10 +20,11 @@ This file is a concise index of completed setup and Gate 0 tasks. It is for work
 | Task 12: Implement minimal SimCLR smoke training setup | 2026-05-28 | Completed | `db4791b` | Added config-driven fake/CIFAR-10 smoke training, utility helpers, smoke configs, and fake-data training test. | `src/utils.py`, `src/train_simclr.py`, `configs/simclr_fake_smoke.yaml`, `configs/cifar10_simclr_smoke.yaml`, `tests/test_train_simclr_smoke.py`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 13: Record fake smoke CLI run result | 2026-05-28 | Completed | `29f497b` | Recorded the manual fake-data smoke CLI run, module-style command fix, small CSV log, and external checkpoint location. | `experiments/exp01_fake_smoke_cli.md`, `results/logs/simclr_fake_smoke.csv`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/errors_and_fixes.md` |
 | Task 14: Record CIFAR-10 smoke preflight result | 2026-05-28 | Completed | `4b99a85` | Recorded that the CIFAR-10 smoke config is safe but the real smoke run is not ready because CIFAR-10 files are missing and download needs owner approval. | `experiments/exp02_cifar10_smoke_preflight.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
-| Task 15: Record CIFAR-10 external download result | 2026-05-29 | Completed, pending review | - | Recorded the Human Owner-approved CIFAR-10 download to external F-drive research storage and repository safety checks. | `experiments/exp03_cifar10_download.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
+| Task 15: Record CIFAR-10 external download result | 2026-05-29 | Completed | `ca44337` | Recorded the Human Owner-approved CIFAR-10 download to external F-drive research storage and repository safety checks. | `experiments/exp03_cifar10_download.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
+| Task 16: Record real CIFAR-10 smoke run result | 2026-05-29 | Completed, pending review | - | Recorded the manual real CIFAR-10 smoke CLI run, small CSV log, external checkpoint path, and repository safety checks. | `experiments/exp04_cifar10_smoke_cli.md`, `results/logs/cifar10_simclr_smoke.csv`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 
 ## Current Workflow Position
 
-- Current stage: Gate 2 / CIFAR-10 Smoke Preparation
-- Next owner decision: review Task 15 record and approve real CIFAR-10 smoke run
+- Current stage: Gate 2 / Smoke Training
+- Next owner decision: review Task 16 real CIFAR-10 smoke record and choose next engineering step
 - Do not start yet: linear probe, supervised baseline, evaluation, ablation, long runs
