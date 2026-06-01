@@ -867,3 +867,52 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 21, then decide whether to run the supervised fake smoke CLI.
+
+### 2026-06-02
+
+#### Task
+
+- Task 22: Record fake supervised CLI smoke result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's manual fake-data supervised CLI smoke run without rerunning training, running real CIFAR-10 supervised training, downloading data, creating checkpoints, changing code/config/tests, implementing evaluation/ablation, or reporting fake train accuracy as real performance.
+
+#### Output
+
+- Added `experiments/exp08_fake_supervised_cli.md` with the command, observed output, CSV log, no-checkpoint behavior, repository safety checks, and fake-data-only limitation.
+- Included `results/logs/supervised_fake_smoke.csv` as the small repository smoke log from the Human Owner's successful manual run; Codex read the file but did not edit its content.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Supervised Baseline Smoke.
+- Updated `notes/task_registry.md` to mark Task 21 as commit `d62cc28` and add Task 22.
+
+#### Validation
+
+- Read `results/logs/supervised_fake_smoke.csv`; contents matched the Human Owner-provided smoke log.
+- Confirmed `configs/supervised_fake_smoke.yaml` has `save_checkpoint: false`.
+- Checked that no files under repository `data/` exist except `data/README.md`.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The record clearly states that this is fake-data supervised smoke validation only, not a real CIFAR-10 supervised baseline.
+- The record states that `final_train_acc=0.000000` is not a real supervised baseline result and must not be reported as model performance.
+- The no-checkpoint behavior is documented as expected because `save_checkpoint: false`.
+- The CSV provenance is explicit: it came from the Human Owner's manual run and was read, not edited, by Codex.
+- No training, real CIFAR-10 supervised run, download, checkpoint creation, code change, config change, test change, evaluation report, ablation, or long run was performed by Codex.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 22, then prepare the real CIFAR-10 supervised smoke preflight as a separate task.

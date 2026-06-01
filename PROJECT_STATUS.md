@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 3 / Supervised Baseline Scaffold |
-| Current Task | Task 21 supervised baseline scaffold |
-| Last Completed Task | Task 20 real CIFAR-10 linear probe smoke result merged to main |
-| Git State | working on branch `baseline/supervised-scaffold` |
-| Branch | `baseline/supervised-scaffold` |
-| Next Gate | supervised fake smoke CLI |
+| Current Stage | Gate 3 / Supervised Baseline Smoke |
+| Current Task | Task 22 fake supervised CLI result recorded |
+| Last Completed Task | Task 21 supervised baseline scaffold merged to main |
+| Git State | working on branch `run/fake-supervised-cli` |
+| Branch | `run/fake-supervised-cli` |
+| Next Gate | real CIFAR-10 supervised smoke preflight |
 | Do Not Start Yet | real supervised baseline, evaluation report, ablation, long runs |
-| Blockers | none for Task 21 |
-| Next Owner Decision | review Task 21 and decide whether to run supervised fake smoke CLI |
+| Blockers | none for Task 22 |
+| Next Owner Decision | review Task 22 and decide whether to prepare real CIFAR-10 supervised smoke preflight |
 
 ## Gate 0 Status
 
@@ -50,4 +50,5 @@
 - [x] Real CIFAR-10 linear probe smoke CLI run has been recorded.
 - [x] The CIFAR-10 linear probe smoke train accuracy is documented as not being real model performance.
 - [x] Supervised baseline scaffold and fake-data smoke test have been added.
+- [x] Fake-data supervised CLI smoke run has been recorded.
 - [ ] Real supervised baseline training, evaluation report, ablation, and long runs have not been started.
