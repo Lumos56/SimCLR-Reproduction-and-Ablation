@@ -727,3 +727,47 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 18, then decide whether to run the real CIFAR-10 linear probe smoke command.
+
+### 2026-06-01
+
+#### Task
+
+- Task 19: Record real CIFAR-10 linear probe smoke preflight.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's read-only preflight check for `configs/cifar10_linear_probe_smoke.yaml` without running real or fake linear probe, downloading data, creating checkpoints, implementing supervised baseline, evaluation report, ablation, or reporting accuracy.
+
+#### Output
+
+- Added `experiments/exp06_cifar10_linear_probe_preflight.md` with checked config values, external SimCLR checkpoint availability, external CIFAR-10 data availability, `download=false`, `save_checkpoint=false`, and the owner-approval requirement before running the real smoke command.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Linear Probe Smoke Preflight.
+- Updated `notes/task_registry.md` to mark Task 18 as commit `0878a6a` and add Task 19.
+
+#### Validation
+
+- Confirmed branch `run/cifar10-linear-probe-preflight`.
+- Confirmed initial repository status was clean before edits.
+- Checked final diff scope remained within the allowed files.
+- No training, download, checkpoint creation, code edit, config edit, test edit, results/log edit, supervised baseline, evaluation report, ablation, or accuracy reporting was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The preflight record states that the config is safe for a real CIFAR-10 linear probe smoke run but that the run still requires owner approval.
+- The record notes that `save_checkpoint=false`, so no linear probe weights should be created by the smoke run.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 19, then approve the real CIFAR-10 linear probe smoke command if ready.

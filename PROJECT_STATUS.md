@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 3 / Linear Probe Smoke |
-| Current Task | Task 18 fake linear probe CLI result recorded |
-| Last Completed Task | Task 17 linear probe scaffold merged to main |
-| Git State | working on branch `run/fake-linear-probe-cli` |
-| Branch | `run/fake-linear-probe-cli` |
-| Next Gate | real CIFAR-10 linear probe smoke decision |
-| Do Not Start Yet | real CIFAR-10 linear probe, supervised baseline, evaluation report, ablation, long runs |
+| Current Stage | Gate 3 / Linear Probe Smoke Preflight |
+| Current Task | Task 19 real CIFAR-10 linear probe smoke preflight recorded |
+| Last Completed Task | Task 18 fake linear probe CLI result merged to main |
+| Git State | working on branch `run/cifar10-linear-probe-preflight` |
+| Branch | `run/cifar10-linear-probe-preflight` |
+| Next Gate | real CIFAR-10 linear probe smoke run |
+| Do Not Start Yet | supervised baseline, evaluation report, ablation, long runs |
 | Blockers | none for Gate 0 |
-| Next Owner Decision | review Task 18 fake linear probe CLI record and decide whether to run real CIFAR-10 linear probe smoke |
+| Next Owner Decision | approve real CIFAR-10 linear probe smoke run |
 
 ## Gate 0 Status
 
@@ -46,4 +46,5 @@
 - [x] Real CIFAR-10 smoke training has been run and recorded.
 - [x] Linear probe scaffold has been merged.
 - [x] Fake-data linear probe CLI smoke run has been recorded.
+- [x] Real CIFAR-10 linear probe smoke preflight has been recorded.
 - [ ] Full baseline training, supervised baseline, evaluation report, ablation, and long runs have not been started.
