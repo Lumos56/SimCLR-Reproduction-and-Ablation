@@ -819,3 +819,51 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 20, then decide whether to start supervised baseline scaffolding or evaluation planning.
+
+### 2026-06-01
+
+#### Task
+
+- Task 21: Implement supervised ResNet18 baseline scaffold with fake-data smoke test.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Add a config-driven supervised ResNet18 baseline scaffold, fake/CIFAR-10 smoke configs, and fake-data pytest coverage without running real CIFAR-10 supervised baseline training, downloading data, creating repository checkpoints, implementing evaluation/ablation, or reporting accuracy as a real baseline result.
+
+#### Output
+
+- Added `src/train_supervised.py` with a trainable `CifarResNet18Encoder` plus classifier head, fake/CIFAR-10 dataset modes, CSV logging, and optional checkpoint saving guarded against repository-local model weights.
+- Added `configs/supervised_fake_smoke.yaml` for future fake-data CLI smoke runs.
+- Added `configs/cifar10_supervised_smoke.yaml` for future real CIFAR-10 smoke planning with `download: false` and `save_checkpoint: false`.
+- Added `tests/test_supervised_smoke.py` using fake data, CPU, tiny batches, tmp_path logs, and tmp_path checkpoint output.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Supervised Baseline Scaffold.
+- Updated `notes/task_registry.md` to mark Task 20 as commit `793b7a7` and add Task 21.
+
+#### Validation
+
+- `tests/test_supervised_smoke.py` passed.
+- Full current test subset passed: dataset, model shapes, NT-Xent, SimCLR integration, SimCLR smoke, linear probe smoke, and supervised smoke.
+- No real CIFAR-10 supervised baseline training, download, evaluation report, ablation, long run, or repository-local checkpoint creation was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The scaffold trains the full supervised model, not a frozen linear probe.
+- Fake-data tests use `tmp_path` for logs and checkpoint output.
+- The CIFAR-10 supervised smoke config uses the external data root, `download: false`, and `save_checkpoint: false`.
+- The task does not claim any supervised baseline accuracy.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 21, then decide whether to run the supervised fake smoke CLI.
