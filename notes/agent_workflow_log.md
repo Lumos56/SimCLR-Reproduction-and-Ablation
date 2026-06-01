@@ -771,3 +771,51 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 19, then approve the real CIFAR-10 linear probe smoke command if ready.
+
+### 2026-06-01
+
+#### Task
+
+- Task 20: Record real CIFAR-10 linear probe smoke CLI result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's manual real CIFAR-10 linear probe smoke CLI run without rerunning training, downloading data, creating checkpoints, changing code/config/tests, implementing supervised baseline/evaluation/ablation, or reporting smoke train accuracy as real performance.
+
+#### Output
+
+- Added `experiments/exp07_cifar10_linear_probe_cli.md` with the command, observed output, CSV log, no-checkpoint behavior, repository safety checks, and smoke-only limitation.
+- Included `results/logs/cifar10_linear_probe_smoke.csv` as the small repository smoke log from the Human Owner's successful manual run; Codex read the file but did not edit its content.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Linear Probe Smoke.
+- Updated `notes/task_registry.md` to mark Task 19 as commit `626ac2d` and add Task 20.
+
+#### Validation
+
+- Read `results/logs/cifar10_linear_probe_smoke.csv`; contents matched the Human Owner-provided smoke log.
+- Checked that no files under repository `data/` exist except `data/README.md`.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The record clearly states that this is a real CIFAR-10 linear probe smoke run only, not a full linear probe experiment or baseline.
+- The record states that `final_train_acc=0.062500` is not a real evaluation result and must not be reported as model performance.
+- The no-checkpoint behavior is documented as expected because `save_checkpoint: false`.
+- The CSV provenance is now explicit: it came from the Human Owner's manual run and was read, not edited, by Codex.
+- No training, fake smoke run, data download, checkpoint creation, code change, config change, test change, supervised baseline, evaluation report, ablation, or long run was performed by Codex.
+
+#### What Was Wrong
+
+- The first Task 20 delivery report did not distinguish clearly enough between Codex-edited documentation files and the owner-generated CSV artifact. This review corrected the project record.
+
+#### Follow-up
+
+- Review and commit Task 20, then decide whether to start supervised baseline scaffolding or evaluation planning.
