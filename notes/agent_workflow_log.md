@@ -963,3 +963,52 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 23, then approve the real CIFAR-10 supervised smoke command if ready.
+
+### 2026-06-02
+
+#### Task
+
+- Task 24: Record real CIFAR-10 supervised smoke CLI result.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's manual real CIFAR-10 supervised smoke CLI run without rerunning real or fake supervised training, downloading data, creating checkpoints, changing code/config/tests, implementing evaluation/ablation, or reporting smoke train accuracy as real model performance.
+
+#### Output
+
+- Added `experiments/exp10_cifar10_supervised_cli.md` with the command, observed output, CSV log, no-checkpoint behavior, repository safety checks, and smoke-only limitation.
+- Included `results/logs/cifar10_supervised_smoke.csv` as the small repository smoke log from the Human Owner's successful manual run; Codex read the file but did not edit its content.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Supervised Baseline Smoke.
+- Updated `notes/task_registry.md` to mark Task 23 as commit `35581f1` and add Task 24.
+
+#### Validation
+
+- Read `results/logs/cifar10_supervised_smoke.csv`; contents matched the Human Owner-provided smoke log.
+- Confirmed `configs/cifar10_supervised_smoke.yaml` has `save_checkpoint: false`.
+- Checked that no files under repository `data/` exist except `data/README.md`.
+- Checked that no `.pt`, `.pth`, `.ckpt`, or `.onnx` files exist inside the repository.
+- Checked that no files over 10MB exist inside the repository.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The record clearly states that this is a real CIFAR-10 supervised smoke run only, not a full supervised baseline experiment.
+- The record states that `final_train_acc=0.031250` is not a real supervised baseline performance result and must not be reported as model performance.
+- The no-checkpoint behavior is documented as expected because `save_checkpoint: false`.
+- The CSV provenance is explicit: it came from the Human Owner's manual run and was read, not edited, by Codex.
+- No training, fake supervised run, download, checkpoint creation, code change, config change, test change, evaluation report, ablation, or long run was performed by Codex.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 24, then decide the baseline training plan as a separate task.
