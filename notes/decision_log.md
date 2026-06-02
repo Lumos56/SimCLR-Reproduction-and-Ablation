@@ -14,6 +14,8 @@ This file records project workflow decisions.
 | 2026-05-26 | Use branch/report/review/commit workflow. | Keep each task scoped, reviewable, and traceable before moving to the next gate. | Active |
 | 2026-05-28 | Require explicit owner approval before downloading CIFAR-10. | The CIFAR-10 smoke config is safe with `download: false`, but the dataset was missing during preflight; any download must be an owner-approved action to the external dataset directory. | Active |
 | 2026-05-29 | CIFAR-10 download approved only to external F-drive research storage. | The Human Owner explicitly approved the CIFAR-10 download and ran it manually with `torchvision.datasets.CIFAR10`; dataset files remain outside the repository under `/home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation`. | Completed |
+| 2026-06-03 | Use a short baseline stage before longer baseline or ablation. | Smoke runs are not baseline results; a short supervised, SimCLR, and linear-probe baseline stage provides preliminary controlled-run evidence before longer training or ablation. | Active |
+| 2026-06-03 | Treat short baseline as preliminary and not final performance. | README and final report must distinguish short baseline outputs from final performance claims and preserve limitations, configs, commands, and failure records. | Active |
 
 ## Guardrails Carried Into Gate 1
 

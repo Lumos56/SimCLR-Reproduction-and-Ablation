@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Gate 3 / Supervised Baseline Smoke |
-| Current Task | Task 24 real CIFAR-10 supervised smoke result recorded |
-| Last Completed Task | Task 23 real CIFAR-10 supervised smoke preflight merged to main |
-| Git State | working on branch `run/cifar10-supervised-cli` |
-| Branch | `run/cifar10-supervised-cli` |
-| Next Gate | baseline training plan decision |
-| Do Not Start Yet | formal supervised baseline, evaluation report, ablation, long runs |
-| Blockers | none for Task 24 |
-| Next Owner Decision | review Task 24 and decide baseline training plan |
+| Current Stage | Baseline Training Planning |
+| Current Task | Task 25 baseline training plan decision |
+| Last Completed Task | Task 24 real CIFAR-10 supervised smoke result merged to main |
+| Git State | working on branch `plan/baseline-training-decision` |
+| Branch | `plan/baseline-training-decision` |
+| Next Gate | short baseline config preparation |
+| Do Not Start Yet | long training, ablation, final evaluation report |
+| Blockers | none for Task 25 |
+| Next Owner Decision | review Task 25 and approve short baseline config preparation |
 
 ## Gate 0 Status
 
@@ -54,4 +54,5 @@
 - [x] Real CIFAR-10 supervised smoke preflight has been recorded.
 - [x] Real CIFAR-10 supervised smoke CLI run has been recorded.
 - [x] The CIFAR-10 supervised smoke train accuracy is documented as not being real supervised baseline performance.
-- [ ] Formal supervised baseline training, evaluation report, ablation, and long runs have not been started.
+- [x] Short baseline training plan decision has been drafted.
+- [ ] Short baseline configs, formal baseline training, evaluation report, ablation, and long runs have not been started.

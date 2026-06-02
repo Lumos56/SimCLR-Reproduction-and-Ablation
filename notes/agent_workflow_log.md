@@ -1012,3 +1012,51 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 24, then decide the baseline training plan as a separate task.
+
+### 2026-06-03
+
+#### Task
+
+- Task 25: Create baseline training plan decision document.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Create a planning document for the first formal short baseline stage after completed smoke validation, update workflow tracking, and record the decision without running training/tests, downloading data, creating checkpoints, implementing code, editing configs, or fabricating results.
+
+#### Output
+
+- Added `notes/baseline_training_plan.md` with smoke validation status, short baseline scope, recommended run order, storage rules, result interpretation rules, stopping/failure rules, and next task sequence.
+- Updated `PROJECT_STATUS.md` for Baseline Training Planning.
+- Updated `notes/task_registry.md` to mark Task 24 as commit `38639cf` and add Task 25.
+- Updated `notes/decision_log.md` with the short-baseline-before-longer-training decision and preliminary-result interpretation rule.
+
+#### Validation
+
+- Confirmed branch `plan/baseline-training-decision`.
+- Confirmed initial repository status was clean before edits.
+- Read required status files, configs, and smoke experiment records before writing.
+- Checked final diff scope remained within allowed planning and workflow files.
+- No training, tests, download, checkpoint creation, code edit, config edit, result log edit, experiment result edit, ablation, or baseline result reporting was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The plan explicitly states that it is not an experiment result.
+- The plan recommends supervised short baseline first, then SimCLR short pretrain, then linear probe.
+- The plan keeps checkpoints and datasets in external research storage and forbids committing model weights.
+- The plan defines Task 26 as config preparation only, not a training run.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 25, then create short-baseline configs in Task 26 without running training.
