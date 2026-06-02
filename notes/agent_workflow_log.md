@@ -916,3 +916,50 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 22, then prepare the real CIFAR-10 supervised smoke preflight as a separate task.
+
+### 2026-06-02
+
+#### Task
+
+- Task 23: Record real CIFAR-10 supervised smoke preflight.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Record the Human Owner's read-only preflight check for `configs/cifar10_supervised_smoke.yaml` without running real or fake supervised training, downloading data, creating checkpoints, changing code/config/tests/results logs, implementing evaluation/ablation, or reporting accuracy.
+
+#### Output
+
+- Added `experiments/exp09_cifar10_supervised_preflight.md` with checked config values, external CIFAR-10 data availability, `download=false`, `save_checkpoint=false`, missing supervised checkpoint directory as non-blocking, and the owner-approval requirement before running the real smoke command.
+- Updated `PROJECT_STATUS.md` for Gate 3 / Supervised Baseline Smoke Preflight.
+- Updated `notes/task_registry.md` to mark Task 22 as commit `2bd1d5c` and add Task 23.
+
+#### Validation
+
+- Confirmed branch `run/cifar10-supervised-preflight`.
+- Confirmed initial repository status was clean before edits.
+- Read `configs/cifar10_supervised_smoke.yaml`; observed config values matched the owner-provided preflight summary.
+- Checked final diff scope remained within the allowed files.
+- No real CIFAR-10 supervised training, fake supervised training, download, checkpoint creation, code edit, config edit, test edit, results/log edit, evaluation report, ablation, long run, or accuracy reporting was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The preflight record states that the config is safe for a real CIFAR-10 supervised smoke run but that the run still requires owner approval.
+- The record notes that `download=false`, so no dataset download should occur.
+- The record notes that `save_checkpoint=false`, so no supervised weights should be created.
+- The missing external supervised checkpoint directory is explicitly recorded as not a blocker for this smoke run.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 23, then approve the real CIFAR-10 supervised smoke command if ready.
