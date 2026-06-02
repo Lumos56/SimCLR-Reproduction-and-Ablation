@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Baseline Training Planning |
-| Current Task | Task 25 baseline training plan decision |
-| Last Completed Task | Task 24 real CIFAR-10 supervised smoke result merged to main |
-| Git State | working on branch `plan/baseline-training-decision` |
-| Branch | `plan/baseline-training-decision` |
+| Current Stage | Workflow Documentation |
+| Current Task | Task 26 workflow playbook draft |
+| Last Completed Task | Task 25 baseline training plan merged to main |
+| Git State | working on branch `docs/workflow-playbook-draft` |
+| Branch | `docs/workflow-playbook-draft` |
 | Next Gate | short baseline config preparation |
-| Do Not Start Yet | long training, ablation, final evaluation report |
-| Blockers | none for Task 25 |
-| Next Owner Decision | review Task 25 and approve short baseline config preparation |
+| Do Not Start Yet | short baseline training, ablation, final report |
+| Blockers | none for Task 26 |
+| Next Owner Decision | review Task 26 and approve Task 27 short-baseline config preparation |
 
 ## Gate 0 Status
 
@@ -32,7 +32,7 @@
 - [x] Model encoder and projection head issue has been merged.
 - [x] NT-Xent loss issue has been merged.
 - [x] Synthetic model + loss forward-backward integration test has been merged.
-- [ ] Linear probe, supervised baseline, evaluation, ablation, and long runs must not start yet.
+- [x] Gate 1 module readiness checks have been completed; later evaluation, ablation, and long runs remain gated by approved task scope.
 
 ## Gate 2 Status
 
@@ -54,5 +54,10 @@
 - [x] Real CIFAR-10 supervised smoke preflight has been recorded.
 - [x] Real CIFAR-10 supervised smoke CLI run has been recorded.
 - [x] The CIFAR-10 supervised smoke train accuracy is documented as not being real supervised baseline performance.
+
+## Planning / Workflow Documentation Status
+
 - [x] Short baseline training plan decision has been drafted.
-- [ ] Short baseline configs, formal baseline training, evaluation report, ablation, and long runs have not been started.
+- [x] Reusable workflow playbook draft has been created.
+- [ ] Short baseline configs have not been prepared yet.
+- [ ] Formal baseline training, evaluation report, ablation, and long runs have not been started.

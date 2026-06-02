@@ -1051,7 +1051,7 @@ This file records how agents are used in this project.
 - The plan explicitly states that it is not an experiment result.
 - The plan recommends supervised short baseline first, then SimCLR short pretrain, then linear probe.
 - The plan keeps checkpoints and datasets in external research storage and forbids committing model weights.
-- The plan defines Task 26 as config preparation only, not a training run.
+- Historical note: the Task 25 plan originally defined Task 26 as config preparation only; this was superseded by the Task 26 numbering correction, which moved config preparation to Task 27.
 
 #### What Was Wrong
 
@@ -1060,3 +1060,52 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 25, then create short-baseline configs in Task 26 without running training.
+
+### 2026-06-03
+
+#### Task
+
+- Task 26: Create workflow playbook draft.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Create a reusable workflow playbook draft from the SimCLR project process before short-baseline config preparation, update workflow tracking, and avoid training, tests, downloads, checkpoints, code edits, config edits, result edits, GitHub connections, browser actions, and fabricated outcomes.
+
+#### Output
+
+- Added `notes/workflow_playbook_draft.md` with the minimal reusable file set, Day 0 / Day 1 setup, storage policy, agent roles, task lifecycle, gate system, no-code conditions, commit/merge rules, review rules, smoke/baseline/final-result distinctions, optional capability guidance, lessons learned, and next use.
+- Updated `PROJECT_STATUS.md` for Workflow Documentation.
+- Updated `notes/task_registry.md` to mark Task 25 as commit `91ecf58` and add Task 26.
+- Updated `notes/decision_log.md` with the decision to create a reusable workflow playbook before short-baseline config preparation.
+
+#### Validation
+
+- Confirmed branch `docs/workflow-playbook-draft`.
+- Confirmed initial repository status was clean before edits.
+- Read required status files, configs, storage docs, and smoke experiment records before writing.
+- Checked final diff scope remained within allowed workflow documentation files.
+- No training, tests, download, checkpoint creation, code edit, config edit, result edit, experiment edit, figure creation, GitHub connection, browser action, or fabricated result was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The draft states that it is a reusable workflow draft, not a project result.
+- The draft keeps the workflow lightweight and does not become a final retrospective.
+- The draft records storage policy, agent roles, gates, review rules, and lessons learned from this project.
+- The draft preserves the rule that smoke logs are not performance results.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 26, then proceed to Task 27 short-baseline config preparation as a separate task.
+- Task numbering was corrected: Task 26 is workflow playbook draft; short-baseline config preparation moves to Task 27.

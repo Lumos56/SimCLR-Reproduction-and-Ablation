@@ -94,12 +94,14 @@ Recommended next tasks:
 
 | Task | Scope |
 |---|---|
-| Task 26 | Create short-baseline configs, but do not run long training yet. |
-| Task 27 | Run supervised short baseline. |
-| Task 28 | Run SimCLR short pretrain. |
-| Task 29 | Run linear probe on the short SimCLR checkpoint. |
+| Task 26 | Create the reusable workflow playbook draft. |
+| Task 27 | Create short-baseline configs, but do not run training yet. |
+| Task 28 | Run supervised short baseline. |
+| Task 29 | Run SimCLR short pretrain. |
+| Task 30 | Run linear probe on the short SimCLR checkpoint. |
 
-Task 26 should only prepare configs and safety checks. It should not start baseline training.
+Task 27 should only prepare configs and safety checks. It should not start baseline training.
+Task 26 is the workflow playbook draft and does not prepare baseline configs.
 
 ## Decision
 
