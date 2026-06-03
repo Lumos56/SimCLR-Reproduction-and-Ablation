@@ -1,0 +1,2 @@
+mode,dataset,dataset_split,top1_accuracy,correct,total,checkpoint_path,simclr_checkpoint_path
+supervised,cifar10,test,0.8737,8737,10000,/home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/supervised_short/cifar10_supervised_short.pt,

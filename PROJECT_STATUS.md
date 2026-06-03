@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Evaluation Scaffold |
-| Current Task | Task 32 evaluation scaffold |
-| Last Completed Task | Task 31 short baseline summary and evaluation planning merged to main |
-| Git State | working on branch `eval/evaluation-scaffold` |
-| Branch | `eval/evaluation-scaffold` |
-| Next Gate | supervised short evaluation |
-| Do Not Start Yet | real evaluation run, ablation, final report, long runs |
-| Blockers | none for Task 32 |
-| Next Owner Decision | review Task 32 and approve supervised short evaluation |
+| Current Stage | Short Baseline Evaluation |
+| Current Task | Task 33 supervised short evaluation result recorded |
+| Last Completed Task | Task 32 evaluation scaffold merged to main |
+| Git State | working on branch `eval/supervised-short` |
+| Branch | `eval/supervised-short` |
+| Next Gate | Task 34 linear probe short evaluation |
+| Do Not Start Yet | ablation, final report, long runs |
+| Blockers | none for Task 33 |
+| Next Owner Decision | review Task 33 and approve linear probe short evaluation |
 
 ## Gate 0 Status
 
@@ -74,4 +74,6 @@
 - [x] The linear probe short final train accuracy is documented as last-batch training accuracy, not test accuracy or final performance.
 - [x] Short baseline training summary and evaluation planning have been drafted.
 - [x] Evaluation scaffold has been implemented with fake-data tests only.
-- [ ] Real evaluation, ablation, final report, result table, and long runs have not been started.
+- [x] Supervised short CIFAR-10 test-set evaluation has been recorded.
+- [x] The supervised short evaluation Top-1 accuracy is documented as a real test-set metric for the 10-epoch short baseline, not final supervised baseline performance.
+- [ ] Linear probe short evaluation, ablation, final report, and long runs have not been started.

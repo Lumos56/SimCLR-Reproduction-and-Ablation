@@ -1508,3 +1508,84 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review the Task 32 scaffold and provenance follow-up together before commit.
+
+### 2026-06-04
+
+#### Task
+
+- Task 33: Record supervised short evaluation result.
+
+#### Issue
+
+- Human Owner manually ran supervised short evaluation and provided command output plus CSV result.
+
+#### Branch
+
+- `eval/supervised-short`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Recorded the Human Owner-run CIFAR-10 test-set evaluation for the supervised 10-epoch short baseline.
+- Added `experiments/exp15_supervised_short_eval.md` with command, observed output, CSV content, checkpoint path, provenance, interpretation, and limitations.
+- Kept `results/tables/supervised_short_eval.csv` as a small untracked result table ready for commit.
+- Updated `PROJECT_STATUS.md` for Short Baseline Evaluation.
+- Updated `notes/task_registry.md` to mark Task 32 as commit `759748e` and add Task 33.
+
+#### Files Changed
+
+- `experiments/exp15_supervised_short_eval.md`: new experiment record for supervised short evaluation.
+- `results/tables/supervised_short_eval.csv`: owner-generated small evaluation CSV result to include in the commit.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and evaluation status.
+- `notes/task_registry.md`: recorded Task 32 commit and Task 33 pending-review row.
+- `notes/agent_workflow_log.md`: appended this Task 33 work log entry.
+
+#### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|Task 33|supervised short evaluation|supervised_short_eval' -CaseSensitive:$false -Context 1,1`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -8`
+- `Get-Content -Path 'results\tables\supervised_short_eval.csv'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `rg --files -g '*.pt' -g '*.pth' -g '*.ckpt' -g '*.onnx' -g 'events.out.tfevents*'`
+- `Get-ChildItem -Path . -Recurse -File | Where-Object { $_.Length -gt 10MB } | Select-Object -ExpandProperty FullName`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --name-only`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+
+#### Validation
+
+- Confirmed branch `eval/supervised-short`.
+- Confirmed Task 32 commit hash `759748e` from `git log`.
+- Confirmed `results/tables/supervised_short_eval.csv` content matches the Human Owner-provided supervised evaluation result.
+- Confirmed no repository `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found.
+- Confirmed no files over 10MB were found inside the repository.
+- `git diff --check` reported no issues.
+- No evaluation, training, ablation, dataset download, or checkpoint creation was run by Codex.
+
+#### Not Validated
+
+- Codex did not rerun the supervised evaluation.
+- Linear probe short evaluation was not run or recorded.
+- Ablation and final-report metrics were not started.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`.
+- Untracked: `experiments/exp15_supervised_short_eval.md`, `results/tables/supervised_short_eval.csv`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes untracked files until staged.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- `top1_accuracy=0.873700` is a real CIFAR-10 test-set metric for the supervised short baseline, but it is not final supervised baseline performance.
+
+#### Next Step
+
+- Review and commit Task 33, then proceed to Task 34 linear probe short evaluation if approved.
