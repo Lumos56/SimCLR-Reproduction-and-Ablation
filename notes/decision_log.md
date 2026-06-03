@@ -17,6 +17,7 @@ This file records project workflow decisions.
 | 2026-06-03 | Use a short baseline stage before longer baseline or ablation. | Smoke runs are not baseline results; a short supervised, SimCLR, and linear-probe baseline stage provides preliminary controlled-run evidence before longer training or ablation. | Active |
 | 2026-06-03 | Treat short baseline as preliminary and not final performance. | README and final report must distinguish short baseline outputs from final performance claims and preserve limitations, configs, commands, and failure records. | Active |
 | 2026-06-03 | Create a reusable workflow playbook before short-baseline configs. | The SimCLR project has enough smoke-stage workflow evidence to capture a lightweight draft for future AI research coding projects before moving into baseline training. | Active |
+| 2026-06-03 | Implement evaluation scaffold before ablation. | The project has short-baseline training logs and checkpoints, but no CIFAR-10 test-set metrics; supervised and linear-probe checkpoints need comparable Top-1 evaluation before ablation. | Active |
 
 ## Guardrails Carried Into Gate 1
 

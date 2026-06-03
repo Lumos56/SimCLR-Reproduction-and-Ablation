@@ -1307,3 +1307,52 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 30, then decide the short baseline summary and evaluation planning task.
+
+### 2026-06-03
+
+#### Task
+
+- Task 31: Short baseline summary and evaluation planning.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Summarize completed short-baseline training runs and plan the next evaluation scaffold without running training, evaluation, tests, downloading data, creating checkpoints, creating figures, fabricating test accuracy, starting ablation, or editing evaluation code.
+
+#### Output
+
+- Added `experiments/exp14_short_baseline_summary.md` summarizing Task 28 supervised short baseline, Task 29 SimCLR short pretrain, and Task 30 linear probe short.
+- Added `results/tables/short_baseline_training_summary.md` with training-log metrics, checkpoint paths, log paths, and interpretation limits.
+- Updated `PROJECT_STATUS.md` for Short Baseline Summary / Evaluation Planning.
+- Updated `notes/task_registry.md` to mark Task 30 as commit `6f60b28` and add Task 31.
+- Updated `notes/decision_log.md` with the decision to implement evaluation scaffold before ablation.
+
+#### Validation
+
+- Confirmed branch `analysis/short-baseline-summary`.
+- Confirmed initial repository status was clean before edits.
+- Read required project status, registry, workflow log, baseline plan, experiment records, and CSV log summaries before writing.
+- Checked CSV line counts and final log rows for supervised short, SimCLR short, and linear probe short with `wc`, `head`, and `tail`.
+- No training, evaluation, tests, download, checkpoint creation, figure creation, code edit, config edit, log edit, ablation, or fabricated result was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The summary separates training-log metrics from missing test-set evaluation.
+- The table states that supervised and linear-probe train accuracy values are not CIFAR-10 test accuracy or final performance.
+- The table states that SimCLR short pretrain loss is not representation quality or final performance.
+- Task 32 is defined as evaluation scaffold implementation with fake-data tests first and no real evaluation run.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 31, then decide whether to start Task 32 evaluation scaffold implementation.
