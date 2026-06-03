@@ -3,14 +3,14 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Short Baseline Training |
-| Current Task | Task 29 SimCLR short pretrain result recorded |
-| Last Completed Task | Task 28 supervised short baseline merged to main |
-| Git State | working on branch `run/simclr-short-pretrain` |
-| Branch | `run/simclr-short-pretrain` |
-| Next Gate | Task 30 linear probe on short SimCLR checkpoint |
+| Current Task | Task 30 linear probe short result recorded |
+| Last Completed Task | Task 29 SimCLR short pretrain merged to main |
+| Git State | working on branch `run/linear-probe-short` |
+| Branch | `run/linear-probe-short` |
+| Next Gate | short baseline summary and evaluation planning |
 | Do Not Start Yet | ablation, final report, long runs |
-| Blockers | none for Task 29 |
-| Next Owner Decision | review Task 29 and approve Task 30 linear probe |
+| Blockers | none for Task 30 |
+| Next Owner Decision | review Task 30 and decide short baseline summary/evaluation planning |
 
 ## Gate 0 Status
 
@@ -69,5 +69,7 @@
 - [x] SimCLR short pretrain run has been recorded.
 - [x] SimCLR short pretrain checkpoint is stored externally, outside the Git repository.
 - [x] The SimCLR short pretrain final loss is documented as training loss, not representation quality or final model performance.
-- [ ] Linear probe short run has not been started.
+- [x] Linear probe short training run has been recorded.
+- [x] Linear probe short checkpoint is stored externally, outside the Git repository.
+- [x] The linear probe short final train accuracy is documented as last-batch training accuracy, not test accuracy or final performance.
 - [ ] Evaluation report, ablation, final report, result table, and long runs have not been started.
