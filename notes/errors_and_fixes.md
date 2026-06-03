@@ -52,3 +52,37 @@ Run the CLI as a module from the repository root:
 #### Lesson
 
 Use module-style execution for `src` package CLI commands so imports resolve from the repository root.
+
+### 2026-06-03 - Full CSV Log Printed During Short Baseline Review
+
+#### Context
+
+The Human Owner ran the supervised short baseline and inspected `results/logs/cifar10_supervised_short.csv`.
+
+#### Error Message
+
+```text
+The full 3901-line CSV log was printed to the terminal because cat was used.
+```
+
+#### Investigation
+
+The command template was appropriate for very small smoke logs, where printing the whole CSV is acceptable. It was reused for a short-baseline training log with 3901 lines, which made the terminal output noisy and harder to review.
+
+This was not a code failure and did not affect the supervised short baseline run.
+
+#### Fix
+
+For short-baseline, baseline, or long-run CSV logs, inspect summaries instead of printing the whole file:
+
+```bash
+wc -l results/logs/cifar10_supervised_short.csv
+head -n 5 results/logs/cifar10_supervised_short.csv
+tail -n 10 results/logs/cifar10_supervised_short.csv
+```
+
+Use scripts or plotting tools for deeper analysis.
+
+#### Lesson
+
+Never `cat` full training CSV logs for short-baseline, baseline, or long-run records. Reserve full-file `cat` only for smoke logs with a few lines.

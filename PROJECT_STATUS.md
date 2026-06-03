@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Short Baseline Config Preparation |
-| Current Task | Task 27 short-baseline config preparation |
-| Last Completed Task | Task 26 workflow playbook draft merged to main |
-| Git State | working on branch `config/short-baselines` |
-| Branch | `config/short-baselines` |
-| Next Gate | supervised short baseline run |
-| Do Not Start Yet | training, ablation, final report, result table |
-| Blockers | none for Task 27 |
-| Next Owner Decision | review Task 27 and approve supervised short baseline run |
+| Current Stage | Short Baseline Training |
+| Current Task | Task 28 supervised short baseline result recorded |
+| Last Completed Task | Task 27 short-baseline configs merged to main |
+| Git State | working on branch `run/supervised-short-baseline` |
+| Branch | `run/supervised-short-baseline` |
+| Next Gate | SimCLR short pretrain |
+| Do Not Start Yet | SimCLR short pretrain, linear probe short, ablation, final report |
+| Blockers | none for Task 28 |
+| Next Owner Decision | review Task 28 and approve SimCLR short pretrain |
 
 ## Gate 0 Status
 
@@ -60,4 +60,12 @@
 - [x] Short baseline training plan decision has been drafted.
 - [x] Reusable workflow playbook draft has been created.
 - [x] Short baseline configs have been prepared for pending review.
-- [ ] Formal baseline training, evaluation report, ablation, and long runs have not been started.
+
+## Short Baseline Training Status
+
+- [x] Supervised short baseline training run has been recorded.
+- [x] Supervised short baseline checkpoint is stored externally, outside the Git repository.
+- [x] The supervised short baseline final train accuracy is documented as last-batch training accuracy, not test accuracy or final performance.
+- [ ] SimCLR short pretrain has not been started.
+- [ ] Linear probe short run has not been started.
+- [ ] Evaluation report, ablation, final report, result table, and long runs have not been started.

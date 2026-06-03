@@ -120,6 +120,13 @@ In these cases, inspect, report, and ask for the next owner decision.
 - Final baseline: planned config plus documented interpretation, failure records, and review.
 - README must not overclaim smoke or short-baseline results as final performance.
 
+## Log Display Rule
+
+- For smoke logs with only a few lines, printing the whole CSV with `cat` is acceptable.
+- For short-baseline, baseline, or long-run CSV logs, never print the whole file with `cat`.
+- Use `wc -l <log.csv>`, `head -n 5 <log.csv>`, and `tail -n 10 <log.csv>` for terminal inspection.
+- Use scripts or plotting tools for deeper analysis.
+
 ## When To Use Extra Codex Capabilities
 
 - Plotting: use after CSV logs and result tables exist.
