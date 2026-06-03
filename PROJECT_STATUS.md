@@ -3,14 +3,14 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Short Baseline Evaluation |
-| Current Task | Task 33 supervised short evaluation result recorded |
-| Last Completed Task | Task 32 evaluation scaffold merged to main |
-| Git State | working on branch `eval/supervised-short` |
-| Branch | `eval/supervised-short` |
-| Next Gate | Task 34 linear probe short evaluation |
+| Current Task | Task 34 linear probe short evaluation result recorded |
+| Last Completed Task | Task 33 supervised short evaluation merged to main |
+| Git State | working on branch `eval/linear-probe-short` |
+| Branch | `eval/linear-probe-short` |
+| Next Gate | Task 35 short baseline result table and first interpretation |
 | Do Not Start Yet | ablation, final report, long runs |
-| Blockers | none for Task 33 |
-| Next Owner Decision | review Task 33 and approve linear probe short evaluation |
+| Blockers | none for Task 34 |
+| Next Owner Decision | review Task 34 and approve short baseline result table |
 
 ## Gate 0 Status
 
@@ -76,4 +76,6 @@
 - [x] Evaluation scaffold has been implemented with fake-data tests only.
 - [x] Supervised short CIFAR-10 test-set evaluation has been recorded.
 - [x] The supervised short evaluation Top-1 accuracy is documented as a real test-set metric for the 10-epoch short baseline, not final supervised baseline performance.
-- [ ] Linear probe short evaluation, ablation, final report, and long runs have not been started.
+- [x] Linear probe short CIFAR-10 test-set evaluation has been recorded.
+- [x] The linear probe short evaluation Top-1 accuracy is documented as a real test-set metric for the short SimCLR plus short linear-probe path, not final SimCLR performance.
+- [ ] Short baseline comparison table, ablation, final report, and long runs have not been started.

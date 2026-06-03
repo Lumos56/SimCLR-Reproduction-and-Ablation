@@ -1589,3 +1589,88 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review and commit Task 33, then proceed to Task 34 linear probe short evaluation if approved.
+
+### 2026-06-04
+
+#### Task
+
+- Task 34: Record linear probe short evaluation result.
+
+#### Issue
+
+- Human Owner manually ran linear probe short evaluation and provided command output plus CSV result.
+
+#### Branch
+
+- `eval/linear-probe-short`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Recorded the Human Owner-run CIFAR-10 test-set evaluation for the linear probe trained on the short SimCLR checkpoint.
+- Added `experiments/exp16_linear_probe_short_eval.md` with command, observed output, CSV content, linear probe checkpoint path, SimCLR checkpoint path, provenance, interpretation, and limitations.
+- Kept `results/tables/linear_probe_short_eval.csv` as a small untracked result table ready for commit.
+- Updated `PROJECT_STATUS.md` for Task 34 and the Task 35 next gate.
+- Updated `notes/task_registry.md` to mark Task 33 as commit `1b5b80f` and add Task 34.
+
+#### Files Changed
+
+- `experiments/exp16_linear_probe_short_eval.md`: new experiment record for linear probe short evaluation.
+- `results/tables/linear_probe_short_eval.csv`: owner-generated small evaluation CSV result to include in the commit.
+- `PROJECT_STATUS.md`: updated current task, branch, next gate, and evaluation status.
+- `notes/task_registry.md`: recorded Task 33 commit and Task 34 pending-review row.
+- `notes/agent_workflow_log.md`: appended this Task 34 work log entry.
+
+#### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|Task 34|linear probe short evaluation|linear_probe_short_eval' -CaseSensitive:$false -Context 1,1`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -8`
+- `Get-Content -Path 'results\tables\linear_probe_short_eval.csv'`
+- `Get-Content -Path 'experiments\exp15_supervised_short_eval.md'`
+- `Get-Content -Path 'experiments\exp13_linear_probe_short.md'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `rg --files -g '*.pt' -g '*.pth' -g '*.ckpt' -g '*.onnx' -g 'events.out.tfevents*'`
+- `Get-ChildItem -Path . -Recurse -File | Where-Object { $_.Length -gt 10MB } | Select-Object -ExpandProperty FullName`
+- `Get-Item 'results\tables\linear_probe_short_eval.csv','experiments\exp16_linear_probe_short_eval.md' | Select-Object FullName,Length,LastWriteTime`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --name-only`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+
+#### Validation
+
+- Confirmed branch `eval/linear-probe-short`.
+- Confirmed Task 33 commit hash `1b5b80f` from `git log`.
+- Confirmed `results/tables/linear_probe_short_eval.csv` content matches the Human Owner-provided linear probe evaluation result.
+- Confirmed no repository `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found.
+- Confirmed no files over 10MB were found inside the repository.
+- `git diff --check` reported no issues.
+- No evaluation, supervised evaluation, training, ablation, dataset download, or checkpoint creation was run by Codex.
+
+#### Not Validated
+
+- Codex did not rerun the linear probe short evaluation.
+- Short baseline comparison table was not created.
+- Ablation and final-report metrics were not started.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`.
+- Untracked: `experiments/exp16_linear_probe_short_eval.md`, `results/tables/linear_probe_short_eval.csv`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes untracked files until staged.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- `top1_accuracy=0.621400` is a real CIFAR-10 test-set metric for the short linear probe, but it is not final SimCLR performance.
+
+#### Next Step
+
+- Review and commit Task 34, then proceed to Task 35 short baseline result table and first interpretation if approved.
