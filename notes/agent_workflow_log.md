@@ -1356,3 +1356,155 @@ This file records how agents are used in this project.
 #### Follow-up
 
 - Review and commit Task 31, then decide whether to start Task 32 evaluation scaffold implementation.
+
+### 2026-06-04
+
+#### Task
+
+- Task 32: Implement evaluation scaffold with fake-data tests.
+
+#### Issue
+
+- Task file pasted by the Human Owner; branch `eval/evaluation-scaffold`.
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Confirmed the previous Task 32 attempt left no visible task files or uncommitted code changes.
+- Added `src/evaluate.py` with config-driven Top-1 evaluation for `supervised` and `linear_probe` modes.
+- Added future real-evaluation configs for supervised short and linear-probe short checkpoints, with comments that they must not be run during Task 32.
+- Added fake-data evaluation smoke tests for supervised and linear-probe checkpoint schemas.
+- Updated `PROJECT_STATUS.md` and `notes/task_registry.md` for Task 32.
+
+#### Files Changed
+
+- `src/evaluate.py`: added evaluation dataset/model loading, checkpoint-schema handling, Top-1 calculation, and CSV/Markdown output writing.
+- `configs/evaluate_supervised_short.yaml`: added future supervised short evaluation config pointing to the external supervised checkpoint.
+- `configs/evaluate_linear_probe_short.yaml`: added future linear-probe short evaluation config pointing to the external classifier checkpoint and matching SimCLR encoder checkpoint.
+- `tests/test_evaluate_smoke.py`: added fake-data smoke tests that create temporary supervised and linear-probe checkpoints under `tmp_path`.
+- `PROJECT_STATUS.md`: moved current stage to Evaluation Scaffold and marked fake-data-only scaffold implementation complete.
+- `notes/task_registry.md`: recorded Task 31 commit `99e6664` and added Task 32 as completed, pending review.
+- `notes/agent_workflow_log.md`: appended this Task 32 work log entry.
+
+#### Commands Run
+
+- `rg --files`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -8`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_evaluate_smoke.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py tests/test_linear_probe_smoke.py tests/test_supervised_smoke.py tests/test_evaluate_smoke.py`
+- `rg --files -g '*.pt' -g '*.pth' -g '*.ckpt' -g '*.onnx' -g 'events.out.tfevents*'`
+- `Get-ChildItem -Path . -Recurse -File | Where-Object { $_.Length -gt 10MB } | Select-Object -ExpandProperty FullName`
+
+#### Validation
+
+- `tests/test_evaluate_smoke.py`: 2 passed.
+- Current specified test set: 31 passed.
+- No real CIFAR-10 evaluation was run.
+- No training was run.
+- No checkpoint or model weight file was created inside the repository.
+- No file larger than 10MB was found inside the repository.
+
+#### Not Validated
+
+- Real CIFAR-10 supervised short test-set evaluation was not run.
+- Real CIFAR-10 linear-probe short test-set evaluation was not run.
+- External checkpoint existence and accuracy values for future real evaluation were not validated in Task 32.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`.
+- Untracked: `configs/evaluate_linear_probe_short.yaml`, `configs/evaluate_supervised_short.yaml`, `src/evaluate.py`, `tests/test_evaluate_smoke.py`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes the untracked new files listed above.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- Windows Git on the WSL UNC path reported `dubious ownership`; WSL Git was used for authoritative project Git status.
+- The linear-probe evaluation config requires the matching SimCLR checkpoint because the existing linear-probe checkpoint stores only `classifier_state_dict`.
+
+#### Next Step
+
+- Owner and ChatGPT review Task 32. If approved, start the next scoped task for real supervised short evaluation only.
+
+### 2026-06-04
+
+#### Task
+
+- Task 32 follow-up: add evaluation result provenance fields.
+
+#### Issue
+
+- Follow-up requested by the Human Owner on branch `eval/evaluation-scaffold`.
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Added explicit evaluation provenance fields to `src/evaluate.py`.
+- Evaluation results now include `dataset_split` and `simclr_checkpoint_path` alongside the existing metric and primary checkpoint fields.
+- Linear-probe evaluation now requires `checkpoint.simclr_path` for provenance because the classifier checkpoint alone is insufficient to reproduce the evaluated model.
+- Updated fake-data evaluation smoke tests to verify provenance in both returned results and output CSV rows.
+
+#### Files Changed
+
+- `src/evaluate.py`: added `dataset_split` derivation, `simclr_checkpoint_path` provenance, and output CSV/Markdown fields.
+- `tests/test_evaluate_smoke.py`: added assertions for fake split and SimCLR checkpoint provenance in supervised and linear-probe smoke tests.
+- `notes/agent_workflow_log.md`: appended this follow-up entry.
+
+#### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|task32|Task 32|evaluation scaffold' -CaseSensitive:$false -Context 1,1`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_evaluate_smoke.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py tests/test_linear_probe_smoke.py tests/test_supervised_smoke.py tests/test_evaluate_smoke.py`
+- `rg --files -g '*.pt' -g '*.pth' -g '*.ckpt' -g '*.onnx' -g 'events.out.tfevents*'`
+- `Get-ChildItem -Path . -Recurse -File | Where-Object { $_.Length -gt 10MB } | Select-Object -ExpandProperty FullName`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --name-only`
+
+#### Validation
+
+- `tests/test_evaluate_smoke.py`: 2 passed.
+- Current specified test set: 31 passed.
+- No real CIFAR-10 evaluation was run.
+- No training was run.
+- No dataset download was run.
+- No checkpoint or model weight file was created inside the repository.
+- No file larger than 10MB was found inside the repository.
+- `git diff --check` reported no issues.
+
+#### Not Validated
+
+- Real supervised short CIFAR-10 test-set evaluation was not run.
+- Real linear-probe short CIFAR-10 test-set evaluation was not run.
+- Future real CSV/Markdown result values were not generated.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/agent_workflow_log.md`, `notes/task_registry.md`.
+- Untracked from Task 32: `configs/evaluate_linear_probe_short.yaml`, `configs/evaluate_supervised_short.yaml`, `src/evaluate.py`, `tests/test_evaluate_smoke.py`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes untracked Task 32 files until staged.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- Windows Git on the WSL UNC path still reports ownership noise; WSL Git was used for authoritative Git checks.
+- `git diff --stat` does not include the untracked evaluator and test files until they are staged.
+
+#### Next Step
+
+- Review the Task 32 scaffold and provenance follow-up together before commit.

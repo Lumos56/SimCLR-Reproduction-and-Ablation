@@ -1,0 +1,24 @@
+# Task 32 evaluation scaffold config.
+# Future Task 33 real supervised evaluation may run this after owner approval.
+# Do not run real CIFAR-10 evaluation during Task 32.
+
+seed: 0
+mode: supervised
+device: auto
+batch_size: 128
+num_workers: 2
+
+checkpoint:
+  path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/supervised_short/cifar10_supervised_short.pt
+
+model:
+  feature_dim: 512
+  num_classes: 10
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: false
+  download: false
+
+output_path: results/tables/supervised_short_eval.csv

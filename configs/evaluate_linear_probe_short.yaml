@@ -1,0 +1,27 @@
+# Task 32 evaluation scaffold config.
+# Future Task 34 real linear-probe evaluation may run this after owner approval.
+# Do not run real CIFAR-10 evaluation during Task 32.
+
+seed: 0
+mode: linear_probe
+device: auto
+batch_size: 128
+num_workers: 2
+
+checkpoint:
+  # The linear-probe checkpoint stores classifier_state_dict only.
+  path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/linear_probe_short/cifar10_linear_probe_short.pt
+  # The frozen encoder must be reconstructed from the matching SimCLR checkpoint.
+  simclr_path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_short/cifar10_simclr_short.pt
+
+model:
+  feature_dim: 512
+  num_classes: 10
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: false
+  download: false
+
+output_path: results/tables/linear_probe_short_eval.csv

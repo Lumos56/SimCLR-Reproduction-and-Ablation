@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Short Baseline Summary / Evaluation Planning |
-| Current Task | Task 31 short baseline summary and evaluation planning |
-| Last Completed Task | Task 30 linear probe short result merged to main |
-| Git State | working on branch `analysis/short-baseline-summary` |
-| Branch | `analysis/short-baseline-summary` |
-| Next Gate | evaluation scaffold implementation |
-| Do Not Start Yet | real evaluation, ablation, final report, long runs |
-| Blockers | none for Task 31 |
-| Next Owner Decision | review Task 31 and approve evaluation scaffold implementation |
+| Current Stage | Evaluation Scaffold |
+| Current Task | Task 32 evaluation scaffold |
+| Last Completed Task | Task 31 short baseline summary and evaluation planning merged to main |
+| Git State | working on branch `eval/evaluation-scaffold` |
+| Branch | `eval/evaluation-scaffold` |
+| Next Gate | supervised short evaluation |
+| Do Not Start Yet | real evaluation run, ablation, final report, long runs |
+| Blockers | none for Task 32 |
+| Next Owner Decision | review Task 32 and approve supervised short evaluation |
 
 ## Gate 0 Status
 
@@ -73,5 +73,5 @@
 - [x] Linear probe short checkpoint is stored externally, outside the Git repository.
 - [x] The linear probe short final train accuracy is documented as last-batch training accuracy, not test accuracy or final performance.
 - [x] Short baseline training summary and evaluation planning have been drafted.
-- [ ] Evaluation scaffold has not been implemented.
+- [x] Evaluation scaffold has been implemented with fake-data tests only.
 - [ ] Real evaluation, ablation, final report, result table, and long runs have not been started.
