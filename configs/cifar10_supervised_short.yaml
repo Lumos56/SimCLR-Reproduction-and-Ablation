@@ -1,0 +1,37 @@
+# Short baseline config for supervised CIFAR-10 training.
+# This is not a final baseline config.
+# Checkpoints are external artifacts and must not be committed.
+
+seed: 0
+device: auto
+
+model:
+  feature_dim: 512
+  num_classes: 10
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: true
+  download: false
+  augmentation_strength: weak
+
+training:
+  epochs: 10
+  batch_size: 128
+  # null means full epoch; the training code treats None as no batch cap.
+  max_train_batches: null
+  num_workers: 2
+  shuffle: true
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0
+
+paths:
+  log_dir: results/logs
+  log_filename: cifar10_supervised_short.csv
+  save_checkpoint: true
+  checkpoint_dir: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/supervised_short
+  checkpoint_filename: cifar10_supervised_short.pt

@@ -1,0 +1,40 @@
+# Short baseline config for CIFAR-10 linear probing.
+# This is not a final baseline config.
+# Checkpoints are external artifacts and must not be committed.
+
+seed: 0
+device: auto
+
+checkpoint:
+  simclr_path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_short/cifar10_simclr_short.pt
+
+model:
+  feature_dim: 512
+  num_classes: 10
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: true
+  download: false
+  augmentation_strength: weak
+
+training:
+  epochs: 5
+  batch_size: 128
+  # null means full epoch; the training code treats None as no batch cap.
+  max_train_batches: null
+  num_workers: 2
+  shuffle: true
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0
+
+paths:
+  log_dir: results/logs
+  log_filename: cifar10_linear_probe_short.csv
+  save_checkpoint: true
+  checkpoint_dir: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/linear_probe_short
+  checkpoint_filename: cifar10_linear_probe_short.pt

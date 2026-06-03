@@ -1109,3 +1109,52 @@ This file records how agents are used in this project.
 
 - Review and commit Task 26, then proceed to Task 27 short-baseline config preparation as a separate task.
 - Task numbering was corrected: Task 26 is workflow playbook draft; short-baseline config preparation moves to Task 27.
+
+### 2026-06-03
+
+#### Task
+
+- Task 27: Create short-baseline config files.
+
+#### Agent Used
+
+- Codex
+
+#### Prompt Summary
+
+- Create short-baseline config files for supervised CIFAR-10 training, SimCLR CIFAR-10 pretraining, and linear probing without running training/tests, downloading data, creating checkpoints, editing code, implementing ablation, creating result tables, or fabricating results.
+
+#### Output
+
+- Added `configs/cifar10_supervised_short.yaml` for 10-epoch CIFAR-10 supervised short baseline with batch size 128, `max_train_batches: null`, `download: false`, repository log path, and external checkpoint path.
+- Added `configs/cifar10_simclr_short.yaml` for 10-epoch CIFAR-10 SimCLR short pretraining with batch size 128, temperature 0.5, `max_train_batches: null`, `download: false`, repository log path, and external checkpoint path.
+- Added `configs/cifar10_linear_probe_short.yaml` for 5-epoch CIFAR-10 linear probe using the short SimCLR checkpoint path, batch size 128, `max_train_batches: null`, `download: false`, repository log path, and external checkpoint path.
+- Updated `PROJECT_STATUS.md` for Short Baseline Config Preparation.
+- Updated `notes/task_registry.md` to mark Task 26 as commit `057517e` and add Task 27.
+
+#### Validation
+
+- Confirmed branch `config/short-baselines`.
+- Confirmed initial repository status was clean before edits.
+- Read required planning, workflow, smoke config, storage, registry, and decision files before writing.
+- Checked the training code supports `max_train_batches: null` as no batch cap.
+- No training, tests, download, checkpoint creation, code edit, result edit, experiment edit, ablation, result table, or fabricated result was performed.
+
+#### Human Review
+
+-
+
+#### What Was Correct
+
+- The short-baseline configs keep CIFAR-10 data under `/home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation`.
+- The short-baseline configs keep checkpoint paths under `/home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation`.
+- Each new config states that it is a short baseline config, not a final baseline config.
+- Each new config states that checkpoints are external artifacts and must not be committed.
+
+#### What Was Wrong
+
+-
+
+#### Follow-up
+
+- Review and commit Task 27, then ask the Human Owner before running the supervised short baseline.

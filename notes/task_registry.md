@@ -31,10 +31,11 @@ This file is a concise index of completed setup and Gate 0 tasks. It is for work
 | Task 23: Record real CIFAR-10 supervised smoke preflight | 2026-06-02 | Completed | `35581f1` | Recorded the read-only preflight for real CIFAR-10 supervised smoke, including external CIFAR-10 data, no-download behavior, no-checkpoint behavior, and owner approval required before running. | `experiments/exp09_cifar10_supervised_preflight.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 24: Record real CIFAR-10 supervised smoke CLI result | 2026-06-02 | Completed | `38639cf` | Recorded the manual real CIFAR-10 supervised smoke CLI run, small CSV log, no-checkpoint behavior, repository safety checks, and non-performance interpretation of smoke train accuracy. | `experiments/exp10_cifar10_supervised_cli.md`, `results/logs/cifar10_supervised_smoke.csv`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 | Task 25: Create baseline training plan decision document | 2026-06-03 | Completed | `91ecf58` | Added the short baseline training plan decision, including run order, storage rules, interpretation rules, failure rules, and next task sequence without running training or modifying configs. | `notes/baseline_training_plan.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
-| Task 26: Create workflow playbook draft | 2026-06-03 | Completed, pending review | - | Added a reusable workflow playbook draft for future AI research coding projects, documenting minimal files, storage rules, agent roles, task lifecycle, gates, review rules, and lessons learned. | `notes/workflow_playbook_draft.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
+| Task 26: Create workflow playbook draft | 2026-06-03 | Completed | `057517e` | Added a reusable workflow playbook draft for future AI research coding projects, documenting minimal files, storage rules, agent roles, task lifecycle, gates, review rules, and lessons learned. | `notes/workflow_playbook_draft.md`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`, `notes/decision_log.md` |
+| Task 27: Create short-baseline config files | 2026-06-03 | Completed, pending review | - | Added short-baseline CIFAR-10 configs for supervised training, SimCLR pretraining, and linear probing with external checkpoint paths and no training run. | `configs/cifar10_supervised_short.yaml`, `configs/cifar10_simclr_short.yaml`, `configs/cifar10_linear_probe_short.yaml`, `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md` |
 
 ## Current Workflow Position
 
-- Current stage: Workflow Documentation
-- Next owner decision: review Task 26 and approve Task 27 short-baseline config preparation
-- Do not start yet: short baseline training, ablation, final report
+- Current stage: Short Baseline Config Preparation
+- Next owner decision: review Task 27 and approve supervised short baseline run
+- Do not start yet: training, ablation, final report, result table

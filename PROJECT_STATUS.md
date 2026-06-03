@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Workflow Documentation |
-| Current Task | Task 26 workflow playbook draft |
-| Last Completed Task | Task 25 baseline training plan merged to main |
-| Git State | working on branch `docs/workflow-playbook-draft` |
-| Branch | `docs/workflow-playbook-draft` |
-| Next Gate | short baseline config preparation |
-| Do Not Start Yet | short baseline training, ablation, final report |
-| Blockers | none for Task 26 |
-| Next Owner Decision | review Task 26 and approve Task 27 short-baseline config preparation |
+| Current Stage | Short Baseline Config Preparation |
+| Current Task | Task 27 short-baseline config preparation |
+| Last Completed Task | Task 26 workflow playbook draft merged to main |
+| Git State | working on branch `config/short-baselines` |
+| Branch | `config/short-baselines` |
+| Next Gate | supervised short baseline run |
+| Do Not Start Yet | training, ablation, final report, result table |
+| Blockers | none for Task 27 |
+| Next Owner Decision | review Task 27 and approve supervised short baseline run |
 
 ## Gate 0 Status
 
@@ -59,5 +59,5 @@
 
 - [x] Short baseline training plan decision has been drafted.
 - [x] Reusable workflow playbook draft has been created.
-- [ ] Short baseline configs have not been prepared yet.
+- [x] Short baseline configs have been prepared for pending review.
 - [ ] Formal baseline training, evaluation report, ablation, and long runs have not been started.
