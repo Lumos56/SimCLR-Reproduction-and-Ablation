@@ -1674,3 +1674,104 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review and commit Task 34, then proceed to Task 35 short baseline result table and first interpretation if approved.
+
+### 2026-06-04
+
+#### Task
+
+- Task 35: Build short baseline result table and first interpretation.
+
+#### Issue
+
+- Analysis/documentation task after Task 33 supervised short evaluation and Task 34 linear probe short evaluation.
+
+#### Branch
+
+- `analysis/short-baseline-results`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Added `results/tables/short_baseline_results.md` with the first concise supervised-vs-SimCLR short-baseline CIFAR-10 test-set comparison table.
+- Added `experiments/exp17_short_baseline_analysis.md` with conservative interpretation, limitations, why train-batch metrics were insufficient, and recommended next stage.
+- Updated `PROJECT_STATUS.md` for Short Baseline Result Summary.
+- Updated `notes/task_registry.md` to mark Task 34 as commit `081c845` and add Task 35.
+- Updated `notes/decision_log.md` to record that the short-baseline table is preliminary controlled comparison evidence, not final benchmark performance.
+
+#### Files Changed
+
+- `results/tables/short_baseline_results.md`: new concise short-baseline comparison table.
+- `experiments/exp17_short_baseline_analysis.md`: new analysis record for Task 35.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and status checklist.
+- `notes/task_registry.md`: recorded Task 34 commit and Task 35 pending-review row.
+- `notes/decision_log.md`: added preliminary-comparison decision.
+- `notes/agent_workflow_log.md`: appended this Task 35 work log entry.
+
+#### Commands Run
+
+- `Get-Content -Path 'C:\Users\ye\.codex\attachments\d442432e-ce6f-4adf-904b-2b72bbc8d583\pasted-text.txt'`
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|Task 35|short baseline result table|linear probe short evaluation|supervised short evaluation' -CaseSensitive:$false -Context 1,1`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `Get-Content -Path 'AGENTS.md' -TotalCount 220`
+- `Get-Content -Path 'README.md' -TotalCount 140`
+- `Get-Content -Path 'PROJECT_STATUS.md'`
+- `Get-Content -Path 'notes\task_registry.md'`
+- `Get-Content -Path 'notes\agent_workflow_log.md' -Tail 180`
+- `Get-Content -Path 'notes\baseline_training_plan.md'`
+- `Get-Content -Path 'notes\decision_log.md'`
+- `Get-Content -Path 'experiments\exp14_short_baseline_summary.md'`
+- `Get-Content -Path 'experiments\exp15_supervised_short_eval.md'`
+- `Get-Content -Path 'experiments\exp16_linear_probe_short_eval.md'`
+- `Get-Content -Path 'results\tables\short_baseline_training_summary.md'`
+- `Get-Content -Path 'results\tables\supervised_short_eval.csv'`
+- `Get-Content -Path 'results\tables\linear_probe_short_eval.csv'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- wc -l results/logs/cifar10_supervised_short.csv results/logs/cifar10_simclr_short.csv results/logs/cifar10_linear_probe_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- head -n 3 results/logs/cifar10_supervised_short.csv results/logs/cifar10_simclr_short.csv results/logs/cifar10_linear_probe_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 3 results/logs/cifar10_supervised_short.csv results/logs/cifar10_simclr_short.csv results/logs/cifar10_linear_probe_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -12`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `rg --files -g '*.pt' -g '*.pth' -g '*.ckpt' -g '*.onnx' -g 'events.out.tfevents*'`
+- `Get-ChildItem -Path . -Recurse -File | Where-Object { $_.Length -gt 10MB } | Select-Object -ExpandProperty FullName`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --name-only`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+
+#### Validation
+
+- Confirmed branch `analysis/short-baseline-results`.
+- Confirmed Task 34 commit hash `081c845` from `git log`.
+- Confirmed supervised short evaluation CSV reports `top1_accuracy=0.8737`, `correct=8737`, `total=10000`, `dataset_split=test`.
+- Confirmed linear probe short evaluation CSV reports `top1_accuracy=0.6214`, `correct=6214`, `total=10000`, `dataset_split=test`.
+- Inspected training-log line counts and first/last rows without printing full logs.
+- Confirmed no repository `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found.
+- Confirmed no files over 10MB were found inside the repository.
+- `git diff --check` reported no issues.
+- No training, evaluation, tests, dataset download, checkpoint creation, figure creation, or ablation was run.
+
+#### Not Validated
+
+- No new model performance was generated.
+- No README update was made.
+- No ablation plan was created.
+- No final report section was written.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/decision_log.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`.
+- Untracked: `experiments/exp17_short_baseline_analysis.md`, `results/tables/short_baseline_results.md`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes untracked files until staged.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- The short SimCLR plus linear-probe result is lower than supervised short baseline, but this is a preliminary short-baseline result and not final SimCLR performance.
+
+#### Next Step
+
+- Review and commit Task 35, then decide whether to update README v0.2 or plan the first ablation stage.

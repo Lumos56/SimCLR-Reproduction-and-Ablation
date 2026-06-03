@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Short Baseline Evaluation |
-| Current Task | Task 34 linear probe short evaluation result recorded |
-| Last Completed Task | Task 33 supervised short evaluation merged to main |
-| Git State | working on branch `eval/linear-probe-short` |
-| Branch | `eval/linear-probe-short` |
-| Next Gate | Task 35 short baseline result table and first interpretation |
+| Current Stage | Short Baseline Result Summary |
+| Current Task | Task 35 short baseline result table and first interpretation |
+| Last Completed Task | Task 34 linear probe short evaluation merged to main |
+| Git State | working on branch `analysis/short-baseline-results` |
+| Branch | `analysis/short-baseline-results` |
+| Next Gate | decide README v0.2 update or ablation planning |
 | Do Not Start Yet | ablation, final report, long runs |
-| Blockers | none for Task 34 |
-| Next Owner Decision | review Task 34 and approve short baseline result table |
+| Blockers | none for Task 35 |
+| Next Owner Decision | review Task 35 and decide README v0.2 update or ablation planning |
 
 ## Gate 0 Status
 
@@ -78,4 +78,5 @@
 - [x] The supervised short evaluation Top-1 accuracy is documented as a real test-set metric for the 10-epoch short baseline, not final supervised baseline performance.
 - [x] Linear probe short CIFAR-10 test-set evaluation has been recorded.
 - [x] The linear probe short evaluation Top-1 accuracy is documented as a real test-set metric for the short SimCLR plus short linear-probe path, not final SimCLR performance.
-- [ ] Short baseline comparison table, ablation, final report, and long runs have not been started.
+- [x] Short baseline comparison table and first conservative interpretation have been drafted.
+- [ ] README v0.2 update, ablation, final report, and long runs have not been started.
