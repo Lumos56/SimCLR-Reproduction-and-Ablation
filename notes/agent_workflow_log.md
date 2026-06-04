@@ -2039,3 +2039,82 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review Task 37 README v0.2, then decide whether the next gate is GitHub remote setup or ablation planning.
+
+### 2026-06-04
+
+#### Task
+
+- Task 38: Record GitHub remote setup and first push.
+
+#### Issue
+
+- Document the Human Owner's first GitHub publication of the project after README v0.2 was merged and pushed.
+
+#### Branch
+
+- `docs/github-first-push`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Created `experiments/exp19_github_first_push.md` to record the remote URL, SSH authentication result, first push result, latest pushed commit, final clean status, and practical meaning of `main` tracking `origin/main`.
+- Updated `PROJECT_STATUS.md` to the GitHub Publication stage.
+- Marked Task 37 with commit `5809cef` and added Task 38 as completed pending review in `notes/task_registry.md`.
+- Added a decision-log entry recording that the first GitHub push happened after README v0.2 and short-baseline figures were ready.
+- Performed only read-only Git/GitHub-adjacent checks; no push, PR, issue, repository setting change, training, evaluation, or tests were run.
+
+#### Files Changed
+
+- `experiments/exp19_github_first_push.md`: added first GitHub push record.
+- `PROJECT_STATUS.md`: updated current task, branch, next gate, and guardrails.
+- `notes/task_registry.md`: recorded Task 37 commit and added Task 38 row.
+- `notes/decision_log.md`: recorded first GitHub publication timing decision.
+- `notes/agent_workflow_log.md`: appended this Task 38 entry.
+
+#### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|GitHub|first push' -SimpleMatch`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -5`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git remote -v`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- gh --version`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- gh auth status`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git ls-remote origin refs/heads/main`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git rev-parse origin/main`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git ls-tree --name-only origin/main README.md results/figures/short_baseline_test_accuracy.png results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch -vv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git show -s --format='%h %H %s' main origin/main`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- src configs tests results README.md AGENTS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' experiments/exp19_github_first_push.md`
+
+#### Validation
+
+- Confirmed current branch is `docs/github-first-push`.
+- Confirmed `origin` points to `git@github.com:Lumos56/SimCLR-Reproduction-and-Ablation.git`.
+- Confirmed `origin/main` is visible at `5809cef3bc75e78e39583fa9b9217aa53b2ad882`.
+- Confirmed local `main` tracks `origin/main`.
+- Confirmed `README.md` and all four short-baseline figure files exist in the `origin/main` tree.
+- Confirmed GitHub connector tools for repository content were not exposed in this session and `gh` was not installed in WSL.
+- Confirmed `git diff --check` passed.
+- Confirmed no disallowed `src`, `configs`, `tests`, `results`, `README.md`, or `AGENTS.md` paths were listed as modified.
+
+#### Not Validated
+
+- GitHub README rendering was not visually checked.
+- GitHub issues, PRs, and repository settings were not inspected or changed.
+- No tests were run because this was a documentation-only task.
+
+#### Known Issues
+
+- Remote repository content was verified through read-only Git commands, not through rendered GitHub UI.
+
+#### Next Step
+
+- Review Task 38, then decide the ablation planning scope.

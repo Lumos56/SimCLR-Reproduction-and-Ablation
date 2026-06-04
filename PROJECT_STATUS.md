@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | README / Presentation Checkpoint |
-| Current Task | Task 37 README v0.2 update |
-| Last Completed Task | Task 36 short baseline visualization curves merged to main |
-| Git State | working on branch `docs/readme-v0.2` |
-| Branch | `docs/readme-v0.2` |
-| Next Gate | GitHub remote setup or ablation planning decision |
-| Do Not Start Yet | ablation, long runs, final report |
-| Blockers | none for Task 37 |
-| Next Owner Decision | review Task 37 and decide GitHub remote setup or ablation planning |
+| Current Stage | GitHub Publication |
+| Current Task | Task 38 GitHub remote setup and first push recorded |
+| Last Completed Task | Task 37 README v0.2 update merged and pushed to GitHub |
+| Git State | working on branch `docs/github-first-push` |
+| Branch | `docs/github-first-push` |
+| Next Gate | ablation planning |
+| Do Not Start Yet | ablation runs, long runs, final report |
+| Blockers | none for Task 38 |
+| Next Owner Decision | review Task 38 and decide ablation planning scope |
 
 ## Gate 0 Status
 
@@ -81,4 +81,5 @@
 - [x] Short baseline comparison table and first conservative interpretation have been drafted.
 - [x] Short baseline training curves and test-accuracy figure have been generated from existing CSV logs and result tables.
 - [x] README v0.2 has been drafted from the short-baseline results and figures.
-- [ ] GitHub remote setup, ablation, final report, and long runs have not been started.
+- [x] GitHub remote setup and first push to `origin/main` have been recorded.
+- [ ] Ablation planning, ablation runs, final report, and long runs have not been started.
