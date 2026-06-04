@@ -1964,3 +1964,78 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review the improved Task 36 figures, then commit Task 36 if approved.
+
+### 2026-06-04
+
+#### Task
+
+- Task 37: Update README to v0.2 after short-baseline results.
+
+#### Issue
+
+- Documentation-only README checkpoint after Task 36 short-baseline figures were merged.
+
+#### Branch
+
+- `docs/readme-v0.2`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Updated `README.md` from setup-stage v0.1 content to v0.2 project-facing documentation.
+- Added current implementation status, short-baseline CIFAR-10 test-set results, generated figure references, reproduction-check commands, storage policy, workflow notes, limitations, and next steps.
+- Updated `PROJECT_STATUS.md` for the README / Presentation Checkpoint stage.
+- Marked Task 36 with commit `d52ddb5` and added Task 37 as completed pending review in `notes/task_registry.md`.
+
+#### Files Changed
+
+- `README.md`: updated to v0.2 documentation after short-baseline results.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, last completed task, next gate, and do-not-start guidance.
+- `notes/task_registry.md`: recorded Task 36 commit and added Task 37 row.
+- `notes/agent_workflow_log.md`: appended this Task 37 entry.
+
+#### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\1617ce36-479d-4ce2-a5e8-9e634e38ac82\pasted-text.txt'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -5`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' AGENTS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' README.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 80 notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 120 notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' notes/baseline_training_plan.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' notes/workflow_playbook_draft.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' results/tables/short_baseline_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' results/tables/short_baseline_training_summary.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,240p' experiments/exp17_short_baseline_analysis.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,240p' experiments/exp18_short_baseline_curves.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- ls -lh results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png results/figures/short_baseline_test_accuracy.png`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- src configs tests results experiments AGENTS.md notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- grep -n -E "README version|0\.873700|0\.621400|short_baseline_test_accuracy|not final|Ablations|GitHub remote|Storage Policy" README.md`
+
+#### Validation
+
+- Confirmed README includes v0.2, the two short-baseline CIFAR-10 test-set metrics, figure references, storage policy, limitations, and next steps.
+- Confirmed `git diff --check` passed before the workflow-log append.
+- Confirmed no disallowed code/config/test/results/experiment/AGENTS/decision-log paths were listed as modified before the workflow-log append.
+- No training, evaluation, tests, dataset download, checkpoint creation, figure generation, GitHub connection, or browser action was run.
+
+#### Not Validated
+
+- README rendering on GitHub was not checked because browser/computer actions were disallowed.
+- No test suite was run because the task explicitly forbids running tests.
+- No new experiment metric was generated.
+
+#### Known Issues
+
+- README v0.2 reports preliminary short-baseline results only; ablation and final report are still pending.
+
+#### Next Step
+
+- Review Task 37 README v0.2, then decide whether the next gate is GitHub remote setup or ablation planning.

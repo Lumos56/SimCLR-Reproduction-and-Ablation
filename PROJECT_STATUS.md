@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Short Baseline Visualization |
-| Current Task | Task 36 short-baseline training curves |
-| Last Completed Task | Task 35 short baseline result table merged to main |
-| Git State | working on branch `viz/short-baseline-curves` |
-| Branch | `viz/short-baseline-curves` |
-| Next Gate | README v0.2 update |
-| Do Not Start Yet | ablation, final report, long runs |
-| Blockers | none for Task 36 |
-| Next Owner Decision | review Task 36 and decide README v0.2 update |
+| Current Stage | README / Presentation Checkpoint |
+| Current Task | Task 37 README v0.2 update |
+| Last Completed Task | Task 36 short baseline visualization curves merged to main |
+| Git State | working on branch `docs/readme-v0.2` |
+| Branch | `docs/readme-v0.2` |
+| Next Gate | GitHub remote setup or ablation planning decision |
+| Do Not Start Yet | ablation, long runs, final report |
+| Blockers | none for Task 37 |
+| Next Owner Decision | review Task 37 and decide GitHub remote setup or ablation planning |
 
 ## Gate 0 Status
 
@@ -80,4 +80,5 @@
 - [x] The linear probe short evaluation Top-1 accuracy is documented as a real test-set metric for the short SimCLR plus short linear-probe path, not final SimCLR performance.
 - [x] Short baseline comparison table and first conservative interpretation have been drafted.
 - [x] Short baseline training curves and test-accuracy figure have been generated from existing CSV logs and result tables.
-- [ ] README v0.2 update, ablation, final report, and long runs have not been started.
+- [x] README v0.2 has been drafted from the short-baseline results and figures.
+- [ ] GitHub remote setup, ablation, final report, and long runs have not been started.
