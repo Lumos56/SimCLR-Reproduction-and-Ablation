@@ -2118,3 +2118,88 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review Task 38, then decide the ablation planning scope.
+
+### 2026-06-04
+
+#### Task
+
+- Task 39: Create ablation plan decision document.
+
+#### Issue
+
+- Create the ablation planning decision after short-baseline results, README v0.2, and GitHub first push.
+
+#### Branch
+
+- `plan/ablation-decision`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Added `notes/ablation_plan.md` as the planning document for the first ablation stage.
+- Added `experiments/exp20_ablation_plan.md` as the experiment record for the ablation-plan decision.
+- Recommended no projection head as the first ablation because it directly tests a core SimCLR design choice and requires explicit model/config support.
+- Kept the planned ablation scale at the current short-baseline level: 10-epoch SimCLR pretrain and 5-epoch linear probe.
+- Updated project status, task registry, and decision log without changing code, configs, tests, results, README, or AGENTS.
+
+#### Files Changed
+
+- `notes/ablation_plan.md`: added ablation plan decision, planned ablations, safe run strategy, output rules, interpretation rules, next tasks, and failure rules.
+- `experiments/exp20_ablation_plan.md`: recorded why ablation planning starts now, current evidence, chosen first ablation, and what is not done yet.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and do-not-start guidance.
+- `notes/task_registry.md`: marked Task 38 with commit `c00d78d` and added Task 39 as completed pending review.
+- `notes/decision_log.md`: recorded the decision to start ablation planning with no projection head.
+- `notes/agent_workflow_log.md`: appended this Task 39 entry.
+
+#### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR','ablation','GitHub first push' -SimpleMatch`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -6`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,240p' AGENTS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,180p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' README.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 90 notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 90 notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 130 notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,240p' notes/baseline_training_plan.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' notes/workflow_playbook_draft.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' results/tables/short_baseline_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' experiments/exp17_short_baseline_analysis.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' experiments/exp18_short_baseline_curves.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' configs/cifar10_simclr_short.yaml`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' configs/cifar10_linear_probe_short.yaml`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' notes/ablation_plan.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' experiments/exp20_ablation_plan.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- src configs tests results README.md AGENTS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- find . -type f -name '*.pt' -print -o -type f -name '*.pth' -print -o -type f -name '*.ckpt' -print -o -type f -name '*.onnx' -print -o -type f -name 'events.out.tfevents*' -print`
+
+#### Validation
+
+- Confirmed branch `plan/ablation-decision`.
+- Confirmed Task 38 commit `c00d78d` is in recent history.
+- Confirmed planning documents use existing short-baseline metrics only.
+- Confirmed `git diff --check` passed.
+- Confirmed no disallowed `src`, `configs`, `tests`, `results`, `README.md`, or `AGENTS.md` paths were listed as modified.
+- Confirmed no `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found in the repository.
+- No training, evaluation, tests, checkpoint creation, figure creation, ablation config creation, or code implementation was run.
+
+#### Not Validated
+
+- No ablation code or config was validated because this task is planning-only.
+- No new model performance was generated.
+
+#### Known Issues
+
+- The plan intentionally stops before ablation setup and run work.
+
+#### Next Step
+
+- Review Task 39, then decide Task 40 no projection ablation setup.
