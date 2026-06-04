@@ -43,6 +43,19 @@ def test_simclr_forward_shapes() -> None:
     assert tuple(z.shape) == (4, 128)
 
 
+def test_no_projection_simclr_forward_shapes() -> None:
+    model = SimCLR(use_projection_head=False)
+    model.eval()
+    x = torch.randn(4, 3, 32, 32)
+
+    with torch.no_grad():
+        h, z = model(x)
+
+    assert tuple(h.shape) == (4, 512)
+    assert tuple(z.shape) == (4, 512)
+    assert torch.equal(h, z)
+
+
 def test_cifar_resnet18_first_conv_is_cifar_sized() -> None:
     encoder = CifarResNet18Encoder()
 

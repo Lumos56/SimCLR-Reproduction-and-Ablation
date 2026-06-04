@@ -2203,3 +2203,104 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review Task 39, then decide Task 40 no projection ablation setup.
+
+### 2026-06-04
+
+#### Task
+
+- Task 40: No projection ablation setup.
+
+#### Issue
+
+- Add implementation, configs, and tests for the first planned no-projection-head SimCLR ablation without running real ablation training or evaluation.
+
+#### Branch
+
+- `ablation/no-projection-setup`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Added `SimCLR(use_projection_head=False)` support while preserving the default projection-head behavior.
+- Updated `src/train_simclr.py` to parse `model.use_projection_head`, defaulting to `true` when omitted.
+- Added shape, forward/backward, and fake-data smoke coverage for the no-projection path.
+- Added three no-projection short configs for SimCLR pretraining, linear probing, and future linear-probe evaluation.
+- Updated project status and task registry for Task 40.
+
+#### Files Changed
+
+- `src/models/simclr.py`: added optional projection-head disabling with identity representation for no-projection ablation.
+- `src/train_simclr.py`: added config parsing for `model.use_projection_head`.
+- `tests/test_model_shapes.py`: added no-projection output-shape coverage.
+- `tests/test_simclr_integration.py`: added no-projection synthetic NT-Xent forward/backward coverage.
+- `tests/test_train_simclr_smoke.py`: added fake-data smoke test for `model.use_projection_head=false`.
+- `configs/cifar10_simclr_no_projection_short.yaml`: added no-projection short pretraining config.
+- `configs/cifar10_linear_probe_no_projection_short.yaml`: added matching no-projection linear-probe config.
+- `configs/evaluate_linear_probe_no_projection_short.yaml`: added future no-projection linear-probe evaluation config.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and guardrails.
+- `notes/task_registry.md`: marked Task 39 with commit `9a501fc` and added Task 40 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 40 entry.
+
+#### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\82180eba-f6b4-4250-bbbb-e47a13928128\pasted-text.txt'`
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR','no projection','ablation','Task 40' -SimpleMatch`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -8`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' AGENTS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,180p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' notes/ablation_plan.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 80 notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 80 notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 120 notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' src/models/simclr.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' src/models/encoder.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' src/models/projection_head.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,320p' src/train_simclr.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,320p' src/train_linear_probe.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,340p' src/evaluate.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' src/losses/nt_xent.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' tests/test_model_shapes.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,260p' tests/test_simclr_integration.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,340p' tests/test_train_simclr_smoke.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' configs/cifar10_simclr_short.yaml`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' configs/cifar10_linear_probe_short.yaml`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' configs/evaluate_linear_probe_short.yaml`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_model_shapes.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m pytest -q tests/test_dataset.py tests/test_model_shapes.py tests/test_nt_xent.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py tests/test_linear_probe_smoke.py tests/test_supervised_smoke.py tests/test_evaluate_smoke.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- src/datasets.py src/augmentations.py src/losses results experiments README.md AGENTS.md src/train_linear_probe.py src/evaluate.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- find . -type f -name '*.pt' -print -o -type f -name '*.pth' -print -o -type f -name '*.ckpt' -print -o -type f -name '*.onnx' -print -o -type f -name 'events.out.tfevents*' -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff -- src/models/simclr.py src/train_simclr.py tests/test_model_shapes.py tests/test_simclr_integration.py tests/test_train_simclr_smoke.py`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -c "from pathlib import Path; import yaml; paths=['configs/cifar10_simclr_no_projection_short.yaml','configs/cifar10_linear_probe_no_projection_short.yaml','configs/evaluate_linear_probe_no_projection_short.yaml']; [yaml.safe_load(Path(p).read_text(encoding='utf-8')) for p in paths]; print('parsed configs:', ', '.join(paths))"`
+
+#### Validation
+
+- Focused tests passed: `11 passed`.
+- Full current test set passed: `34 passed`.
+- `git diff --check` passed.
+- The three no-projection config files parsed as valid YAML.
+- No disallowed `src/datasets.py`, `src/augmentations.py`, `src/losses/*`, `results/*`, `experiments/*`, `README.md`, `AGENTS.md`, `src/train_linear_probe.py`, or `src/evaluate.py` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found in the repository.
+- No real CIFAR-10 training or evaluation was run.
+- No checkpoints or model weights were intentionally created in the repository.
+
+#### Not Validated
+
+- No real no-projection ablation run was executed.
+- No real CIFAR-10 no-projection linear probe or evaluation was executed.
+- New no-projection config files were not used for real runs.
+
+#### Known Issues
+
+- Task 40 only prepares setup. Task 41 is still needed before any no-projection short pretrain evidence exists.
+
+#### Next Step
+
+- Review Task 40, then decide whether to start Task 41 no projection short pretrain.

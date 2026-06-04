@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Ablation Planning |
-| Current Task | Task 39 ablation plan decision |
-| Last Completed Task | Task 38 GitHub first push recorded and pushed to origin/main |
-| Git State | working on branch `plan/ablation-decision` |
-| Branch | `plan/ablation-decision` |
-| Next Gate | no projection ablation setup |
-| Do Not Start Yet | ablation runs, long runs, final report |
-| Blockers | none for Task 39 |
-| Next Owner Decision | review Task 39 and decide Task 40 no projection ablation setup |
+| Current Stage | No Projection Ablation Setup |
+| Current Task | Task 40 no projection ablation setup |
+| Last Completed Task | Task 39 ablation plan decision merged to main |
+| Git State | working on branch `ablation/no-projection-setup` |
+| Branch | `ablation/no-projection-setup` |
+| Next Gate | Task 41 no projection short pretrain |
+| Do Not Start Yet | ablation runs, evaluation runs, final report, long runs |
+| Blockers | none for Task 40 |
+| Next Owner Decision | review Task 40 and decide whether to start Task 41 no projection short pretrain |
 
 ## Gate 0 Status
 
@@ -83,4 +83,5 @@
 - [x] README v0.2 has been drafted from the short-baseline results and figures.
 - [x] GitHub remote setup and first push to `origin/main` have been recorded.
 - [x] Ablation plan decision has been drafted.
-- [ ] Ablation runs, long runs, and final report have not been started.
+- [x] No projection ablation setup has been prepared.
+- [ ] Ablation runs, evaluation runs, long runs, and final report have not been started.

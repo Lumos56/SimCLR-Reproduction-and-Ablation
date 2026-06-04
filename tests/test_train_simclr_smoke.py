@@ -2,6 +2,8 @@ import csv
 import math
 from pathlib import Path
 
+import torch
+
 from src.train_simclr import run_smoke_training
 
 
@@ -57,3 +59,55 @@ def test_fake_simclr_smoke_training_creates_log_and_checkpoint(tmp_path: Path) -
     assert rows[0]["epoch"] == "1"
     assert rows[0]["step"] == "1"
     assert math.isfinite(float(rows[0]["loss"]))
+
+
+def test_fake_no_projection_simclr_smoke_training_uses_config(tmp_path: Path) -> None:
+    config = {
+        "seed": 0,
+        "device": "cpu",
+        "model": {
+            "use_projection_head": False,
+        },
+        "dataset": {
+            "name": "fake",
+            "size": 8,
+            "image_size": [3, 32, 32],
+            "num_classes": 10,
+            "augmentation_strength": "weak",
+        },
+        "training": {
+            "epochs": 1,
+            "batch_size": 4,
+            "max_train_batches": 1,
+            "num_workers": 0,
+            "shuffle": False,
+            "temperature": 0.5,
+        },
+        "optimizer": {
+            "name": "adam",
+            "lr": 0.001,
+            "weight_decay": 0.0,
+        },
+        "paths": {
+            "log_dir": str(tmp_path / "logs"),
+            "log_filename": "simclr_no_projection_smoke.csv",
+            "checkpoint_dir": str(tmp_path / "checkpoints"),
+            "checkpoint_filename": "simclr_no_projection_smoke.pt",
+        },
+    }
+
+    result = run_smoke_training(config)
+
+    checkpoint_path = Path(result["checkpoint_path"]).resolve()
+    repo_root = Path(__file__).resolve().parents[1]
+
+    assert result["steps"] == 1
+    assert checkpoint_path.is_file()
+    assert checkpoint_path.is_relative_to(tmp_path.resolve())
+    assert not checkpoint_path.is_relative_to(repo_root)
+
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+    state_dict = checkpoint["model_state_dict"]
+
+    assert any(key.startswith("encoder.") for key in state_dict)
+    assert not any(key.startswith("projection_head.") for key in state_dict)

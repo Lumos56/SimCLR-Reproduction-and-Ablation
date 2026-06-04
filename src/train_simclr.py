@@ -78,6 +78,36 @@ def build_optimizer(model: torch.nn.Module, config: dict[str, Any]) -> torch.opt
     raise ValueError("optimizer.name must be one of {'adam', 'sgd'}")
 
 
+def parse_bool_config(value: Any, *, field_name: str) -> bool:
+    """Parse a bool config field while accepting YAML bools and clear strings."""
+
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        if normalized in {"true", "yes", "1"}:
+            return True
+        if normalized in {"false", "no", "0"}:
+            return False
+    raise ValueError(f"{field_name} must be a boolean")
+
+
+def build_simclr_model(config: dict[str, Any]) -> SimCLR:
+    """Build SimCLR with config-controlled projection-head behavior.
+
+    ``model.use_projection_head`` defaults to ``true`` to preserve the existing
+    SimCLR path. Setting it to ``false`` enables the no-projection ablation,
+    where NT-Xent receives the encoder representation directly.
+    """
+
+    model_config = config.get("model", {})
+    use_projection_head = parse_bool_config(
+        model_config.get("use_projection_head", True),
+        field_name="model.use_projection_head",
+    )
+    return SimCLR(use_projection_head=use_projection_head)
+
+
 def unpack_two_view_batch(batch) -> tuple[torch.Tensor, torch.Tensor]:
     """Extract two augmented image views from a torchvision dataset batch."""
 
@@ -132,7 +162,7 @@ def run_smoke_training(config_or_path: dict[str, Any] | str | Path) -> dict[str,
         drop_last=True,
     )
 
-    model = SimCLR().to(device)
+    model = build_simclr_model(config).to(device)
     loss_fn = NTXentLoss(temperature=float(training_config.get("temperature", 0.5)))
     optimizer = build_optimizer(model, config)
 
