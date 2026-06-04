@@ -1775,3 +1775,192 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review and commit Task 35, then decide whether to update README v0.2 or plan the first ablation stage.
+
+### 2026-06-04
+
+#### Task
+
+- Task 36: Generate short-baseline training curves.
+
+#### Issue
+
+- Visualization-only task to prepare short-baseline figures for inspection and possible README v0.2 update.
+
+#### Branch
+
+- `viz/short-baseline-curves`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Added `src/plot_training_curves.py`, a matplotlib-only plotting script that reads existing CSV logs and evaluation result CSVs.
+- Generated four short-baseline figures under `results/figures/`.
+- Added `experiments/exp18_short_baseline_curves.md` documenting inputs, outputs, command, and interpretation limits.
+- Updated `PROJECT_STATUS.md` for Short Baseline Visualization.
+- Updated `notes/task_registry.md` to mark Task 35 as commit `26cf647` and add Task 36.
+- Repositioned the test-accuracy plot note after visual inspection showed a text overlap in the first generated version.
+
+#### Files Changed
+
+- `src/plot_training_curves.py`: new plotting script for loss curves and test-accuracy bar chart.
+- `results/figures/supervised_short_loss_curve.png`: generated supervised short training loss curve.
+- `results/figures/simclr_short_loss_curve.png`: generated SimCLR short pretraining loss curve.
+- `results/figures/linear_probe_short_loss_curve.png`: generated linear probe short training loss curve.
+- `results/figures/short_baseline_test_accuracy.png`: generated short-baseline test-accuracy comparison figure.
+- `experiments/exp18_short_baseline_curves.md`: new visualization record.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and status checklist.
+- `notes/task_registry.md`: recorded Task 35 commit and Task 36 pending-review row.
+- `notes/agent_workflow_log.md`: appended this Task 36 work log entry.
+
+#### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|Task 36|short-baseline training curves|plot_training_curves|short_baseline_results' -CaseSensitive:$false -Context 1,1`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -12`
+- `Get-Content -Path 'AGENTS.md' -TotalCount 220`
+- `Get-Content -Path 'PROJECT_STATUS.md'`
+- `Get-Content -Path 'notes\task_registry.md'`
+- `Get-Content -Path 'notes\agent_workflow_log.md' -Tail 180`
+- `Get-Content -Path 'notes\workflow_playbook_draft.md'`
+- `Get-Content -Path 'experiments\exp17_short_baseline_analysis.md'`
+- `Get-Content -Path 'results\tables\short_baseline_results.md'`
+- `/home/yeyee/miniconda3/envs/simclr/bin/python -m src.plot_training_curves` run three times: initial generation, annotation fix, final annotation fix.
+- `Get-Item 'results\figures\supervised_short_loss_curve.png','results\figures\simclr_short_loss_curve.png','results\figures\linear_probe_short_loss_curve.png','results\figures\short_baseline_test_accuracy.png' | Select-Object FullName,Length,LastWriteTime`
+- `Get-ChildItem -Path . -Recurse -File | Where-Object { $_.Length -gt 10MB } | Select-Object FullName,Length`
+- `rg --files -g '*.pt' -g '*.pth' -g '*.ckpt' -g '*.onnx' -g 'events.out.tfevents*'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --name-only`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- ls -lh results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png results/figures/short_baseline_test_accuracy.png`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- file results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png results/figures/short_baseline_test_accuracy.png`
+
+#### Validation
+
+- Confirmed branch `viz/short-baseline-curves`.
+- Confirmed Task 35 commit hash `26cf647` from `git log`.
+- Ran the plotting script and generated all four required PNG files.
+- Confirmed PNG files exist and are small: about 37K to 60K.
+- Confirmed PNG dimensions are normal: loss curves `840 x 532`, accuracy chart `784 x 532`.
+- Visually inspected generated figures and fixed the test-accuracy annotation overlap.
+- Confirmed no repository `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found.
+- Confirmed no files over 10MB were found inside the repository.
+- `git diff --check` reported no issues.
+- `git status` did not show modifications to `results/logs/*` or `results/tables/*.csv`.
+- No training, evaluation, tests, dataset download, checkpoint creation, or ablation was run.
+
+#### Not Validated
+
+- No README v0.2 update was made.
+- No ablation plan was created.
+- No new model performance was generated.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`.
+- Untracked: `experiments/exp18_short_baseline_curves.md`, `results/figures/linear_probe_short_loss_curve.png`, `results/figures/short_baseline_test_accuracy.png`, `results/figures/simclr_short_loss_curve.png`, `results/figures/supervised_short_loss_curve.png`, `src/plot_training_curves.py`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes untracked files until staged.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- These figures are short-baseline visualizations only and must not be treated as final benchmark plots.
+
+#### Next Step
+
+- Review and commit Task 36, then decide whether to proceed with README v0.2 update.
+
+### 2026-06-04
+
+#### Task
+
+- Task 36 follow-up: improve short-baseline visualization readability before commit.
+
+#### Issue
+
+- Improve readability of the Task 36 figures while keeping the same visualization-only scope.
+
+#### Branch
+
+- `viz/short-baseline-curves`
+
+#### Agent
+
+- Codex
+
+#### Summary
+
+- Updated `src/plot_training_curves.py` so each loss figure keeps the raw logged curve as a secondary visual layer and adds a clearly labeled 100-step rolling-mean trend line.
+- Standardized figure size, DPI, title size, label size, tick size, and layout constants across the figures.
+- Improved the test-accuracy chart layout while preserving the two original Top-1 values and correct/total annotations.
+- Updated `experiments/exp18_short_baseline_curves.md` to state that final loss figures use raw curves plus rolling-mean trend lines, no data values were changed, and the figures are suitable for README v0.2 as preliminary short-baseline visualizations.
+- Regenerated the four required PNG files.
+
+#### Files Changed
+
+- `src/plot_training_curves.py`: added rolling mean smoothing, visual constants, secondary raw curves, stronger trend lines, and cleaner test-accuracy chart styling.
+- `results/figures/supervised_short_loss_curve.png`: regenerated with raw curve plus rolling mean trend.
+- `results/figures/simclr_short_loss_curve.png`: regenerated with raw curve plus rolling mean trend.
+- `results/figures/linear_probe_short_loss_curve.png`: regenerated with raw curve plus rolling mean trend.
+- `results/figures/short_baseline_test_accuracy.png`: regenerated with clearer labels and no overlapping note.
+- `experiments/exp18_short_baseline_curves.md`: updated interpretation and provenance notes.
+- `notes/agent_workflow_log.md`: appended this follow-up entry.
+
+#### Commands Run
+
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `Get-Content -Path 'src\plot_training_curves.py'`
+- `Get-Content -Path 'experiments\exp18_short_baseline_curves.md'`
+- `Get-Content -Path 'notes\agent_workflow_log.md' -Tail 140`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- /home/yeyee/miniconda3/envs/simclr/bin/python -m src.plot_training_curves`
+- `Select-String -Path 'src\plot_training_curves.py' -Pattern 'Short baseline, not final benchmark' -Context 6,6`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- results/logs results/tables`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- find . -type f -size +10M -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- find . -type f -name '*.pt' -print -o -type f -name '*.pth' -print -o -type f -name '*.ckpt' -print -o -type f -name '*.onnx' -print -o -type f -name 'events.out.tfevents*' -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- ls -lh results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png results/figures/short_baseline_test_accuracy.png`
+
+#### Validation
+
+- Regenerated all four required PNG files.
+- Visually inspected the loss curves and confirmed raw curves are secondary while rolling mean trends are clearly labeled.
+- Visually inspected the test-accuracy chart and confirmed the earlier text overlap was removed.
+- Confirmed `git diff --check` passed.
+- Confirmed no CSV logs or result tables were listed as modified by `git status --short -- results/logs results/tables`.
+- Confirmed no files over 10MB were found.
+- Confirmed no `.pt`, `.pth`, `.ckpt`, `.onnx`, or TensorBoard event files were found in the repository.
+- Confirmed the four PNG files exist and remain small for Git.
+- No training, evaluation, tests, dataset download, checkpoint creation, README update, or ablation was run.
+- Existing CSV logs and result tables were not edited.
+
+#### Not Validated
+
+- README v0.2 was not updated.
+- No new model performance was generated.
+
+#### Git Status
+
+- Modified: `PROJECT_STATUS.md`, `notes/task_registry.md`, `notes/agent_workflow_log.md`.
+- Untracked: `experiments/exp18_short_baseline_curves.md`, `results/figures/linear_probe_short_loss_curve.png`, `results/figures/short_baseline_test_accuracy.png`, `results/figures/simclr_short_loss_curve.png`, `results/figures/supervised_short_loss_curve.png`, `src/plot_training_curves.py`.
+
+#### Git Diff Stat
+
+- Plain `git diff --stat` reports tracked-file edits only and excludes untracked files until staged.
+- Final tracked-file diff stat is recorded in the Task Completion Report.
+
+#### Known Issues
+
+- These remain preliminary short-baseline figures, not final benchmark plots.
+
+#### Next Step
+
+- Review the improved Task 36 figures, then commit Task 36 if approved.

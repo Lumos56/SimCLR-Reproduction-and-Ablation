@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Short Baseline Result Summary |
-| Current Task | Task 35 short baseline result table and first interpretation |
-| Last Completed Task | Task 34 linear probe short evaluation merged to main |
-| Git State | working on branch `analysis/short-baseline-results` |
-| Branch | `analysis/short-baseline-results` |
-| Next Gate | decide README v0.2 update or ablation planning |
+| Current Stage | Short Baseline Visualization |
+| Current Task | Task 36 short-baseline training curves |
+| Last Completed Task | Task 35 short baseline result table merged to main |
+| Git State | working on branch `viz/short-baseline-curves` |
+| Branch | `viz/short-baseline-curves` |
+| Next Gate | README v0.2 update |
 | Do Not Start Yet | ablation, final report, long runs |
-| Blockers | none for Task 35 |
-| Next Owner Decision | review Task 35 and decide README v0.2 update or ablation planning |
+| Blockers | none for Task 36 |
+| Next Owner Decision | review Task 36 and decide README v0.2 update |
 
 ## Gate 0 Status
 
@@ -79,4 +79,5 @@
 - [x] Linear probe short CIFAR-10 test-set evaluation has been recorded.
 - [x] The linear probe short evaluation Top-1 accuracy is documented as a real test-set metric for the short SimCLR plus short linear-probe path, not final SimCLR performance.
 - [x] Short baseline comparison table and first conservative interpretation have been drafted.
+- [x] Short baseline training curves and test-accuracy figure have been generated from existing CSV logs and result tables.
 - [ ] README v0.2 update, ablation, final report, and long runs have not been started.
