@@ -2621,3 +2621,118 @@ Note: unstaged `git diff --stat` does not include the new untracked experiment f
 ### Next Step
 
 - Review Task 43, then decide whether to start Task 44 no-projection ablation result table and first interpretation.
+
+---
+
+## Task 44: Build no-projection ablation result table and first interpretation
+
+### Issue
+
+Task 44: Build no-projection ablation result table and first interpretation.
+
+### Branch
+
+`analysis/no-projection-ablation`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-05
+
+### Summary
+
+Built the no-projection ablation comparison table and conservative first interpretation from existing result CSVs. No training, evaluation, tests, figure generation, code edit, config edit, log edit, or CSV edit was performed.
+
+### Files Changed
+
+- `results/tables/no_projection_ablation_results.md`: added the short no-projection ablation comparison table, checkpoint provenance, difference, and conservative interpretation note.
+- `experiments/exp24_no_projection_ablation_analysis.md`: added the Task 44 analysis record with compared runs, result, limitations, not-done items, and next-stage recommendation.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and guardrails.
+- `notes/task_registry.md`: marked Task 43 with commit `5f8d246` and added Task 44 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 44 entry.
+- `notes/decision_log.md`: recorded that the no-projection short ablation is preliminary and lower than the short SimCLR baseline by 2.69 percentage points.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\104ff0ee-6e99-4366-9a7c-f480342fe019\pasted-text.txt'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/ablation_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 100 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 180 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 120 notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" experiments/exp16_linear_probe_short_eval.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" experiments/exp20_ablation_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" experiments/exp21_no_projection_short_pretrain.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" experiments/exp22_no_projection_linear_probe_short.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" experiments/exp23_no_projection_linear_probe_eval.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'cat results/tables/linear_probe_short_eval.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'cat results/tables/linear_probe_no_projection_short_eval.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" results/tables/short_baseline_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src configs tests README.md AGENTS.md results/logs results/figures results/tables/*.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" results/tables/no_projection_ablation_results.md && sed -n "1,240p" experiments/exp24_no_projection_ablation_analysis.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff -- PROJECT_STATUS.md notes/task_registry.md notes/decision_log.md notes/agent_workflow_log.md'`
+
+### Validation
+
+- Confirmed current branch is `analysis/no-projection-ablation`.
+- Confirmed Task 43 commit hash is `5f8d246`.
+- Confirmed baseline CSV value: `top1_accuracy=0.6214`, `correct=6214`, `total=10000`.
+- Confirmed no-projection CSV value: `top1_accuracy=0.5945`, `correct=5945`, `total=10000`.
+- Recorded the difference as `0.594500 - 0.621400 = -0.026900`, or -2.69 percentage points.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `README.md`, `AGENTS.md`, `results/logs/*`, `results/figures/*`, or `results/tables/*.csv` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not edit code, configs, logs, CSV files, README, or AGENTS.md.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? experiments/exp24_no_projection_ablation_analysis.md
+?? results/tables/no_projection_ablation_results.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 ++++----
+ notes/agent_workflow_log.md | 115 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 ++--
+ 4 files changed, 132 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked experiment file or Markdown result table.
+
+### Known Issues
+
+- The no-projection ablation result is preliminary: CIFAR-10 only, 10-epoch pretrain, 5-epoch linear probe, single run, no repeated seeds, and no tuning.
+- This task does not start the next ablation.
+
+### Next Step
+
+- Review Task 44, then decide whether to run a workflow reproducibility audit or plan the next ablation.

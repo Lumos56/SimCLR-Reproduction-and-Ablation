@@ -21,6 +21,7 @@ This file records project workflow decisions.
 | 2026-06-04 | Treat the short-baseline result table as a preliminary controlled comparison, not final benchmark performance. | Task 35 compares supervised short and SimCLR short plus linear-probe test-set results, but the SimCLR pretrain is only 10 epochs, the linear probe is only 5 epochs, and no ablation or tuning has been done. | Active |
 | 2026-06-04 | Publish the project to GitHub after README v0.2 and short-baseline figures were ready. | The first GitHub push happened after the short-baseline comparison, visualization figures, and README v0.2 were merged to `main`, giving the remote repository a coherent first public project state. | Active |
 | 2026-06-04 | Start ablation planning with the no-projection-head ablation. | No projection head directly tests a core SimCLR design choice, requires explicit model/config support, and should be compared first against the current short SimCLR plus linear-probe reference before augmentation or batch-size ablations. | Active |
+| 2026-06-05 | Treat the no-projection ablation result as preliminary and lower than the short SimCLR baseline by 2.69 percentage points. | Task 44 compares existing CIFAR-10 test-set result CSVs only: baseline SimCLR short plus linear probe is 0.621400, no-projection SimCLR short plus linear probe is 0.594500, and the result is short, single-seed, and not tuned. | Active |
 
 ## Guardrails Carried Into Gate 1
 
