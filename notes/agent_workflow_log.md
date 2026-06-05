@@ -2304,3 +2304,91 @@ This file records how agents are used in this project.
 #### Next Step
 
 - Review Task 40, then decide whether to start Task 41 no projection short pretrain.
+
+---
+
+## Task 41: Record no-projection SimCLR short pretrain result
+
+### Issue
+
+Task 41: Record no-projection SimCLR short pretrain result.
+
+### Branch
+
+`run/no-projection-short-pretrain`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-05
+
+### Summary
+
+Recorded the Human Owner-run no-projection SimCLR short pretrain result using `configs/cifar10_simclr_no_projection_short.yaml`. The training script printed `completed smoke training`, but this record treats the run as no-projection SimCLR short pretrain because the approved no-projection config was used.
+
+### Files Changed
+
+- `experiments/exp21_no_projection_short_pretrain.md`: recorded command output, config conditions, CSV log summary, external checkpoint path, checkpoint key safety result, interpretation limits, and not-run items.
+- `results/logs/cifar10_simclr_no_projection_short.csv`: included the small Human Owner-generated training log.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and guardrails for Task 41.
+- `notes/task_registry.md`: marked Task 40 with commit `cf0c298` and added Task 41 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 41 entry.
+
+### Commands Run
+
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR','no-projection','Task 41' -SimpleMatch`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git log --oneline -8`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git remote -v`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' AGENTS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,180p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 90 notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 120 notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,220p' configs/cifar10_simclr_no_projection_short.yaml`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- wc -l results/logs/cifar10_simclr_no_projection_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- ls -lh results/logs/cifar10_simclr_no_projection_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- head -n 5 results/logs/cifar10_simclr_no_projection_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- tail -n 10 results/logs/cifar10_simclr_no_projection_short.csv`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- src configs tests README.md AGENTS.md notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- find . -type f -name '*.pt' -print -o -type f -name '*.pth' -print -o -type f -name '*.ckpt' -print -o -type f -name '*.onnx' -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- find . -type f -size +10M -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short --untracked-files=all`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git diff -- PROJECT_STATUS.md notes/task_registry.md notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- git status --short -- results/logs results/tables`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation -- sed -n '1,240p' experiments/exp21_no_projection_short_pretrain.md`
+
+### Validation
+
+- Confirmed current branch is `run/no-projection-short-pretrain`.
+- Confirmed Task 40 commit hash is `cf0c298`.
+- Confirmed `results/logs/cifar10_simclr_no_projection_short.csv` has 3901 lines including header.
+- Confirmed `results/logs/cifar10_simclr_no_projection_short.csv` is about 99K.
+- Confirmed the first and last CSV rows match the Human Owner-provided result, including final row `10,3900,4.30843448638916`.
+- Recorded the Human Owner-reported checkpoint key safety check: 120 keys, 120 encoder keys, and 0 projection head keys.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `README.md`, `AGENTS.md`, or `notes/decision_log.md` paths were listed as modified.
+- Confirmed result-table files were not modified; only the new no-projection training CSV was listed under `results/logs`.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not rerun training.
+- Codex did not run linear probe.
+- Codex did not run evaluation.
+- Codex did not inspect the external checkpoint directly.
+- No representation quality or final performance metric was produced by this task.
+
+### Known Issues
+
+- The training script still prints `completed smoke training`; this record documents that the actual config makes this a no-projection SimCLR short pretrain run.
+
+### Next Step
+
+- Review Task 41, then decide whether to start Task 42 no-projection linear probe short.

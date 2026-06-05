@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | No Projection Ablation Setup |
-| Current Task | Task 40 no projection ablation setup |
-| Last Completed Task | Task 39 ablation plan decision merged to main |
-| Git State | working on branch `ablation/no-projection-setup` |
-| Branch | `ablation/no-projection-setup` |
-| Next Gate | Task 41 no projection short pretrain |
-| Do Not Start Yet | ablation runs, evaluation runs, final report, long runs |
-| Blockers | none for Task 40 |
-| Next Owner Decision | review Task 40 and decide whether to start Task 41 no projection short pretrain |
+| Current Stage | No Projection Ablation |
+| Current Task | Task 41 no-projection SimCLR short pretrain result recorded |
+| Last Completed Task | Task 40 no-projection ablation setup merged to main |
+| Git State | working on branch `run/no-projection-short-pretrain` |
+| Branch | `run/no-projection-short-pretrain` |
+| Next Gate | Task 42 no-projection linear probe short |
+| Do Not Start Yet | no-projection evaluation, ablation table, final report, long runs |
+| Blockers | none for Task 41 |
+| Next Owner Decision | review Task 41 and decide whether to start Task 42 no-projection linear probe short |
 
 ## Gate 0 Status
 
@@ -84,4 +84,5 @@
 - [x] GitHub remote setup and first push to `origin/main` have been recorded.
 - [x] Ablation plan decision has been drafted.
 - [x] No projection ablation setup has been prepared.
-- [ ] Ablation runs, evaluation runs, long runs, and final report have not been started.
+- [x] No projection SimCLR short pretrain result has been recorded.
+- [ ] No projection evaluation, ablation table, long runs, and final report have not been started.
