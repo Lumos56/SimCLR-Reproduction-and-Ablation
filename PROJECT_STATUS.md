@@ -3,14 +3,14 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | No Projection Ablation |
-| Current Task | Task 42 no-projection linear probe short result recorded |
-| Last Completed Task | Task 41 no-projection SimCLR short pretrain merged to main |
-| Git State | working on branch `run/no-projection-linear-probe-short` |
-| Branch | `run/no-projection-linear-probe-short` |
-| Next Gate | Task 43 no-projection linear probe evaluation |
-| Do Not Start Yet | no-projection evaluation record beyond Task 43, ablation table, final report, long runs |
-| Blockers | none for Task 42 |
-| Next Owner Decision | review Task 42 and decide whether to start Task 43 no-projection linear probe evaluation |
+| Current Task | Task 43 no-projection linear probe evaluation result recorded |
+| Last Completed Task | Task 42 no-projection linear probe short merged to main |
+| Git State | working on branch `eval/no-projection-linear-probe` |
+| Branch | `eval/no-projection-linear-probe` |
+| Next Gate | Task 44 no-projection ablation result table and first interpretation |
+| Do Not Start Yet | ablation table beyond Task 44, final report, long runs |
+| Blockers | none for Task 43 |
+| Next Owner Decision | review Task 43 and decide whether to start Task 44 no-projection ablation result table and first interpretation |
 
 ## Gate 0 Status
 
@@ -86,4 +86,5 @@
 - [x] No projection ablation setup has been prepared.
 - [x] No projection SimCLR short pretrain result has been recorded.
 - [x] No projection linear probe short result has been recorded.
-- [ ] No projection evaluation, ablation table, long runs, and final report have not been started.
+- [x] No projection linear probe CIFAR-10 test-set evaluation has been recorded.
+- [ ] No projection ablation result table, long runs, and final report have not been started.
