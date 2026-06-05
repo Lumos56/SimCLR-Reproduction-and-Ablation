@@ -8,6 +8,12 @@ This is a reusable workflow draft, not a project result.
 
 Its purpose is to make the SimCLR collaboration process reusable in future AI research coding projects while preserving the roles of the Human Owner, ChatGPT, Codex, and optional Claude Code. This draft should stay lightweight until the SimCLR project finishes.
 
+## Workflow Reproducibility Audit
+
+Task 45 adds a workflow reproducibility audit at `notes/workflow_reproducibility_audit.md`. Use that audit with this draft when restarting this project in a new conversation or adapting the workflow to a future AI research coding project.
+
+The audit should not replace this draft yet. It records what is currently sufficient, what remains risky, and what should be finalized later.
+
 ## Minimal Reusable File Set
 
 For a new project, keep this small file set from the start:

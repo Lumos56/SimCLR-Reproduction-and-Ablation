@@ -2736,3 +2736,123 @@ Note: unstaged `git diff --stat` does not include the new untracked experiment f
 ### Next Step
 
 - Review Task 44, then decide whether to run a workflow reproducibility audit or plan the next ablation.
+
+---
+
+## Task 45: Workflow reproducibility audit after first ablation
+
+### Issue
+
+Task 45: Workflow reproducibility audit after first ablation.
+
+### Branch
+
+`docs/workflow-reproducibility-audit`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-05
+
+### Summary
+
+Added a workflow reproducibility audit after the first ablation and linked it from `notes/workflow_playbook_draft.md`. This task is documentation and workflow review only; no training, evaluation, tests, code edits, config edits, result edits, experiment edits, figures, checkpoints, GitHub actions, issues, or pull requests were created.
+
+### Files Changed
+
+- `notes/workflow_reproducibility_audit.md`: added the audit, reusable context packages, task boundary rules, result interpretation rules, storage rules, Git/GitHub workflow notes, recommended improvements, and current verdict.
+- `notes/workflow_playbook_draft.md`: added a short section pointing to the Task 45 audit.
+- `PROJECT_STATUS.md`: updated current stage, task, branch, next gate, and guardrails.
+- `notes/task_registry.md`: marked Task 44 with commit `be5b438` and added Task 45 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 45 entry.
+- `notes/decision_log.md`: recorded the decision to audit workflow reproducibility after the first ablation.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\b63901e4-4eab-41ac-8241-45710387d8b6\pasted-text.txt'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 120 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 140 notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 220 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/errors_and_fixes.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,320p" notes/workflow_playbook_draft.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/baseline_training_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/ablation_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" results/tables/short_baseline_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" results/tables/no_projection_ablation_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,280p" experiments/exp17_short_baseline_analysis.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,280p" experiments/exp24_no_projection_ablation_analysis.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" experiments/exp19_github_first_push.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" data/README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find experiments -maxdepth 1 -type f | sort'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find results/tables -maxdepth 1 -type f | sort && find results/figures -maxdepth 1 -type f | sort'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git remote -v'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src configs tests results experiments README.md AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,320p" notes/workflow_reproducibility_audit.md && sed -n "1,80p" notes/workflow_playbook_draft.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff -- PROJECT_STATUS.md notes/task_registry.md notes/decision_log.md notes/agent_workflow_log.md notes/workflow_playbook_draft.md'`
+
+### Validation
+
+- Confirmed current branch is `docs/workflow-reproducibility-audit`.
+- Confirmed Task 44 commit hash is `be5b438`.
+- Confirmed GitHub remote `origin` points to `git@github.com:Lumos56/SimCLR-Reproduction-and-Ablation.git`.
+- Read the requested workflow, planning, result, and experiment records before writing the audit.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `results/*`, `experiments/*`, `README.md`, or `AGENTS.md` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create checkpoints.
+- Codex did not create figures.
+- Codex did not edit code, configs, results, experiment records, README, or AGENTS.md.
+- Codex did not connect to GitHub, create issues, create pull requests, or use browser/computer actions.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+ M notes/workflow_playbook_draft.md
+?? notes/workflow_reproducibility_audit.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md                |  17 +++---
+ notes/agent_workflow_log.md      | 120 +++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md            |   1 +
+ notes/task_registry.md           |   7 ++-
+ notes/workflow_playbook_draft.md |   6 ++
+ 5 files changed, 140 insertions(+), 11 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked audit file.
+
+### Known Issues
+
+- The workflow is reproducible enough to continue but is not yet a finalized reusable project template.
+- `data/README.md` has stale current-status bullets, which should be addressed separately if it becomes a reproducibility risk.
+
+### Next Step
+
+- Review Task 45, then decide whether to plan the next ablation or introduce GitHub/PR workflow.

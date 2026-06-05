@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | No Projection Ablation Analysis |
-| Current Task | Task 44 no-projection ablation result table and first interpretation |
-| Last Completed Task | Task 43 no-projection linear probe evaluation merged to main |
-| Git State | working on branch `analysis/no-projection-ablation` |
-| Branch | `analysis/no-projection-ablation` |
-| Next Gate | workflow reproducibility audit or next ablation planning |
+| Current Stage | Workflow Reproducibility Audit |
+| Current Task | Task 45 workflow reproducibility audit |
+| Last Completed Task | Task 44 no-projection ablation analysis merged to main |
+| Git State | working on branch `docs/workflow-reproducibility-audit` |
+| Branch | `docs/workflow-reproducibility-audit` |
+| Next Gate | next ablation planning or GitHub/PR workflow decision |
 | Do Not Start Yet | next ablation runs, final report, long runs |
-| Blockers | none for Task 44 |
-| Next Owner Decision | review Task 44 and decide whether to run a workflow reproducibility audit or plan the next ablation |
+| Blockers | none for Task 45 |
+| Next Owner Decision | review Task 45 and decide whether to plan the next ablation or introduce GitHub/PR workflow |
 
 ## Gate 0 Status
 
@@ -88,4 +88,5 @@
 - [x] No projection linear probe short result has been recorded.
 - [x] No projection linear probe CIFAR-10 test-set evaluation has been recorded.
 - [x] No projection ablation result table and first interpretation have been drafted.
+- [x] Workflow reproducibility audit has been drafted after the first ablation.
 - [ ] Next ablation runs, long runs, and final report have not been started.
