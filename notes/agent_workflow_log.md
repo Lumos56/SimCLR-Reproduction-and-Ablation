@@ -2451,6 +2451,8 @@ Recorded the Human Owner-run no-projection linear probe short result using `conf
 - `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'ls -lh /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/linear_probe_no_projection_short/cifar10_linear_probe_no_projection_short.pt'`
 - `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
 - `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
 - `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff -- PROJECT_STATUS.md notes/task_registry.md notes/agent_workflow_log.md'`
 - `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" experiments/exp22_no_projection_linear_probe_short.md'`
 
@@ -2856,3 +2858,128 @@ Note: unstaged `git diff --stat` does not include the new untracked audit file.
 ### Next Step
 
 - Review Task 45, then decide whether to plan the next ablation or introduce GitHub/PR workflow.
+
+---
+
+## Task 46: Weak augmentation ablation setup
+
+### Issue
+
+Task 46: Weak augmentation ablation setup.
+
+### Branch
+
+`ablation/weak-augmentation-setup`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-06
+
+### Summary
+
+Prepared setup-only weak-augmentation ablation configs for the next SimCLR short pretrain, linear probe, and evaluation tasks. No training, evaluation, tests, source-code edits, result files, figures, or checkpoints were created.
+
+### Files Changed
+
+- `configs/cifar10_simclr_weak_aug_short.yaml`: added weak-augmentation SimCLR short pretrain config with projection head enabled and external checkpoint path.
+- `configs/cifar10_linear_probe_weak_aug_short.yaml`: added weak-augmentation linear probe config pointing to the planned weak-augmentation SimCLR checkpoint.
+- `configs/evaluate_linear_probe_weak_aug_short.yaml`: added Task 49 evaluation config pointing to the planned weak-augmentation linear-probe and SimCLR checkpoints.
+- `experiments/exp25_weak_augmentation_setup.md`: recorded setup-only scope, fixed conditions, changed variable, planned artifacts, and interpretation boundary.
+- `PROJECT_STATUS.md`: moved current stage and next gate to weak augmentation setup and Task 47.
+- `notes/task_registry.md`: marked Task 45 with commit `3170a19` and added Task 46 as completed pending review.
+- `notes/decision_log.md`: recorded the decision to use weak augmentation as the second core ablation.
+- `notes/agent_workflow_log.md`: appended this Task 46 entry.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\5428f919-ff50-4d9c-9240-652cab41d9ad\pasted-text.txt'`
+- `Select-String -Path C:\Users\ye\.codex\memories\MEMORY.md -Pattern 'SimCLR|Task 46|workflow reproducibility|ablation planning'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,280p" notes/ablation_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,340p" notes/workflow_reproducibility_audit.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 140 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/cifar10_simclr_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" configs/cifar10_linear_probe_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/evaluate_linear_probe_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" configs/cifar10_simclr_no_projection_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" configs/cifar10_linear_probe_no_projection_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/evaluate_linear_probe_no_projection_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 180 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" results/tables/no_projection_ablation_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" experiments/exp24_no_projection_ablation_analysis.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find configs -maxdepth 1 -type f | sort'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc '/home/yeyee/miniconda3/envs/simclr/bin/python -c "from pathlib import Path; import yaml; paths=[\"configs/cifar10_simclr_weak_aug_short.yaml\", \"configs/cifar10_linear_probe_weak_aug_short.yaml\", \"configs/evaluate_linear_probe_weak_aug_short.yaml\"]; [yaml.safe_load(Path(p).read_text(encoding=\"utf-8\")) for p in paths]; print(\"parsed configs:\", \", \".join(paths))"'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc "/home/yeyee/miniconda3/envs/simclr/bin/python -c 'from pathlib import Path; import yaml; paths=[\"configs/cifar10_simclr_weak_aug_short.yaml\", \"configs/cifar10_linear_probe_weak_aug_short.yaml\", \"configs/evaluate_linear_probe_weak_aug_short.yaml\"]; [yaml.safe_load(Path(p).read_text(encoding=\"utf-8\")) for p in paths]; print(\"parsed configs:\", \", \".join(paths))'"`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation /home/yeyee/miniconda3/envs/simclr/bin/python -c "import yaml; paths=('configs/cifar10_simclr_weak_aug_short.yaml','configs/cifar10_linear_probe_weak_aug_short.yaml','configs/evaluate_linear_probe_weak_aug_short.yaml'); [yaml.safe_load(open(p, encoding='utf-8')) for p in paths]; print('parsed configs:', ', '.join(paths))"`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src tests results README.md AGENTS.md configs/cifar10_simclr_short.yaml configs/cifar10_linear_probe_short.yaml configs/evaluate_linear_probe_short.yaml configs/cifar10_simclr_no_projection_short.yaml configs/cifar10_linear_probe_no_projection_short.yaml configs/evaluate_linear_probe_no_projection_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+
+### Validation
+
+- Confirmed current branch is `ablation/weak-augmentation-setup`.
+- Confirmed Task 45 commit hash is `3170a19`.
+- Confirmed existing short baseline linear-probe Top-1 reference is `0.621400`.
+- Confirmed no weak-augmentation configs existed before Task 46.
+- Parsed all three new weak-augmentation YAML configs successfully after two failed shell-wrapper attempts caused by nested quote handling.
+- `git diff --check` passed.
+- No disallowed `src/*`, `tests/*`, `results/*`, `README.md`, `AGENTS.md`, or existing baseline/no-projection config paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not download data.
+- Codex did not create checkpoints.
+- Codex did not create result tables or figures.
+- Codex did not validate weak-augmentation accuracy because no Task 47-49 runs have happened yet.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? configs/cifar10_linear_probe_weak_aug_short.yaml
+?? configs/cifar10_simclr_weak_aug_short.yaml
+?? configs/evaluate_linear_probe_weak_aug_short.yaml
+?? experiments/exp25_weak_augmentation_setup.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 ++++----
+ notes/agent_workflow_log.md | 127 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 ++--
+ 4 files changed, 144 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked weak-augmentation config files or experiment record.
+
+### Known Issues
+
+- The first two YAML parse commands failed because nested PowerShell/WSL/bash quotes were rewritten before Python executed. The direct WSL Python parse command succeeded.
+- Weak-augmentation training and evaluation results do not exist yet.
+
+### Next Step
+
+- Review Task 46, then run Task 47 weak-augmentation SimCLR short pretraining if approved by the Human Owner.

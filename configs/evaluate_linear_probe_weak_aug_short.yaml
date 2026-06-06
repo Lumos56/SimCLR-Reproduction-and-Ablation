@@ -1,0 +1,28 @@
+# Weak-augmentation ablation evaluation config for the short linear probe.
+# This is for Task 49 evaluation and must not be run during Task 46.
+# The output is a short-ablation metric, not a final benchmark result.
+# Checkpoints are external artifacts and must not be committed.
+
+seed: 0
+mode: linear_probe
+device: auto
+batch_size: 128
+num_workers: 2
+
+checkpoint:
+  # The linear-probe checkpoint stores classifier_state_dict only.
+  path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/linear_probe_weak_aug_short/cifar10_linear_probe_weak_aug_short.pt
+  # The frozen encoder must be reconstructed from the matching weak-augmentation SimCLR checkpoint.
+  simclr_path: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_weak_aug_short/cifar10_simclr_weak_aug_short.pt
+
+model:
+  feature_dim: 512
+  num_classes: 10
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: false
+  download: false
+
+output_path: results/tables/linear_probe_weak_aug_short_eval.csv

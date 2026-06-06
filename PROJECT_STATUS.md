@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Workflow Reproducibility Audit |
-| Current Task | Task 45 workflow reproducibility audit |
-| Last Completed Task | Task 44 no-projection ablation analysis merged to main |
-| Git State | working on branch `docs/workflow-reproducibility-audit` |
-| Branch | `docs/workflow-reproducibility-audit` |
-| Next Gate | next ablation planning or GitHub/PR workflow decision |
-| Do Not Start Yet | next ablation runs, final report, long runs |
-| Blockers | none for Task 45 |
-| Next Owner Decision | review Task 45 and decide whether to plan the next ablation or introduce GitHub/PR workflow |
+| Current Stage | Weak Augmentation Ablation Setup |
+| Current Task | Task 46 weak augmentation ablation setup |
+| Last Completed Task | Task 45 workflow reproducibility audit merged to main |
+| Git State | working on branch `ablation/weak-augmentation-setup` |
+| Branch | `ablation/weak-augmentation-setup` |
+| Next Gate | Task 47 weak augmentation SimCLR short pretrain |
+| Do Not Start Yet | weak augmentation training, evaluation, ablation table, final report, long runs |
+| Blockers | none for Task 46 |
+| Next Owner Decision | review Task 46 weak augmentation setup before running Task 47 |
 
 ## Gate 0 Status
 
@@ -89,4 +89,5 @@
 - [x] No projection linear probe CIFAR-10 test-set evaluation has been recorded.
 - [x] No projection ablation result table and first interpretation have been drafted.
 - [x] Workflow reproducibility audit has been drafted after the first ablation.
-- [ ] Next ablation runs, long runs, and final report have not been started.
+- [x] Weak augmentation ablation configs have been prepared for pending review.
+- [ ] Weak augmentation runs, later ablation table, long runs, and final report have not been started.
