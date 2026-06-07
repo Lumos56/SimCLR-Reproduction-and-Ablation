@@ -2983,3 +2983,106 @@ Note: unstaged `git diff --stat` does not include the new untracked weak-augment
 ### Next Step
 
 - Review Task 46, then run Task 47 weak-augmentation SimCLR short pretraining if approved by the Human Owner.
+
+---
+
+## Task 47: Record weak augmentation SimCLR short pretrain result
+
+### Issue
+
+Task 47: Record weak augmentation SimCLR short pretrain result.
+
+### Branch
+
+`run/weak-augmentation-short-pretrain`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-07
+
+### Summary
+
+Recorded the Human Owner-run weak augmentation SimCLR short pretrain result using `configs/cifar10_simclr_weak_aug_short.yaml`. The run is documented as weak augmentation SimCLR short pretraining, not as a smoke run, even though the script printed `completed smoke training`.
+
+### Files Changed
+
+- `experiments/exp26_weak_augmentation_short_pretrain.md`: recorded command result, steps, final training loss, CSV log path, external checkpoint path, weak augmentation setting, projection-head setting, checkpoint-key inspection, and interpretation limits.
+- `results/logs/cifar10_simclr_weak_aug_short.csv`: included the small training CSV log produced by the Human Owner run.
+- `PROJECT_STATUS.md`: moved the project to Task 47 result-recorded state and Task 48 next gate.
+- `notes/task_registry.md`: marked Task 46 with commit `37abb7b` and added Task 47 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 47 entry.
+
+### Commands Run
+
+- `Select-String -Path C:\Users\ye\.codex\memories\MEMORY.md -Pattern 'SimCLR|Task 47|weak augmentation|Task 46'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 90 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 150 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/cifar10_simclr_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'wc -l results/logs/cifar10_simclr_weak_aug_short.csv && du -h results/logs/cifar10_simclr_weak_aug_short.csv && head -n 5 results/logs/cifar10_simclr_weak_aug_short.csv && tail -n 10 results/logs/cifar10_simclr_weak_aug_short.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src configs tests README.md AGENTS.md notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+
+### Validation
+
+- Confirmed current branch is `run/weak-augmentation-short-pretrain`.
+- Confirmed Task 46 commit hash is `37abb7b`.
+- Confirmed `results/logs/cifar10_simclr_weak_aug_short.csv` exists and has 3901 lines including header.
+- Confirmed the last CSV row is `10,3900,3.614675283432007`.
+- Confirmed the weak augmentation config uses `augmentation_strength: weak`.
+- Confirmed the weak augmentation config uses `model.use_projection_head: true`.
+- Recorded the Human Owner's checkpoint-key quick check: 124 total keys, 120 encoder keys, 4 projection head keys, PASS.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `README.md`, `AGENTS.md`, or `notes/decision_log.md` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not rerun training.
+- Codex did not run linear probe training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not run supervised baseline.
+- Codex did not run ablation analysis.
+- Codex did not create checkpoints.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/task_registry.md
+?? experiments/exp26_weak_augmentation_short_pretrain.md
+?? results/logs/cifar10_simclr_weak_aug_short.csv
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md      | 21 +++++++++++----------
+ notes/task_registry.md |  9 +++++----
+ 2 files changed, 16 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked experiment record, CSV log, or this appended workflow log entry.
+
+### Known Issues
+
+- The final loss is training loss only and is not representation quality or final performance.
+- The weak augmentation test-set metric is not available until Task 49.
+
+### Next Step
+
+- Review Task 47, then run Task 48 weak augmentation linear probe short if approved by the Human Owner.

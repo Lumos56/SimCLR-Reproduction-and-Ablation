@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Weak Augmentation Ablation Setup |
-| Current Task | Task 46 weak augmentation ablation setup |
-| Last Completed Task | Task 45 workflow reproducibility audit merged to main |
-| Git State | working on branch `ablation/weak-augmentation-setup` |
-| Branch | `ablation/weak-augmentation-setup` |
-| Next Gate | Task 47 weak augmentation SimCLR short pretrain |
-| Do Not Start Yet | weak augmentation training, evaluation, ablation table, final report, long runs |
-| Blockers | none for Task 46 |
-| Next Owner Decision | review Task 46 weak augmentation setup before running Task 47 |
+| Current Stage | Weak Augmentation Ablation |
+| Current Task | Task 47 weak augmentation SimCLR short pretrain result recorded |
+| Last Completed Task | Task 46 weak augmentation ablation setup merged to main |
+| Git State | working on branch `run/weak-augmentation-short-pretrain` |
+| Branch | `run/weak-augmentation-short-pretrain` |
+| Next Gate | Task 48 weak augmentation linear probe short |
+| Do Not Start Yet | weak augmentation evaluation, ablation table, final report, long runs |
+| Blockers | none for Task 47 |
+| Next Owner Decision | review Task 47 before running Task 48 weak augmentation linear probe short |
 
 ## Gate 0 Status
 
@@ -90,4 +90,5 @@
 - [x] No projection ablation result table and first interpretation have been drafted.
 - [x] Workflow reproducibility audit has been drafted after the first ablation.
 - [x] Weak augmentation ablation configs have been prepared for pending review.
-- [ ] Weak augmentation runs, later ablation table, long runs, and final report have not been started.
+- [x] Weak augmentation SimCLR short pretrain result has been recorded.
+- [ ] Weak augmentation linear probe, evaluation, ablation table, long runs, and final report have not been started.
