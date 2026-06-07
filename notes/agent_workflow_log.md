@@ -3086,3 +3086,109 @@ Note: unstaged `git diff --stat` does not include the new untracked experiment r
 ### Next Step
 
 - Review Task 47, then run Task 48 weak augmentation linear probe short if approved by the Human Owner.
+
+---
+
+## Task 48: Record weak augmentation linear probe short result
+
+### Issue
+
+Task 48: Record weak augmentation linear probe short result.
+
+### Branch
+
+`run/weak-augmentation-linear-probe-short`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-07
+
+### Summary
+
+Recorded the Human Owner-run weak augmentation linear probe short training result using `configs/cifar10_linear_probe_weak_aug_short.yaml`. The run is documented as weak augmentation linear probe short training, not as a smoke run, even though the script printed `completed linear probe smoke training`.
+
+### Files Changed
+
+- `experiments/exp27_weak_augmentation_linear_probe_short.md`: recorded command result, steps, final train loss, final train accuracy, CSV log path, external checkpoint path, and interpretation limits.
+- `results/logs/cifar10_linear_probe_weak_aug_short.csv`: included the small training CSV log produced by the Human Owner run.
+- `PROJECT_STATUS.md`: moved the project to Task 48 result-recorded state and Task 49 next gate.
+- `notes/task_registry.md`: marked Task 47 with commit `cfda4b6` and added Task 48 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 48 entry.
+
+### Commands Run
+
+- `Select-String -Path C:\Users\ye\.codex\memories\MEMORY.md -Pattern 'SimCLR|Task 48|weak augmentation|Task 47'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 95 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 140 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/cifar10_linear_probe_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'wc -l results/logs/cifar10_linear_probe_weak_aug_short.csv && du -h results/logs/cifar10_linear_probe_weak_aug_short.csv && head -n 5 results/logs/cifar10_linear_probe_weak_aug_short.csv && tail -n 10 results/logs/cifar10_linear_probe_weak_aug_short.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src configs tests README.md AGENTS.md notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+
+### Validation
+
+- Confirmed current branch is `run/weak-augmentation-linear-probe-short`.
+- Confirmed Task 47 commit hash is `cfda4b6`.
+- Confirmed `results/logs/cifar10_linear_probe_weak_aug_short.csv` exists and has 1951 lines including header.
+- Confirmed the last CSV row is `5,1950,1.7195498943328857,0.3515625`.
+- Confirmed the weak augmentation linear probe config points to `/home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_weak_aug_short/cifar10_simclr_weak_aug_short.pt`.
+- Confirmed the weak augmentation linear probe config uses `augmentation_strength: weak`.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `README.md`, `AGENTS.md`, or `notes/decision_log.md` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not rerun training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not run supervised baseline.
+- Codex did not run ablation analysis.
+- Codex did not create checkpoints.
+- Codex did not validate weak augmentation test accuracy because Task 49 has not happened yet.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/task_registry.md
+?? experiments/exp27_weak_augmentation_linear_probe_short.md
+?? results/logs/cifar10_linear_probe_weak_aug_short.csv
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  19 ++++----
+ notes/agent_workflow_log.md | 106 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/task_registry.md      |   7 +--
+ 3 files changed, 120 insertions(+), 12 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked experiment record or CSV log.
+
+### Known Issues
+
+- The final train accuracy is last-batch training accuracy only and is not test accuracy or final performance.
+- The weak augmentation ablation test-set metric is not available until Task 49.
+
+### Next Step
+
+- Review Task 48, then run Task 49 weak augmentation linear probe evaluation if approved by the Human Owner.
