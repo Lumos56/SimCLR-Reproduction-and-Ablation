@@ -3,14 +3,14 @@
 | 字段 | 当前内容 |
 |---|---|
 | Current Stage | Weak Augmentation Ablation |
-| Current Task | Task 48 weak augmentation linear probe short result recorded |
-| Last Completed Task | Task 47 weak augmentation SimCLR short pretrain merged to main |
-| Git State | working on branch `run/weak-augmentation-linear-probe-short` |
-| Branch | `run/weak-augmentation-linear-probe-short` |
-| Next Gate | Task 49 weak augmentation linear probe evaluation |
-| Do Not Start Yet | weak augmentation evaluation record beyond Task 49, ablation table, final report, long runs |
-| Blockers | none for Task 48 |
-| Next Owner Decision | review Task 48 before running Task 49 weak augmentation linear probe evaluation |
+| Current Task | Task 49 weak augmentation linear probe evaluation result recorded |
+| Last Completed Task | Task 48 weak augmentation linear probe short merged to main |
+| Git State | working on branch `eval/weak-augmentation-linear-probe` |
+| Branch | `eval/weak-augmentation-linear-probe` |
+| Next Gate | Task 50 augmentation ablation result table and first interpretation |
+| Do Not Start Yet | ablation table beyond Task 50, final report, long runs |
+| Blockers | none for Task 49 |
+| Next Owner Decision | review Task 49 before starting Task 50 augmentation ablation result table |
 
 ## Gate 0 Status
 
@@ -92,4 +92,5 @@
 - [x] Weak augmentation ablation configs have been prepared for pending review.
 - [x] Weak augmentation SimCLR short pretrain result has been recorded.
 - [x] Weak augmentation linear probe short result has been recorded.
-- [ ] Weak augmentation evaluation, ablation table, long runs, and final report have not been started.
+- [x] Weak augmentation linear probe CIFAR-10 test-set evaluation has been recorded.
+- [ ] Augmentation ablation table, long runs, and final report have not been started.

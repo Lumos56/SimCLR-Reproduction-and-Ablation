@@ -3192,3 +3192,108 @@ Note: unstaged `git diff --stat` does not include the new untracked experiment r
 ### Next Step
 
 - Review Task 48, then run Task 49 weak augmentation linear probe evaluation if approved by the Human Owner.
+
+---
+
+## Task 49: Record weak augmentation linear probe evaluation result
+
+### Issue
+
+Task 49: Record weak augmentation linear probe evaluation result.
+
+### Branch
+
+`eval/weak-augmentation-linear-probe`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-07
+
+### Summary
+
+Recorded the Human Owner-run CIFAR-10 test-set evaluation for the weak augmentation linear probe short run using `configs/evaluate_linear_probe_weak_aug_short.yaml`. This is a real short-ablation test-set metric, not final SimCLR performance.
+
+### Files Changed
+
+- `experiments/exp28_weak_augmentation_linear_probe_eval.md`: recorded the owner-run command, output, CSV content, checkpoint paths, metric, interpretation boundary, and Task 50 comparison handoff.
+- `results/tables/linear_probe_weak_aug_short_eval.csv`: included the small evaluation CSV produced by the Human Owner run.
+- `PROJECT_STATUS.md`: moved the project to Task 49 result-recorded state and Task 50 next gate.
+- `notes/task_registry.md`: marked Task 48 with commit `c98c949` and added Task 49 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 49 entry.
+
+### Commands Run
+
+- `Select-String -Path C:\Users\ye\.codex\memories\MEMORY.md -Pattern 'SimCLR|Task 49|weak augmentation|Task 48'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 100 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 150 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/evaluate_linear_probe_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'wc -l results/tables/linear_probe_weak_aug_short_eval.csv && du -h results/tables/linear_probe_weak_aug_short_eval.csv && sed -n "1,5p" results/tables/linear_probe_weak_aug_short_eval.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src configs tests README.md AGENTS.md results/logs notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+
+### Validation
+
+- Confirmed current branch is `eval/weak-augmentation-linear-probe`.
+- Confirmed Task 48 commit hash is `c98c949`.
+- Confirmed `results/tables/linear_probe_weak_aug_short_eval.csv` exists and has 2 lines including header.
+- Confirmed the CSV records `top1_accuracy=0.3566`, `correct=3566`, and `total=10000`.
+- Confirmed the evaluation config points to the weak augmentation linear-probe checkpoint and matching weak augmentation SimCLR checkpoint.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `README.md`, `AGENTS.md`, `results/logs/*`, or `notes/decision_log.md` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not rerun evaluation.
+- Codex did not run training.
+- Codex did not run supervised evaluation.
+- Codex did not run tests.
+- Codex did not generate an ablation table.
+- Codex did not create checkpoints.
+- Codex did not make a final SimCLR performance claim.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/task_registry.md
+?? experiments/exp28_weak_augmentation_linear_probe_eval.md
+?? results/tables/linear_probe_weak_aug_short_eval.csv
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  19 ++++----
+ notes/agent_workflow_log.md | 105 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/task_registry.md      |   7 +--
+ 3 files changed, 119 insertions(+), 12 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked experiment record or CSV table.
+
+### Known Issues
+
+- This is a short ablation test-set metric, not final SimCLR performance.
+- Task 50 still needs to compare weak augmentation against the strong augmentation baseline and provide the first conservative interpretation.
+
+### Next Step
+
+- Review Task 49, then run Task 50 augmentation ablation result table and first interpretation if approved by the Human Owner.
