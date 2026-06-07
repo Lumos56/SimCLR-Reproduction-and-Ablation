@@ -3297,3 +3297,120 @@ Note: unstaged `git diff --stat` does not include the new untracked experiment r
 ### Next Step
 
 - Review Task 49, then run Task 50 augmentation ablation result table and first interpretation if approved by the Human Owner.
+
+---
+
+## Task 50: Build augmentation ablation result table and first interpretation
+
+### Issue
+
+Task 50: Build augmentation ablation result table and first interpretation.
+
+### Branch
+
+`analysis/augmentation-ablation`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-07
+
+### Summary
+
+Added the augmentation ablation comparison table and first conservative interpretation from existing CSV result files. This task did not run training, evaluation, tests, figure generation, checkpoint creation, or the next ablation.
+
+### Files Changed
+
+- `results/tables/augmentation_ablation_results.md`: added the strong-vs-weak augmentation short ablation table, checkpoint paths, difference, and interpretation note.
+- `experiments/exp29_augmentation_ablation_analysis.md`: added the Task 50 analysis record, compared runs, result, conservative interpretation, limitations, not-done list, and next-stage recommendation.
+- `PROJECT_STATUS.md`: moved the project to augmentation ablation analysis and next ablation planning.
+- `notes/task_registry.md`: marked Task 49 with commit `4204d5a` and added Task 50 as completed pending review.
+- `notes/decision_log.md`: recorded that weak augmentation is substantially lower than strong augmentation in the current short ablation, with preliminary-result limits.
+- `notes/agent_workflow_log.md`: appended this Task 50 entry.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\a68882ba-0866-415f-b0ed-036b8045d12a\pasted-text.txt'`
+- `Select-String -Path C:\Users\ye\.codex\memories\MEMORY.md -Pattern 'SimCLR|Task 50|augmentation ablation|weak augmentation'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/ablation_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 115 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 170 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 120 notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" experiments/exp16_linear_probe_short_eval.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" experiments/exp25_weak_augmentation_setup.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" experiments/exp26_weak_augmentation_short_pretrain.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" experiments/exp27_weak_augmentation_linear_probe_short.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" experiments/exp28_weak_augmentation_linear_probe_eval.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,20p" results/tables/linear_probe_short_eval.csv && sed -n "1,20p" results/tables/linear_probe_weak_aug_short_eval.csv'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" results/tables/short_baseline_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" results/tables/no_projection_ablation_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src configs tests results/logs results/tables/*.csv results/figures README.md AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+
+### Validation
+
+- Confirmed current branch is `analysis/augmentation-ablation`.
+- Confirmed Task 49 commit hash is `4204d5a`.
+- Confirmed strong augmentation baseline CSV value: `top1_accuracy=0.6214`, `correct=6214`, `total=10000`.
+- Confirmed weak augmentation CSV value: `top1_accuracy=0.3566`, `correct=3566`, `total=10000`.
+- Recorded the difference as `0.356600 - 0.621400 = -0.264800`, or -26.48 percentage points.
+- `git diff --check` passed.
+- No disallowed `src/*`, `configs/*`, `tests/*`, `results/logs/*`, `results/tables/*.csv`, `results/figures/*`, `README.md`, or `AGENTS.md` paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not edit CSV files.
+- Codex did not start the next ablation.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? experiments/exp29_augmentation_ablation_analysis.md
+?? results/tables/augmentation_ablation_results.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 ++++----
+ notes/agent_workflow_log.md | 117 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 ++--
+ 4 files changed, 134 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked experiment record or Markdown result table.
+
+### Known Issues
+
+- The augmentation ablation result is preliminary: CIFAR-10 only, 10-epoch pretrain, 5-epoch linear probe, single run, no repeated seeds, and no tuning.
+- This task does not start the batch-size ablation.
+
+### Next Step
+
+- Review Task 50, then decide whether to plan the batch size 64 vs 128 ablation next.
