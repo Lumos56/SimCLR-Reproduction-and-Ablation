@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Augmentation Ablation Analysis |
-| Current Task | Task 50 augmentation ablation result table and first interpretation |
-| Last Completed Task | Task 49 weak augmentation linear probe evaluation merged to main |
-| Git State | working on branch `analysis/augmentation-ablation` |
-| Branch | `analysis/augmentation-ablation` |
-| Next Gate | next ablation planning, likely batch size 64 vs 128 |
-| Do Not Start Yet | next ablation runs, final report, long runs |
-| Blockers | none for Task 50 |
-| Next Owner Decision | review Task 50 and decide whether to plan the batch size ablation next |
+| Current Stage | Batch Size Ablation Setup |
+| Current Task | Task 51 batch size ablation setup |
+| Last Completed Task | Task 50 augmentation ablation analysis merged to main |
+| Git State | working on branch `ablation/batch-size-setup` |
+| Branch | `ablation/batch-size-setup` |
+| Next Gate | Task 52 batch64 SimCLR short pretrain |
+| Do Not Start Yet | batch64 training, evaluation, ablation table, final report, long runs |
+| Blockers | none for Task 51 |
+| Next Owner Decision | review Task 51 before running Task 52 batch64 SimCLR short pretrain |
 
 ## Gate 0 Status
 
@@ -94,4 +94,5 @@
 - [x] Weak augmentation linear probe short result has been recorded.
 - [x] Weak augmentation linear probe CIFAR-10 test-set evaluation has been recorded.
 - [x] Augmentation ablation result table and first interpretation have been drafted.
-- [ ] Next ablation runs, long runs, and final report have not been started.
+- [x] Batch size ablation configs have been prepared for pending review.
+- [ ] Batch64 runs, later ablation table, long runs, and final report have not been started.

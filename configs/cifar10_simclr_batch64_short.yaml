@@ -1,0 +1,37 @@
+# Batch-size ablation config for SimCLR CIFAR-10 pretraining.
+# batch64 refers to the SimCLR pretraining batch size.
+# This is a fixed-epoch short ablation, not a final benchmark config.
+# Checkpoints are external artifacts and must not be committed.
+
+seed: 0
+device: auto
+
+model:
+  use_projection_head: true
+
+dataset:
+  name: cifar10
+  data_root: /home/yeyee/research/03_datasets/SimCLR-Reproduction-and-Ablation
+  train: true
+  download: false
+  augmentation_strength: strong
+
+training:
+  epochs: 10
+  batch_size: 64
+  # null means full epoch; the training code treats None as no batch cap.
+  max_train_batches: null
+  num_workers: 2
+  shuffle: true
+  temperature: 0.5
+
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+paths:
+  log_dir: results/logs
+  log_filename: cifar10_simclr_batch64_short.csv
+  checkpoint_dir: /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_batch64_short
+  checkpoint_filename: cifar10_simclr_batch64_short.pt

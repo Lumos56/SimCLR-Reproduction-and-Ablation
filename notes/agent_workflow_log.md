@@ -3414,3 +3414,255 @@ Note: unstaged `git diff --stat` does not include the new untracked experiment r
 ### Next Step
 
 - Review Task 50, then decide whether to plan the batch size 64 vs 128 ablation next.
+
+---
+
+## Task 51: Batch size ablation setup
+
+### Issue
+
+Task 51: Batch size ablation setup.
+
+### Branch
+
+`ablation/batch-size-setup`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-08
+
+### Summary
+
+Prepared setup-only batch-size ablation configs for the next SimCLR short pretrain, linear probe, and evaluation tasks. This ablation targets SimCLR pretraining batch size 64 vs the existing batch size 128 baseline. Linear probe batch size remains 128 to avoid changing two variables. No training, evaluation, tests, data download, result files, figures, or checkpoints were created.
+
+### Files Changed
+
+- `configs/cifar10_simclr_batch64_short.yaml`: added SimCLR short pretrain config with batch size 64, strong augmentation, projection head enabled, and external checkpoint path.
+- `configs/cifar10_linear_probe_batch64_short.yaml`: added linear probe config pointing to the planned batch64 SimCLR checkpoint while keeping linear probe batch size at 128.
+- `configs/evaluate_linear_probe_batch64_short.yaml`: added Task 54 evaluation config pointing to the planned batch64 linear-probe and SimCLR checkpoints.
+- `experiments/exp30_batch_size_ablation_setup.md`: recorded setup-only scope, baseline reference, changed variable, controlled variable, fixed-epoch interpretation limit, planned artifacts, and Task 52-55 handoff.
+- `PROJECT_STATUS.md`: moved current stage and next gate to batch size ablation setup and Task 52.
+- `notes/task_registry.md`: marked Task 50 with commit `13d5f29` and added Task 51 as completed pending review.
+- `notes/decision_log.md`: recorded the decision to compare batch size 64 vs 128 using fixed epochs while keeping linear probe batch size at 128.
+- `notes/agent_workflow_log.md`: appended this Task 51 entry.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\f01dba38-6dff-4e28-9d33-8a2bce13b6e1\pasted-text.txt'`
+- `Select-String -Path C:\Users\ye\.codex\memories\MEMORY.md -Pattern 'SimCLR|Task 51|batch size|augmentation ablation'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --branch --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git log --oneline --decorate -n 12 --all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" AGENTS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" README.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" notes/ablation_plan.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,340p" notes/workflow_reproducibility_audit.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 130 notes/task_registry.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 140 notes/decision_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'tail -n 180 notes/agent_workflow_log.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" results/tables/no_projection_ablation_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,260p" results/tables/augmentation_ablation_results.md'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/cifar10_simclr_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" configs/cifar10_linear_probe_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/evaluate_linear_probe_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/cifar10_simclr_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,240p" configs/cifar10_linear_probe_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'sed -n "1,220p" configs/evaluate_linear_probe_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation /home/yeyee/miniconda3/envs/simclr/bin/python -c "import yaml; paths=('configs/cifar10_simclr_batch64_short.yaml','configs/cifar10_linear_probe_batch64_short.yaml','configs/evaluate_linear_probe_batch64_short.yaml'); [yaml.safe_load(open(p, encoding='utf-8')) for p in paths]; print('parsed configs:', ', '.join(paths))"`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --check'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short -- src tests results README.md AGENTS.md configs/cifar10_simclr_short.yaml configs/cifar10_linear_probe_short.yaml configs/evaluate_linear_probe_short.yaml configs/cifar10_simclr_weak_aug_short.yaml configs/cifar10_linear_probe_weak_aug_short.yaml configs/evaluate_linear_probe_weak_aug_short.yaml'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f -size +10M -print'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short --untracked-files=all'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git status --short'`
+- `wsl.exe -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'git diff --stat'`
+
+### Validation
+
+- Confirmed current branch is `ablation/batch-size-setup`.
+- Confirmed Task 50 commit hash is `13d5f29`.
+- Parsed all three new batch-size ablation YAML configs successfully.
+- Confirmed existing baseline, no-projection, and weak-augmentation result records before creating the batch-size setup.
+- `git diff --check` passed.
+- No disallowed `src/*`, `tests/*`, `results/*`, `README.md`, `AGENTS.md`, or existing baseline/weak config paths were listed as modified.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not download data.
+- Codex did not create checkpoints.
+- Codex did not create result tables or figures.
+- Codex did not validate batch64 accuracy because no Task 52-54 runs have happened yet.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? configs/cifar10_linear_probe_batch64_short.yaml
+?? configs/cifar10_simclr_batch64_short.yaml
+?? configs/evaluate_linear_probe_batch64_short.yaml
+?? experiments/exp30_batch_size_ablation_setup.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 ++++----
+ notes/agent_workflow_log.md | 123 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 ++--
+ 4 files changed, 140 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked batch64 config files or experiment record.
+
+### Known Issues
+
+- This setup defines a fixed-epoch comparison, not a fixed-optimizer-step comparison.
+- Batch size 64 will create more optimizer steps per epoch than batch size 128, so later interpretation must remain preliminary.
+- Batch64 training and evaluation results do not exist yet.
+
+### Next Step
+
+- Review Task 51, then run Task 52 batch64 SimCLR short pretraining if approved by the Human Owner.
+
+---
+
+## Task 51 Continuation Review: Batch size ablation setup
+
+### Issue
+
+Task 51: Batch size ablation setup, continued after a long-context handoff.
+
+### Branch
+
+`ablation/batch-size-setup`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-08
+
+### Summary
+
+Reviewed the existing Task 51 working-tree changes after the previous conversation likely ended mid-task. No unreasonable file-scope changes were found: modified and untracked files remain inside the Task 51 allowlist, and no source, test, README, result, checkpoint, dataset, or large artifact changes were found. The three batch64 configs match the requested setup-only ablation: SimCLR pretraining changes from batch size 128 to 64, linear probe remains batch size 128, evaluation is reserved for Task 54, and all checkpoint paths stay outside the repository.
+
+One existing context issue remains out of scope: `README.md` still says ablations have not started, but Task 51 explicitly forbids editing `README.md`, so this continuation review did not change it.
+
+### Files Changed
+
+- `notes/agent_workflow_log.md`: appended this continuation review so the handoff, additional validation, and final Task 51 scope audit are recorded.
+
+No config, experiment, status, registry, decision-log, source, test, result, README, checkpoint, dataset, or large artifact files were changed during this continuation review.
+
+### Commands Run During Continuation Review
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\memories\MEMORY.md' | Select-String -Pattern 'SimCLR|task51|Task 51|task 51|SimCLR-Reproduction' -Context 2,2`
+- `Get-Content -LiteralPath '.\AGENTS.md'`
+- `git status --short; git diff --stat`
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\51002fa4-d6a4-4981-85c4-da1d41a4fb58\pasted-text.txt'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git branch --show-current && git status --short && git diff --stat && git diff --name-status'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git log -5 --oneline --decorate'`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- PROJECT_STATUS.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- notes/task_registry.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- notes/decision_log.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- notes/agent_workflow_log.md"`
+- `Get-Content -LiteralPath '.\configs\cifar10_simclr_batch64_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\cifar10_linear_probe_batch64_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\evaluate_linear_probe_batch64_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\experiments\exp30_batch_size_ablation_setup.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\cifar10_simclr_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\cifar10_linear_probe_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\evaluate_linear_probe_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\cifar10_simclr_weak_aug_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\cifar10_linear_probe_weak_aug_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\configs\evaluate_linear_probe_weak_aug_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\PROJECT_STATUS.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\README.md' -Encoding utf8 | Select-Object -First 260`
+- `Get-Content -LiteralPath '.\notes\ablation_plan.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\notes\workflow_reproducibility_audit.md' -Encoding utf8 | Select-Object -First 340`
+- `Get-Content -LiteralPath '.\results\tables\no_projection_ablation_results.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\results\tables\augmentation_ablation_results.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\experiments\exp29_augmentation_ablation_analysis.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\notes\task_registry.md' -Encoding utf8 | Select-Object -Last 80`
+- `/home/yeyee/miniconda3/envs/simclr/bin/python` YAML parse and field-assertion script for the three Task 51 configs.
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src tests results README.md AGENTS.md configs/cifar10_simclr_short.yaml configs/cifar10_linear_probe_short.yaml configs/evaluate_linear_probe_short.yaml configs/cifar10_simclr_weak_aug_short.yaml configs/cifar10_linear_probe_weak_aug_short.yaml configs/evaluate_linear_probe_weak_aug_short.yaml"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f '(' -name '*.pt' -o -name '*.pth' -o -name '*.ckpt' -o -name '*.onnx' ')' -print"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print"`
+- `Get-Content -LiteralPath '.\src\train_simclr.py' -Encoding utf8 | Select-String -Pattern 'use_projection_head|max_train_batches|checkpoint_dir|checkpoint_filename|log_filename|augmentation_strength|batch_size' -Context 2,2`
+- `Get-Content -LiteralPath '.\src\train_linear_probe.py' -Encoding utf8 | Select-String -Pattern 'save_checkpoint|simclr_path|max_train_batches|checkpoint_dir|checkpoint_filename|log_filename|augmentation_strength|batch_size' -Context 2,2`
+- `Get-Content -LiteralPath '.\src\evaluate.py' -Encoding utf8 | Select-String -Pattern 'mode|checkpoint|simclr_path|output_path|train|batch_size|num_workers' -Context 2,2`
+- `Get-Content -LiteralPath '.\src\utils.py' -Encoding utf8 | Select-String -Pattern 'load_config|yaml|safe_load|ensure_dir' -Context 2,2`
+
+### Validation
+
+- Confirmed branch is `ablation/batch-size-setup`.
+- Confirmed Task 50 commit hash is `13d5f29`.
+- Confirmed the existing Task 51 changed-file set stays within the allowed files.
+- Confirmed no disallowed source, test, result, README, AGENTS, or existing baseline/weak config paths are modified.
+- Confirmed all three Task 51 YAML files parse and pass field-level assertions against the task requirements.
+- Confirmed config keys match current training and evaluation script conventions.
+- `git diff --check` passed.
+- No `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found in the repository.
+- No files over 10MB were found in the repository.
+
+### Not Validated
+
+- No training was run.
+- No evaluation was run.
+- No tests were run.
+- No data was downloaded.
+- No checkpoint was created.
+- No result table or figure was created.
+- No batch64 metric exists yet.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? configs/cifar10_linear_probe_batch64_short.yaml
+?? configs/cifar10_simclr_batch64_short.yaml
+?? configs/evaluate_linear_probe_batch64_short.yaml
+?? experiments/exp30_batch_size_ablation_setup.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 ++--
+ notes/agent_workflow_log.md | 252 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 +-
+ 4 files changed, 269 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked batch64 config files or experiment record.
+
+### Known Issues
+
+- The batch64 comparison remains fixed-epoch rather than fixed-optimizer-step, so later interpretation must stay preliminary.
+- `README.md` is stale about ablation progress, but editing it is outside Task 51 scope.
+- Running Git directly from the Windows UNC path produced a `dubious ownership` error; WSL-path Git commands were used for valid status and diff checks.
+
+### Next Step
+
+- Human Owner and ChatGPT Pro should review Task 51. If approved, Task 52 can run batch64 SimCLR short pretraining.
