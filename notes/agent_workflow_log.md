@@ -3666,3 +3666,113 @@ Note: unstaged `git diff --stat` does not include the new untracked batch64 conf
 ### Next Step
 
 - Human Owner and ChatGPT Pro should review Task 51. If approved, Task 52 can run batch64 SimCLR short pretraining.
+
+---
+
+## Task 52: Record batch-size-64 SimCLR short pretrain result
+
+### Issue
+
+Task 52: Record batch-size-64 SimCLR short pretrain result.
+
+### Branch
+
+`run/batch64-simclr-short-pretrain`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-09
+
+### Summary
+
+Recorded the Human Owner-run batch64 SimCLR short pretraining result. The run used `configs/cifar10_simclr_batch64_short.yaml`, produced 7810 logged training steps, wrote the small CSV log `results/logs/cifar10_simclr_batch64_short.csv`, and saved the checkpoint externally at `/home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_batch64_short/cifar10_simclr_batch64_short.pt`.
+
+This task records SimCLR pretraining only. Codex did not rerun training, run linear probe, run evaluation, run tests, create figures, edit result tables, create checkpoints, or start Task 53.
+
+### Files Changed
+
+- `experiments/exp31_batch64_simclr_short_pretrain.md`: added the Task 52 experiment record with command, observed output, CSV summary, external checkpoint path and size, checkpoint key check, interpretation boundary, repository safety check, and next step.
+- `results/logs/cifar10_simclr_batch64_short.csv`: included the Human Owner-generated small batch64 SimCLR pretraining log.
+- `PROJECT_STATUS.md`: moved the project state to Task 52 recorded and set the next gate to Task 53 batch64 linear probe short.
+- `notes/task_registry.md`: marked Task 51 as completed with commit `9dbff06` and added Task 52 as completed pending review.
+- `notes/agent_workflow_log.md`: appended this Task 52 work log entry.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\memories\MEMORY.md' | Select-String -Pattern 'SimCLR|Task 52|batch64|batch-size' -Context 2,2`
+- `Get-Content -LiteralPath '.\AGENTS.md' -Encoding utf8`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git branch --show-current && git status --short && git log -5 --oneline --decorate"`
+- `Get-Content -LiteralPath '.\PROJECT_STATUS.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\notes\task_registry.md' -Encoding utf8 | Select-Object -Last 30`
+- `Get-Content -LiteralPath '.\notes\agent_workflow_log.md' -Encoding utf8 | Select-Object -Last 80`
+- `Get-Content -LiteralPath '.\README.md' -Encoding utf8 | Select-Object -First 220`
+- `Get-Content -LiteralPath '.\configs\cifar10_simclr_batch64_short.yaml' -Encoding utf8`
+- `Get-Content -LiteralPath '.\experiments\exp12_simclr_short_pretrain.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\experiments\exp26_weak_augmentation_short_pretrain.md' -Encoding utf8`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && wc -l results/logs/cifar10_simclr_batch64_short.csv && ls -lh results/logs/cifar10_simclr_batch64_short.csv && head -n 2 results/logs/cifar10_simclr_batch64_short.csv && tail -n 1 results/logs/cifar10_simclr_batch64_short.csv"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && ls -lh /home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_batch64_short/cifar10_simclr_batch64_short.pt && /home/yeyee/miniconda3/envs/simclr/bin/python - <<'PY' ... PY"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f '(' -name '*.pt' -o -name '*.pth' -o -name '*.ckpt' -o -name '*.onnx' ')' -print"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --stat"`
+- `Get-Content -LiteralPath '.\experiments\exp31_batch64_simclr_short_pretrain.md' -Encoding utf8`
+- `Get-Content -LiteralPath '.\PROJECT_STATUS.md' -Encoding utf8 | Select-Object -First 120`
+- `Get-Content -LiteralPath '.\notes\task_registry.md' -Encoding utf8 | Select-Object -Last 12`
+
+### Validation
+
+- Confirmed branch is `run/batch64-simclr-short-pretrain`.
+- Confirmed Task 51 is committed at `9dbff06`.
+- Confirmed the batch64 CSV log exists, is 202K, and has 7811 lines including header.
+- Confirmed first logged row is `1,1,4.82857608795166`.
+- Confirmed final logged row is `10,7810,3.389024257659912`.
+- Confirmed the external checkpoint exists and is 132M.
+- Confirmed checkpoint key check: 124 model keys, 120 encoder keys, 4 projection head keys.
+- Confirmed no `.pt`, `.pth`, `.ckpt`, or `.onnx` files were found inside the repository.
+- Confirmed no files over 10MB were found inside the repository.
+
+### Not Validated
+
+- Codex did not rerun SimCLR pretraining.
+- Codex did not run linear probe training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create checkpoints.
+- Codex did not create figures.
+- Codex did not edit existing result tables.
+- Codex did not validate representation quality or batch-size ablation test accuracy.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/task_registry.md
+?? experiments/exp31_batch64_simclr_short_pretrain.md
+?? results/logs/cifar10_simclr_batch64_short.csv
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 +++++----
+ notes/agent_workflow_log.md | 110 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/task_registry.md      |   9 ++--
+ 3 files changed, 126 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked experiment record or CSV log.
+
+### Known Issues
+
+- `final_loss=3.389024257659912` is training loss only, not test accuracy or final representation quality.
+- This is a fixed-epoch comparison, not fixed optimizer steps; batch64 has more optimizer steps per epoch than the batch128 short baseline.
+- The batch-size ablation metric is not available until Task 54 evaluation after Task 53 linear probe training.
+
+### Next Step
+
+- Review Task 52. If approved, Task 53 should run batch64 linear probe short training.

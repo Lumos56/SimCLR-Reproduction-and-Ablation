@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Batch Size Ablation Setup |
-| Current Task | Task 51 batch size ablation setup |
-| Last Completed Task | Task 50 augmentation ablation analysis merged to main |
-| Git State | working on branch `ablation/batch-size-setup` |
-| Branch | `ablation/batch-size-setup` |
-| Next Gate | Task 52 batch64 SimCLR short pretrain |
-| Do Not Start Yet | batch64 training, evaluation, ablation table, final report, long runs |
-| Blockers | none for Task 51 |
-| Next Owner Decision | review Task 51 before running Task 52 batch64 SimCLR short pretrain |
+| Current Stage | Batch Size Ablation |
+| Current Task | Task 52 batch64 SimCLR short pretrain result recorded |
+| Last Completed Task | Task 51 batch size ablation setup merged to main |
+| Git State | working on branch `run/batch64-simclr-short-pretrain` |
+| Branch | `run/batch64-simclr-short-pretrain` |
+| Next Gate | Task 53 batch64 linear probe short |
+| Do Not Start Yet | batch64 linear probe, evaluation, ablation table, final report, long runs |
+| Blockers | none for Task 52 |
+| Next Owner Decision | review Task 52 before running Task 53 batch64 linear probe short |
 
 ## Gate 0 Status
 
@@ -95,4 +95,5 @@
 - [x] Weak augmentation linear probe CIFAR-10 test-set evaluation has been recorded.
 - [x] Augmentation ablation result table and first interpretation have been drafted.
 - [x] Batch size ablation configs have been prepared for pending review.
-- [ ] Batch64 runs, later ablation table, long runs, and final report have not been started.
+- [x] Batch64 SimCLR short pretrain result has been recorded.
+- [ ] Batch64 linear probe, evaluation, later ablation table, long runs, and final report have not been started.
