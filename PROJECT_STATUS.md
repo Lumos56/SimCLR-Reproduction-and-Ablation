@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Final Report Scaffold |
-| Current Task | Task 58 final report scaffold |
-| Last Completed Task | Task 57 README v0.3 merged to main |
-| Git State | working on branch `report/final-report-scaffold` |
-| Branch | `report/final-report-scaffold` |
-| Next Gate | Task 59 final report first draft |
-| Do Not Start Yet | final report first draft, final polish, long runs, additional ablations |
-| Blockers | none for Task 58 |
-| Next Owner Decision | review Task 58 before starting Task 59 final report first draft |
+| Current Stage | Final Report Drafting |
+| Current Task | Task 59 final report first draft |
+| Last Completed Task | Task 58 final report scaffold merged to main |
+| Git State | working on branch `report/final-report-first-draft` |
+| Branch | `report/final-report-first-draft` |
+| Next Gate | Task 60 project checkpoint review |
+| Do Not Start Yet | final polish, long runs, additional ablations |
+| Blockers | none for Task 59 |
+| Next Owner Decision | review Task 59 before starting Task 60 project checkpoint review |
 
 ## Gate 0 Status
 
@@ -102,4 +102,5 @@
 - [x] Combined ablation summary table has been drafted.
 - [x] README v0.3 has been drafted from completed short baseline and ablation records.
 - [x] Final report scaffold has been drafted.
-- [ ] Final report first draft, final polish, long runs, and additional ablations have not been started.
+- [x] Final report first draft has been drafted.
+- [ ] Final polish, long runs, and additional ablations have not been started.

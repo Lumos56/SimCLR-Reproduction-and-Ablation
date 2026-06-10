@@ -4528,3 +4528,150 @@ Note: unstaged `git diff --stat` does not include the new untracked
 
 - Review Task 58. If approved, Task 59 should write the first full final report
   draft from this scaffold.
+
+---
+
+## Task 59: Write final report first draft
+
+### Issue
+
+Task 59: Write final report first draft.
+
+### Branch
+
+`report/final-report-first-draft`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Applied the Human Owner-provided Markdown first draft from
+`D:/Downloads/final_report_task59_first_draft.md` to
+`report/final_report.md`, replacing the Task 58 scaffold with a coherent first
+draft. The draft preserves conservative interpretation: results are short-run,
+single-run/single-seed, no-tuning evidence; no paper-scale SimCLR performance is
+claimed; ablation observations are preliminary; and the batch-size comparison is
+fixed-epoch, not fixed-optimizer-step.
+
+### Files Changed
+
+- `report/final_report.md`: replaced the Task 58 scaffold with the Human
+  Owner-provided Task 59 first draft.
+- `experiments/exp37_final_report_first_draft.md`: added the Task 59
+  documentation record with source draft, metrics, scope controls, interpretation
+  rules, and next stage.
+- `PROJECT_STATUS.md`: moved the project to Task 59 final report first draft and
+  set Task 60 project checkpoint review as the next gate.
+- `notes/task_registry.md`: marked Task 58 with commit `51d73a8` and added Task
+  59 as completed pending review.
+- `notes/decision_log.md`: recorded that `report/final_report.md` is now a first
+  draft, not the final polished report.
+- `notes/agent_workflow_log.md`: appended this Task 59 work log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'D:\Downloads\final_report_task59_first_draft.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status -sb && git branch --show-current && git log -8 --oneline --decorate'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" AGENTS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git switch -c report/final-report-first-draft'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" PROJECT_STATUS.md && tail -n 90 notes/task_registry.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 100 notes/decision_log.md && tail -n 120 notes/agent_workflow_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,240p" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -R '0.873700\|0.621400\|0.594500\|0.356600\|0.596100' results/tables/short_baseline_results.md results/tables/combined_ablation_results.md results/tables/no_projection_ablation_results.md results/tables/augmentation_ablation_results.md results/tables/batch_size_ablation_results.md"`
+- `Copy-Item -LiteralPath 'D:\Downloads\final_report_task59_first_draft.md' -Destination '.\report\final_report.md' -Force`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,200p" experiments/exp37_final_report_first_draft.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -nE '0\.873700|0\.621400|0\.594500|0\.356600|0\.596100|fixed-epoch|fixed optimizer|fixed-optimizer|paper-scale|definitive|single-run|single-seed|no hyperparameter' report/final_report.md experiments/exp37_final_report_first_draft.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results README.md AGENTS.md experiments/exp00_environment_check.md experiments/exp35_combined_ablation_summary.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print && find . -type f -size +10M -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 12 report/final_report.md | nl -ba'`
+- `Remove-Item -LiteralPath '.\report\final_report.md:Zone.Identifier' -Force`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && rm -f -- "report/final_report.md:Zone.Identifier"'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results README.md AGENTS.md && find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print && find . -type f -size +10M -print'`
+
+### Validation
+
+- Confirmed branch is `report/final-report-first-draft`.
+- Confirmed Task 58 is committed at `51d73a8`.
+- Confirmed the Human Owner-provided first draft replaced the Task 58 scaffold in
+  `report/final_report.md`.
+- Confirmed known metrics in the report and Task 59 record match existing result
+  records:
+  - supervised short baseline: `0.873700`;
+  - SimCLR short plus linear probe: `0.621400`;
+  - no projection: `0.594500`;
+  - weak augmentation: `0.356600`;
+  - batch64: `0.596100`.
+- Confirmed the batch-size caveat remains fixed-epoch / not fixed-optimizer-step.
+- Confirmed conservative language remains present: short-run, single-seed or
+  single-run, no tuning, preliminary observations, no definitive ablation
+  claims, and no paper-scale SimCLR benchmark claim.
+- Initial `git diff --check` reported one extra blank line at EOF in
+  `report/final_report.md`; this was fixed.
+- Windows copy metadata created `report/final_report.md:Zone.Identifier`; this
+  was removed using WSL `rm`.
+- Final `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`,
+  `tests`, `results`, `README.md`, or `AGENTS.md`.
+- Repository checkpoint and large-file searches reported no output.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not edit code, configs, result CSVs, result tables, logs, figures,
+  README, AGENTS, or existing experiment records.
+- Codex did not start Task 60.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+ M report/final_report.md
+?? experiments/exp37_final_report_first_draft.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 ++--
+ notes/agent_workflow_log.md | 147 +++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 +-
+ report/final_report.md      | 275 ++++++++++++++++++++++++++------------------
+ 5 files changed, 330 insertions(+), 123 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked
+`experiments/exp37_final_report_first_draft.md` file.
+
+### Known Issues
+
+- `report/final_report.md` is a first draft, not the final polished report.
+- Current metrics remain preliminary short-run evidence.
+- Batch-size interpretation remains limited by fixed-epoch rather than
+  fixed-step comparison.
+
+### Next Step
+
+- Review Task 59. If approved, Task 60 should perform the project checkpoint
+  review before any final polish, long runs, or additional ablations.
