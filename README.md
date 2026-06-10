@@ -1,49 +1,95 @@
 # SimCLR Reproduction and Ablation
 
-README version: v0.2
+README version: v0.3
 
 ## Overview
 
-This repository is a compact PyTorch SimCLR reproduction and ablation-preparation project on CIFAR-10.
+This repository is a compact PyTorch SimCLR reproduction and ablation project on
+CIFAR-10.
 
-It is also a first AI research coding project: the main goal is to practice reproducible implementation, validation, experiment tracking, and honest result interpretation. The project is intentionally small and is not intended to claim state-of-the-art performance.
+It is a course and research-training style project. The goal is to practice
+reproducible implementation, validation, experiment tracking, ablation analysis,
+and honest result interpretation. It is intentionally small and does not claim
+state-of-the-art or paper-scale SimCLR performance.
+
+The project includes:
+
+- CIFAR-10 data loading and two-crop augmentation;
+- CIFAR-style ResNet18 encoder and projection head;
+- NT-Xent contrastive loss;
+- SimCLR pretraining;
+- frozen-encoder linear probe training and evaluation;
+- supervised ResNet18 short baseline;
+- three short ablations: no projection head, weak augmentation, and batch size
+  64 vs 128.
 
 ## Research Direction
 
-SimCLR is used here as a practical entry point into contrastive representation learning. The longer-term direction is to use the engineering workflow and representation-learning foundation from this project as a stepping stone toward later audio and audio-visual intelligence research.
+SimCLR is used here as a practical entry point into contrastive representation
+learning. The longer-term direction is to use the engineering workflow and
+representation-learning foundation from this project as a stepping stone toward
+later audio and audio-visual intelligence research.
 
-This repository does not implement audio training, video processing, Audio-SimCLR, CLAP, AV-HuBERT, ImageBind, or audio-visual synchronization.
+This repository does not implement audio training, video processing,
+Audio-SimCLR, CLAP, AV-HuBERT, ImageBind, or audio-visual synchronization.
 
 ## Current Status
 
-- CIFAR-10 dataset loading and two-crop augmentation are implemented.
-- CIFAR-style ResNet18 encoder and projection head are implemented.
-- NT-Xent contrastive loss is implemented.
-- SimCLR fake smoke, real CIFAR-10 smoke, and short baseline pretraining have been completed.
-- Linear probe scaffold, fake/real smoke runs, short training, and short CIFAR-10 test evaluation have been completed.
-- Supervised baseline scaffold, fake/real smoke runs, short training, and short CIFAR-10 test evaluation have been completed.
-- Short-baseline result tables and plots have been generated.
-- Ablations and final reporting have not started yet.
+- Core implementation is completed for the current short project scope.
+- Short supervised baseline training and CIFAR-10 test evaluation are completed.
+- Short SimCLR pretraining, short linear probe training, and CIFAR-10 test
+  evaluation are completed.
+- Three core short ablations are completed:
+  - no projection head;
+  - weak augmentation;
+  - SimCLR pretraining batch size 64.
+- Combined ablation summary table is completed.
+- Next stage: Task 58 final report scaffold.
 
-## Short Baseline Results
+## Results
 
-These are preliminary short-baseline results on the CIFAR-10 test split. They are not final benchmark results and should not be compared directly with paper-scale SimCLR results.
+These are preliminary short-run CIFAR-10 test-set results. They are project-level
+evidence for a small controlled workflow, not final benchmark results and not
+paper-scale SimCLR comparisons.
 
-| Method | Training setup | Dataset split | Top-1 accuracy | Correct / total |
-|---|---|---|---:|---:|
-| Supervised short baseline | Supervised ResNet18, 10 epochs | CIFAR-10 test | 0.873700 | 8737 / 10000 |
-| SimCLR short + linear probe | SimCLR pretrain, 10 epochs; linear probe, 5 epochs | CIFAR-10 test | 0.621400 | 6214 / 10000 |
+The supervised short baseline is included as context only. It is not an ablation
+row against SimCLR. The ablation baseline is:
 
-The supervised short baseline is currently higher than the short SimCLR plus linear-probe path. This is expected at this stage because the contrastive pretraining run is short, no hyperparameter tuning has been done, and no ablation has been run. The value of this stage is a controlled first comparison and a validated workflow, not final model performance.
+```text
+SimCLR short + linear probe Top-1 = 0.621400
+```
+
+| Run | CIFAR-10 test Top-1 | Correct / total | Delta vs SimCLR baseline | Notes |
+|---|---:|---:|---:|---|
+| Supervised short baseline | 0.873700 | 8737 / 10000 | N/A | Supervised reference only; not a SimCLR ablation row. |
+| SimCLR short + linear probe | 0.621400 | 6214 / 10000 | 0.00 pp | Short SimCLR ablation baseline. |
+| No projection | 0.594500 | 5945 / 10000 | -2.69 pp | Projection head disabled in this short SimCLR setup. |
+| Weak augmentation | 0.356600 | 3566 / 10000 | -26.48 pp | Largest observed negative drop among completed short ablations. |
+| Batch64 | 0.596100 | 5961 / 10000 | -2.53 pp | Fixed-epoch batch-size comparison, not fixed-optimizer-step comparison. |
 
 Primary result records:
 
 - `results/tables/short_baseline_results.md`
-- `results/tables/supervised_short_eval.csv`
-- `results/tables/linear_probe_short_eval.csv`
-- `experiments/exp17_short_baseline_analysis.md`
+- `results/tables/combined_ablation_results.md`
+- `results/tables/no_projection_ablation_results.md`
+- `results/tables/augmentation_ablation_results.md`
+- `results/tables/batch_size_ablation_results.md`
+
+## Main Observations
+
+- Weak augmentation shows the largest observed negative drop in the completed
+  short ablations.
+- No-projection and batch64 are both slightly lower than the SimCLR short
+  baseline in this short setup.
+- The batch64 result is especially preliminary because the comparison uses fixed
+  epochs, not fixed optimizer steps; batch64 has more optimizer steps per epoch
+  than batch128.
+- These observations are preliminary project-level observations, not final
+  scientific claims.
 
 ## Figures
+
+Existing short-baseline figures:
 
 ![Short baseline CIFAR-10 test accuracy](results/figures/short_baseline_test_accuracy.png)
 
@@ -53,7 +99,8 @@ Primary result records:
 
 ![Linear probe short loss curve](results/figures/linear_probe_short_loss_curve.png)
 
-The loss figures show raw logged curves plus smoothed trend lines for readability. No CSV values were changed to create the figures.
+The loss figures show raw logged curves plus smoothed trend lines for readability.
+No CSV values were changed to create the figures.
 
 ## Repository Structure
 
@@ -75,15 +122,30 @@ The loss figures show raw logged curves plus smoothed trend lines for readabilit
 `-- .github/
 ```
 
+Important directories:
+
+- `configs/`: experiment and evaluation configuration files.
+- `src/`: dataset, augmentation, model, loss, training, evaluation, and plotting
+  code.
+- `tests/`: lightweight fake-data and unit tests.
+- `experiments/`: task-by-task experiment and run records.
+- `results/tables/`: small CSV and Markdown result tables.
+- `results/logs/`: small CSV training logs.
+- `results/figures/`: selected lightweight project figures.
+- `notes/`: workflow logs, task registry, decisions, audits, and planning notes.
+
 ## Installation
 
-Environment setup is controlled by the Human Owner. The project has been developed with a local conda environment at:
+Environment setup is controlled by the Human Owner. The project has been
+developed with a local conda environment at:
 
 ```text
 /home/yeyee/miniconda3/envs/simclr
 ```
 
-The placeholder `environment.yml` should not be treated as a complete lock file. Use the official PyTorch selector when recreating or changing the environment, especially for CUDA-compatible `torch` and `torchvision` versions.
+The placeholder `environment.yml` should not be treated as a complete lock file.
+Use the official PyTorch selector when recreating or changing the environment,
+especially for CUDA-compatible `torch` and `torchvision` versions.
 
 ## How To Reproduce Current Checks
 
@@ -105,11 +167,18 @@ Regenerate the short-baseline figures from existing logs and result CSVs:
 /home/yeyee/miniconda3/envs/simclr/bin/python -m src.plot_training_curves
 ```
 
-Long training and real evaluation commands are recorded in experiment notes and should not be treated as casual quick-start commands.
+Training and evaluation commands for completed real runs are recorded in the
+corresponding files under `experiments/`. They are not repeated here as casual
+quick-start commands because they depend on external CIFAR-10 data and external
+checkpoints.
+
+Datasets and checkpoints are external artifacts and are not committed to this
+repository.
 
 ## Storage Policy
 
-Datasets, checkpoints, model weights, and large exports are stored outside the Git repository.
+Datasets, checkpoints, model weights, and large exports are stored outside the
+Git repository.
 
 Default external locations:
 
@@ -124,7 +193,10 @@ Large exports:
 /home/yeyee/research/05_exports/SimCLR-Reproduction-and-Ablation
 ```
 
-The repository may contain source code, configs, tests, documentation, small CSV logs, small result tables, and selected lightweight figures. It must not contain datasets, `.pt`, `.pth`, `.ckpt`, `.onnx`, TensorBoard event files, W&B runs, or large generated artifacts.
+The repository may contain source code, configs, tests, documentation, small CSV
+logs, small result tables, and selected lightweight figures. It must not contain
+datasets, `.pt`, `.pth`, `.ckpt`, `.onnx`, TensorBoard event files, W&B runs, or
+large generated artifacts.
 
 ## Agent Workflow
 
@@ -136,27 +208,33 @@ Project workflow and guardrails are tracked in:
 - `notes/workflow_playbook_draft.md`
 - `notes/agent_workflow_log.md`
 
-Each task should stay scoped, record commands that were actually run, and distinguish implementation checks, smoke runs, short-baseline results, and final results.
+Each task should stay scoped, record commands that were actually run, and
+distinguish implementation checks, smoke runs, short-baseline results, ablation
+results, and final results.
 
 ## Limitations
 
-- Current metrics are short-baseline results only.
-- No ablation has been run yet.
-- No final benchmark claim is made.
-- No final report has been written yet.
-- The current results should not be compared directly with paper-scale SimCLR results.
-- This repository is a small CIFAR-10 research-engineering project, not a full reproduction of the original SimCLR paper.
+- CIFAR-10 only.
+- 10-epoch SimCLR pretraining.
+- 5-epoch linear probe.
+- Single run per variant.
+- No repeated seeds.
+- No long training.
+- No hyperparameter tuning.
+- Batch-size comparison uses fixed epochs, not fixed optimizer steps.
+- Current results are not final SimCLR performance.
+- Current results are not paper-scale SimCLR benchmarks.
+- This repository is a small CIFAR-10 research-engineering project, not a full
+  reproduction of the original SimCLR paper.
 
 ## Next Steps
 
-- Set up the GitHub remote and first push, if the owner chooses that gate next.
-- Plan the ablation stage before running ablations.
-- Run the no-projection-head ablation.
-- Run the strong-vs-weak augmentation ablation.
-- Run the batch-size ablation.
-- Write the final report after baseline and ablation evidence is complete.
+- Task 58: scaffold the final report.
+- Draft the final report after the scaffold is reviewed.
+- Keep any future long runs or additional ablations as separately approved tasks.
 
 ## References
 
-- Chen, T., Kornblith, S., Norouzi, M., and Hinton, G. A Simple Framework for Contrastive Learning of Visual Representations.
+- Chen, T., Kornblith, S., Norouzi, M., and Hinton, G. A Simple Framework for
+  Contrastive Learning of Visual Representations.
 - Official PyTorch installation selector.

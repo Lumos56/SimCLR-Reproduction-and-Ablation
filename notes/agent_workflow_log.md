@@ -4246,3 +4246,139 @@ summary table or experiment record.
 
 - Review Task 56. If approved, Task 57 should update README v0.3 from the
   completed short baseline and ablation records.
+
+---
+
+## Task 57: Update README to v0.3 with completed short baseline and combined ablation results
+
+### Issue
+
+Task 57: Update README to v0.3 with completed short baseline and combined
+ablation results.
+
+### Branch
+
+`docs/readme-v0.3`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Reviewed the partially completed Task 57 working tree, confirmed the README v0.3
+metrics and ablation deltas match the existing result records, and completed the
+missing workflow tracking entry for Task 57.
+
+README v0.3 now presents the project as a short CIFAR-10 SimCLR reproduction and
+ablation project with supervised context, SimCLR short baseline, no-projection
+ablation, weak-augmentation ablation, batch64 ablation, limitations, repository
+structure, conservative reproduction notes, and next steps. The result wording
+keeps all claims preliminary and does not compare against paper-scale SimCLR
+benchmarks.
+
+### Files Changed
+
+- `README.md`: updated to v0.3 project-display status with the completed short
+  baseline and ablation summary.
+- `PROJECT_STATUS.md`: moved current state to Task 57 README v0.3 documentation
+  and set Task 58 final report scaffold as the next gate.
+- `notes/task_registry.md`: marked Task 56 with commit `e081409` and added Task
+  57 as completed pending review.
+- `notes/decision_log.md`: recorded that README v0.3 is the first
+  project-display README including completed short ablations.
+- `notes/agent_workflow_log.md`: appended this Task 57 completion entry because
+  the previous partial Task 57 work had not recorded it.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\memories\MEMORY.md' | Select-String -Pattern 'Task 57|SimCLR|README|baseline|ablation|Ablation|短期|task57' -Context 2,2`
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\85ea0f60-4601-4989-82aa-bb6cade9c118\pasted-text.txt'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && pwd && git status --short && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" AGENTS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" notes/task_registry.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 220 notes/agent_workflow_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 120 notes/decision_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" results/tables/short_baseline_results.md && sed -n "1,220p" results/tables/no_projection_ablation_results.md && sed -n "1,220p" results/tables/augmentation_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" results/tables/batch_size_ablation_results.md && sed -n "1,220p" results/tables/combined_ablation_results.md && sed -n "1,240p" experiments/exp35_combined_ablation_summary.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status -sb && git branch --show-current && git log -8 --oneline --decorate'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- PROJECT_STATUS.md notes/task_registry.md notes/decision_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results/logs results/figures results/tables experiments AGENTS.md report'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && rg -n "Task 57|README v0.3" notes/agent_workflow_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -nE 'Task 57|README v0.3' notes/agent_workflow_log.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --name-only"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --stat"`
+
+### Validation
+
+- Confirmed branch is `docs/readme-v0.3`.
+- Confirmed Task 56 is committed at `e081409`.
+- Confirmed the README result values match existing records:
+  - supervised short baseline: `0.873700`, `8737 / 10000`;
+  - SimCLR short plus linear probe: `0.621400`, `6214 / 10000`;
+  - no projection: `0.594500`, `5945 / 10000`, `-2.69 pp`;
+  - weak augmentation: `0.356600`, `3566 / 10000`, `-26.48 pp`;
+  - batch64: `0.596100`, `5961 / 10000`, `-2.53 pp`.
+- Confirmed no changes under forbidden Task 57 paths: `src`, `configs`,
+  `tests`, `results/logs`, `results/figures`, `results/tables`,
+  `experiments`, `AGENTS.md`, or `report`.
+- `git diff --check` reported no whitespace errors.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+- Confirmed the previous partial Task 57 work did not append a Task 57 entry to
+  `notes/agent_workflow_log.md`; this entry fixes that missing tracking record.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create checkpoints.
+- Codex did not create figures.
+- Codex did not edit code, configs, result CSVs, logs, figures, experiment
+  records, AGENTS.md, or final report files.
+- Codex did not start Task 58.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M README.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md            |  21 ++++---
+ README.md                    | 164 ++++++++++++++++++++++++++++++++++++-------------
+ notes/agent_workflow_log.md  | 136 ++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md        |   1 +
+ notes/task_registry.md       |   9 +--
+ 5 files changed, 274 insertions(+), 57 deletions(-)
+```
+
+### Known Issues
+
+- The README results remain preliminary because they are short-run, CIFAR-10
+  only, single-run, and not tuned.
+- The batch-size ablation remains fixed-epoch rather than fixed-optimizer-step.
+- Final report work has not started and should remain a separate Task 58 scope.
+
+### Next Step
+
+- Review Task 57. If approved, Task 58 should scaffold the final report.

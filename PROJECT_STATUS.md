@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Combined Ablation Summary |
-| Current Task | Task 56 combined ablation summary table |
-| Last Completed Task | Task 55 batch-size ablation analysis merged to main |
-| Git State | working on branch `analysis/combined-ablation-summary` |
-| Branch | `analysis/combined-ablation-summary` |
-| Next Gate | Task 57 README v0.3 update |
-| Do Not Start Yet | README v0.3, final report, long runs, additional ablations |
-| Blockers | none for Task 56 |
-| Next Owner Decision | review Task 56 before starting Task 57 README v0.3 update |
+| Current Stage | README v0.3 Documentation |
+| Current Task | Task 57 README v0.3 update |
+| Last Completed Task | Task 56 combined ablation summary merged to main |
+| Git State | working on branch `docs/readme-v0.3` |
+| Branch | `docs/readme-v0.3` |
+| Next Gate | Task 58 final report scaffold |
+| Do Not Start Yet | final report scaffold, final report draft, long runs, additional ablations |
+| Blockers | none for Task 57 |
+| Next Owner Decision | review Task 57 before starting Task 58 final report scaffold |
 
 ## Gate 0 Status
 
@@ -100,4 +100,5 @@
 - [x] Batch64 linear probe CIFAR-10 test-set evaluation has been recorded.
 - [x] Batch-size ablation result table and first interpretation have been drafted.
 - [x] Combined ablation summary table has been drafted.
-- [ ] README v0.3, long runs, additional ablations, and final report have not been started.
+- [x] README v0.3 has been drafted from completed short baseline and ablation records.
+- [ ] Final report scaffold, final report draft, long runs, and additional ablations have not been started.
