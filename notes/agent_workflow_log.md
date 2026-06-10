@@ -4113,3 +4113,136 @@ Note: unstaged `git diff --stat` does not include the new untracked result table
 ### Next Step
 
 - Review Task 55. If approved, Task 56 should build the combined ablation summary table across projection head, augmentation strength, and batch size.
+
+---
+
+## Task 56: Build combined ablation summary table
+
+### Issue
+
+Task 56: Build combined ablation summary table.
+
+### Branch
+
+`analysis/combined-ablation-summary`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-10
+
+### Summary
+
+Added a combined short SimCLR ablation summary table across projection head,
+augmentation strength, and SimCLR pretraining batch size. The table uses only
+existing CIFAR-10 test-set result CSVs and existing ablation records.
+
+The baseline SimCLR short plus linear-probe result is `0.621400`. The completed
+short ablation deltas are:
+
+- no projection: `0.594500`, `-2.69 pp`;
+- weak augmentation: `0.356600`, `-26.48 pp`;
+- batch64 SimCLR pretraining: `0.596100`, `-2.53 pp`.
+
+Weak augmentation is the largest observed negative drop among completed short
+SimCLR ablations, but this remains preliminary because all runs are short,
+single-run, and not tuned.
+
+### Files Changed
+
+- `results/tables/combined_ablation_results.md`: added the combined ablation
+  summary table, source records, observations, limitations, and next-stage note.
+- `experiments/exp35_combined_ablation_summary.md`: added the Task 56 experiment
+  record with source files, combined result, conservative interpretation,
+  limitations, not-done items, and next-stage recommendation.
+- `PROJECT_STATUS.md`: moved the project state to Task 56 combined ablation
+  summary and set the next gate to Task 57 README v0.3 update.
+- `notes/task_registry.md`: marked Task 55 with commit `0d7acd6` and added Task
+  56 as completed pending review.
+- `notes/decision_log.md`: recorded that weak augmentation is the largest
+  observed negative drop among the completed short SimCLR ablations.
+- `notes/agent_workflow_log.md`: appended this Task 56 work log entry.
+
+### Commands Run
+
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\memories\MEMORY.md' | Select-String -Pattern 'SimCLR|Task 56|combined ablation|batch-size' -Context 2,2`
+- `Get-Content -LiteralPath 'C:\Users\ye\.codex\attachments\805612d1-9441-4061-84bf-9d9d9db719af\pasted-text.txt' -Encoding utf8`
+- `Get-Content -LiteralPath '.\AGENTS.md' -Encoding utf8`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git branch --show-current && git status --short && git log -9 --oneline --decorate"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n '1,220p' PROJECT_STATUS.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n '1,220p' README.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n '1,220p' notes/ablation_plan.md && sed -n '1,220p' notes/decision_log.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -80 notes/task_registry.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -120 notes/agent_workflow_log.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n '1,80p' results/tables/linear_probe_short_eval.csv && sed -n '1,80p' results/tables/linear_probe_no_projection_short_eval.csv && sed -n '1,80p' results/tables/linear_probe_weak_aug_short_eval.csv && sed -n '1,80p' results/tables/linear_probe_batch64_short_eval.csv"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n '1,220p' results/tables/no_projection_ablation_results.md && sed -n '1,260p' results/tables/augmentation_ablation_results.md && sed -n '1,260p' results/tables/batch_size_ablation_results.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n '1,260p' experiments/exp24_no_projection_ablation_analysis.md && sed -n '1,280p' experiments/exp29_augmentation_ablation_analysis.md && sed -n '1,280p' experiments/exp34_batch_size_ablation_analysis.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results/logs results/figures README.md AGENTS.md 'results/tables/*.csv'"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f \( -name '*.pt' -o -name '*.pth' -o -name '*.ckpt' -o -name '*.onnx' \) -print"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print"`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short && git diff --stat"`
+
+### Validation
+
+- Confirmed branch is `analysis/combined-ablation-summary`.
+- Confirmed Task 55 is committed at `0d7acd6`.
+- Confirmed baseline CSV value: `top1_accuracy=0.6214`, `correct=6214`, `total=10000`.
+- Confirmed no-projection CSV value: `top1_accuracy=0.5945`, `correct=5945`, `total=10000`.
+- Confirmed weak-augmentation CSV value: `top1_accuracy=0.3566`, `correct=3566`, `total=10000`.
+- Confirmed batch64 CSV value: `top1_accuracy=0.5961`, `correct=5961`, `total=10000`.
+- Confirmed table deltas: `0.00 pp`, `-2.69 pp`, `-26.48 pp`, and `-2.53 pp`.
+- `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`, `tests`,
+  `results/logs`, `results/figures`, `README.md`, `AGENTS.md`, or result CSVs.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create checkpoints.
+- Codex did not create figures.
+- Codex did not edit code, configs, CSV files, logs, figures, README, or AGENTS.
+- Codex did not start Task 57.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? experiments/exp35_combined_ablation_summary.md
+?? results/tables/combined_ablation_results.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md      | 21 +++++++++++----------
+ notes/decision_log.md  |  1 +
+ notes/task_registry.md |  9 +++++----
+ 3 files changed, 17 insertions(+), 14 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked combined
+summary table or experiment record.
+
+### Known Issues
+
+- The combined ablation results are preliminary because they are CIFAR-10 only,
+  short-run, single-run, and not tuned.
+- The batch-size comparison is fixed-epoch, not fixed-optimizer-step, so batch64
+  and batch128 had different optimizer-step counts.
+
+### Next Step
+
+- Review Task 56. If approved, Task 57 should update README v0.3 from the
+  completed short baseline and ablation records.

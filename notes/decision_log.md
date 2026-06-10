@@ -27,6 +27,7 @@ This file records project workflow decisions.
 | 2026-06-07 | Treat the weak augmentation ablation result as preliminary and substantially lower than the strong augmentation short baseline. | Task 50 compares existing CIFAR-10 test-set result CSVs only: strong augmentation SimCLR short plus linear probe is 0.621400, weak augmentation SimCLR short plus linear probe is 0.356600, and the result is short, single-seed, and not tuned. | Active |
 | 2026-06-08 | Compare SimCLR pretraining batch size 64 vs 128 using fixed epochs and keep linear probe batch size at 128. | This isolates the planned batch-size ablation to SimCLR pretraining batch size as much as possible, but the comparison remains preliminary because batch size 64 creates more optimizer steps per epoch than batch size 128. | Active |
 | 2026-06-10 | Treat the batch64 ablation result as preliminary and slightly lower than the batch128 short baseline. | Task 55 compares existing CIFAR-10 test-set result CSVs only: batch128 SimCLR short plus linear probe is 0.621400, batch64 SimCLR short plus linear probe is 0.596100, and the fixed-epoch result is short, single-seed, and not tuned. | Active |
+| 2026-06-10 | Treat weak augmentation as the largest observed negative drop among completed short SimCLR ablations. | Task 56 combines existing CIFAR-10 test-set result CSVs only: no-projection is -2.69 pp, weak augmentation is -26.48 pp, and batch64 is -2.53 pp versus the 0.621400 short SimCLR baseline; all interpretations remain preliminary. | Active |
 
 ## Guardrails Carried Into Gate 1
 
