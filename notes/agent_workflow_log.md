@@ -4382,3 +4382,149 @@ benchmarks.
 ### Next Step
 
 - Review Task 57. If approved, Task 58 should scaffold the final report.
+
+---
+
+## Task 58: Create final report scaffold
+
+### Issue
+
+Task 58: Create final report scaffold.
+
+### Branch
+
+`report/final-report-scaffold`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Created a structured final report scaffold for the completed short SimCLR
+baseline and ablation stage. The scaffold contains the requested report
+sections, placeholder bullets, known baseline and ablation tables, limitations,
+workflow references, and a file index. It remains a scaffold and does not start
+the full Task 59 final report draft.
+
+### Files Changed
+
+- `report/final_report.md`: replaced the early placeholder with a structured
+  scaffold covering abstract, motivation, method, implementation, setup,
+  baseline results, ablations, observations, limitations, workflow, future work,
+  and appendix.
+- `experiments/exp36_final_report_scaffold.md`: added the Task 58 documentation
+  record, sections created, known metrics included, scope controls, and next
+  stage note.
+- `PROJECT_STATUS.md`: moved the project to Task 58 final report scaffold and
+  set Task 59 final report first draft as the next gate.
+- `notes/task_registry.md`: marked Task 57 with commit `d747778` and added Task
+  58 as completed pending review.
+- `notes/decision_log.md`: recorded that `report/final_report.md` begins as a
+  scaffold before full Task 59 drafting.
+- `notes/agent_workflow_log.md`: appended this Task 58 work log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\a9ff6b4f-2803-4ec4-afb8-00304873b03b\pasted-text.txt'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status -sb && git branch --show-current && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" AGENTS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,180p" PROJECT_STATUS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 80 notes/task_registry.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 180 notes/agent_workflow_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git log -10 --oneline --decorate'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 80 notes/decision_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,240p" notes/ablation_plan.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" notes/workflow_reproducibility_audit.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,180p" results/tables/short_baseline_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" results/tables/combined_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,160p" results/tables/no_projection_ablation_results.md && sed -n "1,160p" results/tables/augmentation_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,180p" results/tables/batch_size_ablation_results.md && sed -n "1,220p" experiments/exp35_combined_ablation_summary.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && ls -la report experiments | sed -n "1,160p"'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,120p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git ls-files report/final_report.md experiments/exp36_final_report_scaffold.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" experiments/exp36_final_report_scaffold.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results/logs results/tables results/figures README.md AGENTS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -nE '0\.873700|0\.621400|0\.594500|0\.356600|0\.596100|Task 59|fixed-step|paper-scale' report/final_report.md experiments/exp36_final_report_scaffold.md"`
+
+### Validation
+
+- Confirmed branch is `report/final-report-scaffold`.
+- Confirmed Task 57 is committed at `d747778`.
+- Confirmed `report/final_report.md` exists and is a scaffold, not a full
+  narrative report.
+- Confirmed `experiments/exp36_final_report_scaffold.md` exists.
+- Confirmed known metrics in the scaffold match existing result records:
+  - supervised short baseline: `0.873700`, `8737 / 10000`;
+  - SimCLR short plus linear probe: `0.621400`, `6214 / 10000`;
+  - no projection: `0.594500`, `-2.69 pp`;
+  - weak augmentation: `0.356600`, `-26.48 pp`;
+  - batch64: `0.596100`, `-2.53 pp`.
+- `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`,
+  `tests`, `results/logs`, `results/tables`, `results/figures`, `README.md`, or
+  `AGENTS.md`.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not edit code, configs, result CSVs, result tables, logs, figures,
+  README, AGENTS, or existing experiment records.
+- Codex did not start Task 59.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+ M report/final_report.md
+?? experiments/exp36_final_report_scaffold.md
+```
+
+### Git Diff Stat
+
+```text
+PROJECT_STATUS.md           |  21 +++---
+notes/agent_workflow_log.md | 146 ++++++++++++++++++++++++++++++++++++
+notes/decision_log.md       |   1 +
+notes/task_registry.md      |   9 ++-
+report/final_report.md      | 175 +++++++++++++++++++++++++++++++++++++++++---
+5 files changed, 327 insertions(+), 25 deletions(-)
+```
+
+Note: unstaged `git diff --stat` does not include the new untracked
+`experiments/exp36_final_report_scaffold.md` file.
+
+### Known Issues
+
+- `report/final_report.md` is intentionally incomplete and should not be treated
+  as the final report draft.
+- All included metrics remain preliminary short-run results.
+- Batch-size interpretation remains limited by fixed-epoch rather than
+  fixed-step comparison.
+
+### Next Step
+
+- Review Task 58. If approved, Task 59 should write the first full final report
+  draft from this scaffold.

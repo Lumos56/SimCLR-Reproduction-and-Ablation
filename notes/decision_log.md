@@ -29,6 +29,7 @@ This file records project workflow decisions.
 | 2026-06-10 | Treat the batch64 ablation result as preliminary and slightly lower than the batch128 short baseline. | Task 55 compares existing CIFAR-10 test-set result CSVs only: batch128 SimCLR short plus linear probe is 0.621400, batch64 SimCLR short plus linear probe is 0.596100, and the fixed-epoch result is short, single-seed, and not tuned. | Active |
 | 2026-06-10 | Treat weak augmentation as the largest observed negative drop among completed short SimCLR ablations. | Task 56 combines existing CIFAR-10 test-set result CSVs only: no-projection is -2.69 pp, weak augmentation is -26.48 pp, and batch64 is -2.53 pp versus the 0.621400 short SimCLR baseline; all interpretations remain preliminary. | Active |
 | 2026-06-11 | Use README v0.3 as the first project-display README including completed short ablations. | Task 57 updates README after short baseline, no-projection, weak-augmentation, batch-size, and combined-ablation records are complete, while keeping results preliminary and avoiding paper-scale benchmark claims. | Active |
+| 2026-06-11 | Start `report/final_report.md` as a scaffold before full drafting. | Task 58 creates only the final report structure, known-metric placeholders, limitations, and file index so Task 59 can write the first full draft without mixing scaffold setup with narrative drafting. | Active |
 
 ## Guardrails Carried Into Gate 1
 

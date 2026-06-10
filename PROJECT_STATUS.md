@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | README v0.3 Documentation |
-| Current Task | Task 57 README v0.3 update |
-| Last Completed Task | Task 56 combined ablation summary merged to main |
-| Git State | working on branch `docs/readme-v0.3` |
-| Branch | `docs/readme-v0.3` |
-| Next Gate | Task 58 final report scaffold |
-| Do Not Start Yet | final report scaffold, final report draft, long runs, additional ablations |
-| Blockers | none for Task 57 |
-| Next Owner Decision | review Task 57 before starting Task 58 final report scaffold |
+| Current Stage | Final Report Scaffold |
+| Current Task | Task 58 final report scaffold |
+| Last Completed Task | Task 57 README v0.3 merged to main |
+| Git State | working on branch `report/final-report-scaffold` |
+| Branch | `report/final-report-scaffold` |
+| Next Gate | Task 59 final report first draft |
+| Do Not Start Yet | final report first draft, final polish, long runs, additional ablations |
+| Blockers | none for Task 58 |
+| Next Owner Decision | review Task 58 before starting Task 59 final report first draft |
 
 ## Gate 0 Status
 
@@ -101,4 +101,5 @@
 - [x] Batch-size ablation result table and first interpretation have been drafted.
 - [x] Combined ablation summary table has been drafted.
 - [x] README v0.3 has been drafted from completed short baseline and ablation records.
-- [ ] Final report scaffold, final report draft, long runs, and additional ablations have not been started.
+- [x] Final report scaffold has been drafted.
+- [ ] Final report first draft, final polish, long runs, and additional ablations have not been started.
