@@ -1,0 +1,2 @@
+mode,dataset,dataset_split,top1_accuracy,correct,total,checkpoint_path,simclr_checkpoint_path
+linear_probe,cifar10,test,0.5961,5961,10000,/home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/linear_probe_batch64_short/cifar10_linear_probe_batch64_short.pt,/home/yeyee/research/04_models/SimCLR-Reproduction-and-Ablation/simclr_batch64_short/cifar10_simclr_batch64_short.pt
