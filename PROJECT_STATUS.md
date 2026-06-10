@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Batch Size Ablation |
-| Current Task | Task 54 batch64 linear probe evaluation result recorded |
-| Last Completed Task | Task 53 batch64 linear probe short merged to main |
-| Git State | working on branch `eval/batch64-linear-probe` |
-| Branch | `eval/batch64-linear-probe` |
-| Next Gate | Task 55 batch-size ablation result table and first interpretation |
-| Do Not Start Yet | batch-size ablation table beyond Task 55, final report, long runs |
-| Blockers | none for Task 54 |
-| Next Owner Decision | review Task 54 before starting Task 55 batch-size ablation result table and first interpretation |
+| Current Stage | Batch Size Ablation Analysis |
+| Current Task | Task 55 batch-size ablation result table and first interpretation |
+| Last Completed Task | Task 54 batch64 linear probe evaluation merged to main |
+| Git State | working on branch `analysis/batch-size-ablation` |
+| Branch | `analysis/batch-size-ablation` |
+| Next Gate | Task 56 combined ablation summary table |
+| Do Not Start Yet | combined summary beyond Task 56, README v0.3, final report, long runs |
+| Blockers | none for Task 55 |
+| Next Owner Decision | review Task 55 before starting Task 56 combined ablation summary table |
 
 ## Gate 0 Status
 
@@ -98,4 +98,5 @@
 - [x] Batch64 SimCLR short pretrain result has been recorded.
 - [x] Batch64 linear probe short result has been recorded.
 - [x] Batch64 linear probe CIFAR-10 test-set evaluation has been recorded.
-- [ ] Batch-size ablation table, long runs, and final report have not been started.
+- [x] Batch-size ablation result table and first interpretation have been drafted.
+- [ ] Combined ablation summary, README v0.3, long runs, and final report have not been started.
