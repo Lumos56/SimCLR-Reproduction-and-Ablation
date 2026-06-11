@@ -44,7 +44,9 @@ Audio-SimCLR, CLAP, AV-HuBERT, ImageBind, or audio-visual synchronization.
   - weak augmentation;
   - SimCLR pretraining batch size 64.
 - Combined ablation summary table is completed.
-- Next stage: Task 58 final report scaffold.
+- Polished final report draft is completed: [report/final_report.md](report/final_report.md).
+- Next stage after README presentation review: finalize the reusable workflow
+  playbook, then complete the project retrospective and release checkpoint.
 
 ## Results
 
@@ -69,11 +71,11 @@ SimCLR short + linear probe Top-1 = 0.621400
 
 Primary result records:
 
-- `results/tables/short_baseline_results.md`
-- `results/tables/combined_ablation_results.md`
-- `results/tables/no_projection_ablation_results.md`
-- `results/tables/augmentation_ablation_results.md`
-- `results/tables/batch_size_ablation_results.md`
+- [Short baseline results](results/tables/short_baseline_results.md)
+- [Combined ablation results](results/tables/combined_ablation_results.md)
+- [No-projection ablation results](results/tables/no_projection_ablation_results.md)
+- [Augmentation ablation results](results/tables/augmentation_ablation_results.md)
+- [Batch-size ablation results](results/tables/batch_size_ablation_results.md)
 
 ## Main Observations
 
@@ -101,6 +103,13 @@ Existing short-baseline figures:
 
 The loss figures show raw logged curves plus smoothed trend lines for readability.
 No CSV values were changed to create the figures.
+
+## Report
+
+The polished report draft is available at
+[report/final_report.md](report/final_report.md). It summarizes the short
+CIFAR-10 baseline, the completed short ablations, limitations, and workflow
+provenance. It is still a polished draft, not the release-final checkpoint.
 
 ## Repository Structure
 
@@ -229,8 +238,9 @@ results, and final results.
 
 ## Next Steps
 
-- Task 58: scaffold the final report.
-- Draft the final report after the scaffold is reviewed.
+- Task 63: finalize the reusable workflow playbook.
+- Task 64: write the project retrospective.
+- Task 65: release checkpoint / course-project handoff.
 - Keep any future long runs or additional ablations as separately approved tasks.
 
 ## References

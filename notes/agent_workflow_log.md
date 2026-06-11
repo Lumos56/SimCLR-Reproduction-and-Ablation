@@ -4975,3 +4975,179 @@ Note: `git diff --stat` does not include the new untracked
 - Review Task 61. If approved, Task 62 should perform the README + GitHub
   presentation check without starting workflow playbook finalization, long runs,
   or additional ablations.
+
+---
+
+## Task 62: README and GitHub presentation check
+
+### Issue
+
+Task 62: README and GitHub presentation check.
+
+### Branch
+
+`docs/readme-github-presentation-check`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Checked and lightly updated README presentation after the Task 61 polished final
+report draft. The README now references the polished report draft, uses relative
+Markdown links for the primary result tables, keeps existing figure references,
+and removes stale Task 58 / first-draft next-step wording.
+
+No training, evaluation, tests, code edits, config edits, result-table edits,
+report edits, figure generation, checkpoint creation, GitHub issue/PR work, or
+GitHub settings changes were performed.
+
+### Files Changed
+
+- `README.md`: added a concise polished report link, converted primary result
+  records to relative Markdown links, and updated next-step wording to Task 63
+  workflow playbook finalization, Task 64 retrospective, and Task 65 release
+  checkpoint.
+- `experiments/exp40_readme_github_presentation_check.md`: added the Task 62
+  presentation-check record.
+- `PROJECT_STATUS.md`: moved the project to README / GitHub Presentation Check,
+  set Task 62 as current, Task 61 as last completed, and Task 63 as next gate.
+- `notes/task_registry.md`: marked Task 61 with commit `7f60ce9` and added Task
+  62 as completed pending review.
+- `notes/decision_log.md`: recorded Task 62 as a local README/GitHub
+  presentation check before workflow playbook finalization.
+- `notes/agent_workflow_log.md`: appended this Task 62 work log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\86c6af0b-2a07-47b9-9c61-88efef5c6a10\pasted-text.txt'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status -sb && git branch --show-current && git log -8 --oneline --decorate'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" AGENTS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,280p" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,280p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" notes/project_checkpoint_review.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 90 notes/task_registry.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 80 notes/decision_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 260 notes/agent_workflow_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" experiments/exp39_final_report_polish.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" results/tables/short_baseline_results.md && sed -n "1,240p" results/tables/combined_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,200p" results/tables/no_projection_ablation_results.md && sed -n "1,200p" results/tables/augmentation_ablation_results.md && sed -n "1,220p" results/tables/batch_size_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git remote -v && git log --oneline --decorate -10'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && file results/figures/short_baseline_test_accuracy.png results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png && ls -lh results/figures/short_baseline_test_accuracy.png results/figures/supervised_short_loss_curve.png results/figures/simclr_short_loss_curve.png results/figures/linear_probe_short_loss_curve.png'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && rg -n "Task 58|Task 59|final report|report/final_report|results/tables|results/figures|Next stage|Next Steps|paper-scale|repeated seeds|hyperparameter|single run|single-run|fixed" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- README.md PROJECT_STATUS.md notes/task_registry.md notes/decision_log.md experiments/exp40_readme_github_presentation_check.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n -e "Task 58" -e "Task 59" -e "report/final_report.md" -e "results/tables" -e "results/figures" -e "Next stage" -e "Next Steps" -e "paper-scale" -e "repeated seeds" -e "hyperparameter" -e "single run" -e "single-run" -e "fixed" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git branch --show-current'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git remote -v'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git log --oneline --decorate -10'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results report/final_report.md AGENTS.md notes/workflow_playbook_draft.md notes/workflow_reproducibility_audit.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && test -f results/figures/short_baseline_test_accuracy.png'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && test -f results/figures/supervised_short_loss_curve.png'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && test -f results/figures/simclr_short_loss_curve.png'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && test -f results/figures/linear_probe_short_loss_curve.png'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && test -f results/tables/combined_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && test -f report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git rev-parse HEAD main origin/main'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && if grep -n -e "Task 58" -e "Task 59" -e "final report scaffold" README.md; then exit 1; else echo "no stale Task 58/59 wording in README.md"; fi'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n -e "report/final_report.md" -e "results/tables" -e "results/figures" README.md'`
+- `wsl -d Ubuntu-24.04 --% bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n '0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53' README.md"`
+- `wsl -d Ubuntu-24.04 --% bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && if grep -n -e 'Task 58' -e 'Task 59' -e 'final report scaffold' README.md; then exit 1; else echo 'no stale Task 58/59 wording in README.md'; fi"`
+
+### Validation
+
+- Confirmed branch is `docs/readme-github-presentation-check`.
+- Confirmed local `HEAD`, `main`, and `origin/main` all pointed to Task 61
+  commit `7f60ce9` before Task 62 edits.
+- Confirmed remote URL:
+  `git@github.com:Lumos56/SimCLR-Reproduction-and-Ablation.git`.
+- Confirmed `README.md` exists and was updated.
+- Confirmed README now links or references:
+  - `report/final_report.md`;
+  - `results/tables/short_baseline_results.md`;
+  - `results/tables/combined_ablation_results.md`;
+  - `results/tables/no_projection_ablation_results.md`;
+  - `results/tables/augmentation_ablation_results.md`;
+  - `results/tables/batch_size_ablation_results.md`;
+  - four existing figure paths under `results/figures/`.
+- Confirmed the four figure files exist locally and are PNG images.
+- Confirmed required `test -f` checks passed for the four figures,
+  `results/tables/combined_ablation_results.md`, and `report/final_report.md`.
+- Confirmed README no longer contains stale Task 58 / Task 59 / final report
+  scaffold wording.
+- Confirmed README still contains the exact known metrics:
+  `0.873700`, `0.621400`, `0.594500`, `0.356600`, `0.596100`, `-2.69 pp`,
+  `-26.48 pp`, and `-2.53 pp`.
+- `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`,
+  `tests`, `results`, `report/final_report.md`, `AGENTS.md`,
+  `notes/workflow_playbook_draft.md`, or
+  `notes/workflow_reproducibility_audit.md`.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+
+### Not Validated
+
+- GitHub rendered UI was not validated in this task because the Task 62 branch
+  was local and not pushed.
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not edit code, configs, result CSVs, result tables, logs, figures,
+  `report/final_report.md`, `AGENTS.md`, workflow playbook, workflow audit, or
+  existing experiment records.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not create GitHub issues or pull requests.
+- Codex did not modify GitHub files or settings.
+- Codex did not start Task 63.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M README.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? experiments/exp40_readme_github_presentation_check.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 +++---
+ README.md                   |  26 +++++--
+notes/agent_workflow_log.md | 176 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 ++-
+ 5 files changed, 211 insertions(+), 22 deletions(-)
+```
+
+Note: `git diff --stat` does not include the new untracked
+`experiments/exp40_readme_github_presentation_check.md` file.
+
+### Known Issues
+
+- GitHub rendered README, figure display, and links should be checked after Task
+  62 is reviewed, merged, and pushed if a remote visual check is required.
+- README still presents only short-run, single-run, no-tuning evidence.
+- Workflow playbook finalization remains a separate Task 63 item.
+
+### Next Step
+
+- Review Task 62. If approved, Task 63 should finalize the reusable workflow
+  playbook without starting retrospective, release checkpoint, long runs, or
+  additional ablations.
