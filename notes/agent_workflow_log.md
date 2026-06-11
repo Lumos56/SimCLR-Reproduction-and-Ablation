@@ -4817,3 +4817,161 @@ Note: unstaged `git diff --stat` does not include new untracked files
 - Review Task 60. If approved, Task 61 should revise and polish the final report
   without starting README presentation, workflow playbook finalization, long
   runs, or additional ablations.
+
+---
+
+## Task 61: Final report revision and polish
+
+### Issue
+
+Task 61: Final report revision and polish.
+
+### Branch
+
+`report/final-report-polish`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Revised `report/final_report.md` from the Task 59 first draft into a polished
+draft after the Task 60 checkpoint review. The revision improves flow,
+provenance, baseline/ablation role separation, limitation language, workflow
+scope, and future-work sequencing while preserving all known metrics exactly.
+
+No training, evaluation, tests, code edits, config edits, result-table edits,
+README edits, figures, or checkpoints were performed.
+
+### Files Changed
+
+- `report/final_report.md`: updated the status note to Task 61 polished draft,
+  clarified supervised-reference versus SimCLR-ablation roles, added metric
+  provenance, preserved conservative interpretation, clarified the workflow
+  finalization boundary, and updated future-work sequencing.
+- `experiments/exp39_final_report_polish.md`: added the Task 61 documentation
+  record with scope control, preserved metrics, main polish changes, and next
+  stage.
+- `PROJECT_STATUS.md`: moved the project to Final Report Polish, set Task 61 as
+  current, Task 60 as last completed, and Task 62 as the next gate.
+- `notes/task_registry.md`: marked Task 60 with commit `5b29fa5` and added Task
+  61 as completed pending review.
+- `notes/decision_log.md`: recorded that `report/final_report.md` is now a Task
+  61 polished draft, not the release-final report.
+- `notes/agent_workflow_log.md`: appended this Task 61 work log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\83a3e03e-7ea4-4b28-b1a6-31da07540e18\pasted-text.txt'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status -sb && git branch --show-current && git log -10 --oneline --decorate'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" AGENTS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" PROJECT_STATUS.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,240p" notes/task_registry.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" notes/decision_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" notes/project_checkpoint_review.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" notes/workflow_reproducibility_audit.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" results/tables/short_baseline_results.md && sed -n "1,220p" results/tables/combined_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,220p" experiments/exp35_combined_ablation_summary.md && sed -n "1,220p" experiments/exp37_final_report_first_draft.md && sed -n "1,240p" experiments/exp38_project_checkpoint_review.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,260p" README.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && tail -n 240 notes/agent_workflow_log.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,180p" results/tables/no_projection_ablation_results.md && sed -n "1,180p" results/tables/augmentation_ablation_results.md && sed -n "1,180p" results/tables/batch_size_ablation_results.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "1,280p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && sed -n "280,420p" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -nE '0\.873700|0\.621400|0\.594500|0\.356600|0\.596100|-2\.69|-26\.48|-2\.53|fixed-epoch|fixed optimizer|fixed-optimizer|paper-scale|single-run|repeated seeds|no hyperparameter' report/final_report.md"`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff -- report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git branch --show-current'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --check'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git status --short -- src configs tests results README.md AGENTS.md notes/workflow_playbook_draft.md notes/workflow_reproducibility_audit.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && find . -type f -size +10M -print'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n "0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53" report/final_report.md'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && git diff --stat'`
+- `wsl -d Ubuntu-24.04 -- bash -lc 'cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n -e 0.873700 -e 0.621400 -e 0.594500 -e 0.356600 -e 0.596100 -e -2.69 -e -26.48 -e -2.53 report/final_report.md'`
+- `wsl -d Ubuntu-24.04 --% bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n '0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53' report/final_report.md"`
+
+### Validation
+
+- Confirmed branch is `report/final-report-polish`.
+- Confirmed `report/final_report.md` is now a Task 61 polished draft, not the
+  release-final report.
+- Confirmed known metrics remain present in `report/final_report.md`:
+  - supervised short baseline: `0.873700`;
+  - SimCLR short plus linear probe: `0.621400`;
+  - no projection: `0.594500`, `-2.69 pp`;
+  - weak augmentation: `0.356600`, `-26.48 pp`;
+  - batch64: `0.596100`, `-2.53 pp`.
+- Confirmed the batch-size caveat remains fixed-epoch / not fixed-optimizer-step.
+- `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`,
+  `tests`, `results`, `README.md`, `AGENTS.md`,
+  `notes/workflow_playbook_draft.md`, or
+  `notes/workflow_reproducibility_audit.md`.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+- An initial metric grep command using `\|` failed because the PowerShell/WSL
+  quoting treated the pattern as shell pipes. The metric check was rerun
+  successfully with both `grep -e` and PowerShell stop-parsing `--%`.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not edit code, configs, result CSVs, result tables, logs, figures,
+  README, AGENTS, workflow playbook, workflow audit, or existing experiment
+  records.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not start Task 62.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+ M report/final_report.md
+?? experiments/exp39_final_report_polish.md
+```
+
+### Git Diff Stat
+
+```text
+ PROJECT_STATUS.md           |  21 +++---
+ notes/agent_workflow_log.md | 158 ++++++++++++++++++++++++++++++++++++++++++++
+ notes/decision_log.md       |   1 +
+ notes/task_registry.md      |   9 +--
+ report/final_report.md      |  43 ++++++++----
+ 5 files changed, 204 insertions(+), 28 deletions(-)
+```
+
+Note: `git diff --stat` does not include the new untracked
+`experiments/exp39_final_report_polish.md` file.
+
+### Known Issues
+
+- `report/final_report.md` is now polished but still not the release-final
+  checkpoint.
+- README v0.3 still has stale next-step language; this is intentionally left for
+  Task 62.
+- Workflow playbook finalization is intentionally left for Task 63.
+- Current results remain short-run, single-run, no-tuning evidence.
+- Batch-size interpretation remains limited by fixed-epoch rather than
+  fixed-step comparison.
+
+### Next Step
+
+- Review Task 61. If approved, Task 62 should perform the README + GitHub
+  presentation check without starting workflow playbook finalization, long runs,
+  or additional ablations.

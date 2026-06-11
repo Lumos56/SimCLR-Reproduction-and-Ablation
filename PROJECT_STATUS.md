@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Project Checkpoint Review |
-| Current Task | Task 60 project checkpoint review |
-| Last Completed Task | Task 59 final report first draft merged to main |
-| Git State | working on branch `review/project-checkpoint` |
-| Branch | `review/project-checkpoint` |
-| Next Gate | Task 61 final report revision / polish |
-| Do Not Start Yet | final report polish, README/GitHub presentation check, workflow playbook finalization, release checkpoint |
-| Blockers | none for Task 60 |
-| Next Owner Decision | review Task 60 before starting Task 61 final report revision / polish |
+| Current Stage | Final Report Polish |
+| Current Task | Task 61 final report revision / polish |
+| Last Completed Task | Task 60 project checkpoint review merged to main |
+| Git State | working on branch `report/final-report-polish` |
+| Branch | `report/final-report-polish` |
+| Next Gate | Task 62 README + GitHub presentation check |
+| Do Not Start Yet | README/GitHub presentation check, workflow playbook finalization, retrospective, release checkpoint |
+| Blockers | none for Task 61 |
+| Next Owner Decision | review Task 61 final report revision / polish before starting Task 62 |
 
 ## Gate 0 Status
 
@@ -104,4 +104,5 @@
 - [x] Final report scaffold has been drafted.
 - [x] Final report first draft has been drafted.
 - [x] Project checkpoint review has been drafted.
-- [ ] Final report polish, README/GitHub presentation check, workflow playbook finalization, release checkpoint, long runs, and additional ablations have not been started.
+- [x] Final report polish has been drafted.
+- [ ] README/GitHub presentation check, workflow playbook finalization, retrospective, release checkpoint, long runs, and additional ablations have not been started.

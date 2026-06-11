@@ -32,6 +32,7 @@ This file records project workflow decisions.
 | 2026-06-11 | Start `report/final_report.md` as a scaffold before full drafting. | Task 58 creates only the final report structure, known-metric placeholders, limitations, and file index so Task 59 can write the first full draft without mixing scaffold setup with narrative drafting. | Active |
 | 2026-06-11 | Treat `report/final_report.md` as a first draft after Task 59, not the final polished report. | Task 59 applies the Human Owner-provided first draft while preserving conservative interpretation; final polish and checkpoint review remain separate later tasks. | Active |
 | 2026-06-11 | Proceed from first-draft deliverable to final-report polish after checkpoint review. | Task 60 found no blocker for Task 61, but identified README presentation, report provenance polish, possible embedding visualization, and workflow playbook finalization as separate later tasks. | Active |
+| 2026-06-11 | Treat `report/final_report.md` as a Task 61 polished draft, not the release-final report. | Task 61 revises the report for clarity, provenance, and limitation language while leaving README presentation, workflow playbook finalization, retrospective, and release checkpoint to later tasks. | Active |
 
 ## Guardrails Carried Into Gate 1
 

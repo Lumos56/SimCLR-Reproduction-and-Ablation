@@ -1,16 +1,16 @@
 # SimCLR Reproduction and Short Ablation Study on CIFAR-10
 
-Status note: this is a Task 59 first draft. It expands the Task 58 scaffold into a coherent report narrative, but it should still be reviewed and polished before being treated as the final submitted report. All reported metrics are copied from existing result tables and experiment records. No new training, evaluation, or result generation is implied by this draft.
+Status note: this is a Task 61 polished draft. It revises the Task 59 first draft for clearer flow, provenance, and limitation language, but it is still not the release-final checkpoint. All reported metrics are copied from existing result tables and experiment records. No new training, evaluation, testing, figure generation, or result generation is implied by this draft.
 
 ## 1. Abstract / Project Summary
 
-This project implements a compact SimCLR-style contrastive learning pipeline on CIFAR-10 and uses it as a controlled research-engineering exercise. The implementation includes CIFAR-10 data loading, two-view image augmentation, a CIFAR-adapted ResNet18 encoder, a projection head, NT-Xent contrastive loss, SimCLR pretraining, frozen-encoder linear probe evaluation, and a supervised ResNet18 reference baseline.
+This project implements a compact SimCLR-style contrastive learning pipeline on CIFAR-10 as a controlled research-engineering exercise. The implementation covers CIFAR-10 data loading, two-view image augmentation, a CIFAR-adapted ResNet18 encoder, a projection head, NT-Xent contrastive loss, SimCLR pretraining, frozen-encoder linear probe evaluation, and a supervised ResNet18 reference baseline.
 
-The project focuses on reproducibility and honest result interpretation rather than paper-scale performance. After validating the implementation with fake-data tests and short smoke runs, the project runs a short baseline setting: 10 epochs of SimCLR pretraining followed by 5 epochs of linear probe training. Under this short setup, the supervised reference baseline reaches `0.873700` CIFAR-10 test Top-1 accuracy, while the SimCLR short baseline plus linear probe reaches `0.621400`.
+The emphasis is reproducibility and honest interpretation, not paper-scale performance. After validating the implementation with fake-data tests and short smoke runs, the project runs a short baseline setting: 10 epochs of SimCLR pretraining followed by 5 epochs of linear probe training. Under this short setup, the supervised reference baseline reaches `0.873700` CIFAR-10 test Top-1 accuracy, while the SimCLR short baseline plus linear probe reaches `0.621400`.
 
-Three short ablations are then performed on the SimCLR pipeline. Removing the projection head gives `0.594500` Top-1 accuracy, weak augmentation gives `0.356600`, and reducing SimCLR pretraining batch size from 128 to 64 gives `0.596100`. These results suggest that, in this short single-run setup, weak augmentation produces the largest degradation, while no projection head and batch size 64 are both slightly lower than the baseline. These observations are preliminary. They should not be interpreted as definitive conclusions about SimCLR in general because the experiments use CIFAR-10 only, short training schedules, one run per variant, no hyperparameter tuning, and no repeated seeds.
+Three short ablations are then performed on the SimCLR pipeline. Removing the projection head gives `0.594500` Top-1 accuracy, weak augmentation gives `0.356600`, and reducing SimCLR pretraining batch size from 128 to 64 gives `0.596100`. In this short single-run setup, weak augmentation produces the largest degradation, while no projection head and batch size 64 are both slightly lower than the SimCLR baseline. These observations are preliminary: the experiments use CIFAR-10 only, short training schedules, one run per variant, no hyperparameter tuning, and no repeated seeds.
 
-A second goal of the project is to build a reusable AI-assisted research coding workflow. The repository tracks tasks, decisions, experiment records, status updates, result tables, figures, and workflow audits so the project can be resumed across long ChatGPT/Codex conversations without relying only on chat memory.
+A second goal is to build a reusable AI-assisted research coding workflow. The repository tracks tasks, decisions, experiment records, status updates, result tables, figures, and workflow audits so the project can be resumed across long ChatGPT/Codex conversations without relying only on chat memory.
 
 ## 2. Motivation and Background
 
@@ -84,7 +84,7 @@ Datasets and model checkpoints are intentionally stored outside the Git reposito
 
 This prevents large data files and model weights from polluting the repository. Small logs, result tables, figures, configs, and documentation are committed because they are necessary for review and reproducibility.
 
-The project also uses a strict branch-per-task workflow. Each scoped task updates `PROJECT_STATUS.md`, `notes/task_registry.md`, and `notes/agent_workflow_log.md`, and most important decisions are recorded in `notes/decision_log.md`. This workflow proved useful when long AI assistant conversations lost context or when uploaded files expired.
+The project also uses a strict branch-per-task workflow. Each scoped task updates `PROJECT_STATUS.md`, `notes/task_registry.md`, and `notes/agent_workflow_log.md`, and durable decisions are recorded in `notes/decision_log.md`. This workflow proved useful when long AI assistant conversations lost context or when uploaded files expired.
 
 ## 5. Dataset and Experimental Setup
 
@@ -108,22 +108,24 @@ For the batch size ablation, the linear probe batch size remains 128. This reduc
 
 All current experiments are single-run, short-run experiments. There are no repeated seeds, no long training runs, and no hyperparameter sweeps.
 
+Metric provenance is intentionally file-based. Baseline results come from `results/tables/short_baseline_results.md`, while completed SimCLR ablations are consolidated in `results/tables/combined_ablation_results.md`. The corresponding task records under `experiments/` preserve the commands, configs, external checkpoint paths, metric sources, and limitations for each run or analysis step.
+
 ## 6. Baseline Results
 
-The supervised baseline provides a reference point for CIFAR-10 classification with labels. It is not a SimCLR ablation row. The SimCLR short + linear probe result is the baseline for the ablation comparisons.
+The supervised baseline provides a labeled CIFAR-10 reference point. It is not a SimCLR ablation row, because it uses a different training objective. The SimCLR short + linear probe result is the ablation reference for the contrastive pipeline.
 
 | Run | CIFAR-10 test Top-1 | Correct / total | Role |
 |---|---:|---:|---|
 | Supervised short baseline | 0.873700 | 8737 / 10000 | Supervised reference context |
 | SimCLR short + linear probe | 0.621400 | 6214 / 10000 | SimCLR ablation baseline |
 
-The supervised short baseline is substantially higher than the SimCLR short + linear probe result. This is expected in a short training setup: supervised training directly optimizes the target labels, while SimCLR first learns representations through a self-supervised contrastive objective and only later trains a linear classifier. The SimCLR result should therefore be interpreted as a representation-learning baseline, not as a failure to match supervised training.
+The supervised short baseline is substantially higher than the SimCLR short + linear probe result. This is expected in a short training setup: supervised training directly optimizes the target labels, while SimCLR first learns representations through a self-supervised contrastive objective and only later trains a linear classifier. The SimCLR result should therefore be read as a representation-learning baseline for later ablations, not as a failed attempt to match supervised training under equal objectives.
 
 The value of this baseline stage is that it validates the full pipeline: pretraining, checkpointing, linear probing, evaluation, result recording, and comparison against a supervised reference all work under controlled conditions.
 
 ## 7. Ablation Studies
 
-The completed ablations compare variants against the baseline SimCLR short + linear probe run. The table below consolidates the completed short ablations.
+The completed ablations compare SimCLR variants against the baseline SimCLR short + linear probe run. The supervised baseline is deliberately excluded from this ablation table because the table isolates changes inside the SimCLR pipeline.
 
 | Run / variant | Changed factor | Projection head | Augmentation strength | SimCLR pretrain batch size | Linear probe batch size | Pretrain epochs | Linear probe epochs | CIFAR-10 test Top-1 | Correct / total | Delta vs SimCLR baseline |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|
@@ -136,7 +138,7 @@ The completed ablations compare variants against the baseline SimCLR short + lin
 
 The no-projection ablation disables the projection head and applies the contrastive objective directly to the encoder representation. The no-projection result is `0.594500`, which is `2.69` percentage points lower than the baseline SimCLR short + linear probe result of `0.621400`.
 
-This is consistent with the idea that the projection head may help the encoder learn better representations by allowing the contrastive objective to operate in a separate projection space. However, the current evidence is not definitive. The run is short, uses one dataset, has no repeated seeds, and has no tuning.
+This is consistent with the idea that the projection head may help the encoder learn better representations by allowing the contrastive objective to operate in a separate projection space. However, the current evidence is not definitive. The run is short, uses one dataset, has no repeated seeds, and includes no tuning.
 
 ### 7.2 Augmentation Strength Ablation
 
@@ -144,7 +146,7 @@ The weak augmentation ablation replaces the strong SimCLR augmentation setting w
 
 This is the largest negative drop among the completed short ablations. It is consistent with SimCLR's reliance on strong augmentations to create useful contrastive views. In this setup, weak augmentation likely produces a less effective pretext task, resulting in weaker representations for the downstream linear probe.
 
-The result should still be interpreted conservatively. It does not prove that strong augmentation is universally better in every setting. It only shows that, in the current short CIFAR-10 setup, the weak augmentation configuration performs much worse than the strong baseline.
+The result should still be interpreted conservatively. It does not prove that strong augmentation is universally better in every setting. It shows only that, in the current short CIFAR-10 setup, the weak augmentation configuration performs much worse than the strong baseline.
 
 ### 7.3 Batch Size Ablation
 
@@ -162,7 +164,7 @@ Second, disabling the projection head lowered performance by `2.69 pp`. This is 
 
 Third, batch size 64 was `2.53 pp` lower than batch size 128 in the current fixed-epoch comparison. This result is close in magnitude to the no-projection difference, but it is harder to interpret because changing batch size also changes the number of optimizer steps per epoch.
 
-Overall, the strongest project-level observation is that weak augmentation substantially hurts the current short SimCLR pipeline. The other two ablations show smaller negative shifts. All conclusions remain preliminary.
+Overall, the strongest project-level observation is that weak augmentation substantially hurts the current short SimCLR pipeline. The no-projection and batch64 variants show smaller negative shifts. All conclusions remain preliminary.
 
 ## 9. Limitations
 
@@ -199,9 +201,11 @@ This workflow matters because the project was developed through iterative collab
 
 The project also enforces a storage policy. Datasets and checkpoints stay outside the repository, while small configs, logs, figures, result tables, documentation, and experiment records are committed. This makes the repository lightweight but still reproducible enough to audit the experiments.
 
+The workflow itself is not finalized by this report polish task. `notes/workflow_playbook_draft.md` and `notes/workflow_reproducibility_audit.md` remain workflow evidence and draft guidance; final workflow playbook cleanup is planned as a later task.
+
 ## 11. Future Work
 
-The most immediate next step is to polish the final report and README, then perform a project checkpoint review. Potential technical extensions include longer SimCLR pretraining, repeated seeds, a fixed-step batch-size comparison, stronger representation diagnostics, and embedding visualizations.
+The immediate project-management next steps are a README/GitHub presentation check, workflow playbook finalization, a project retrospective, and a release checkpoint after this polished report draft is reviewed. Potential technical extensions include longer SimCLR pretraining, repeated seeds, a fixed-step batch-size comparison, stronger representation diagnostics, and embedding visualizations.
 
 A longer-term research direction is to transfer this contrastive-learning workflow toward audio and audio-visual intelligence. SimCLR provides a useful foundation because many audio and multimodal representation learning methods rely on related ideas: constructing multiple views, aligning embeddings, evaluating learned representations, and carefully interpreting downstream metrics.
 
@@ -219,7 +223,7 @@ These directions should be treated as future projects, not as claims made by the
 Key project files:
 
 - `README.md`: project-display overview and current status.
-- `report/final_report.md`: final report draft.
+- `report/final_report.md`: polished final report draft.
 - `results/tables/short_baseline_results.md`: supervised and SimCLR short baseline results.
 - `results/tables/combined_ablation_results.md`: combined short ablation table.
 - `results/tables/no_projection_ablation_results.md`: projection head ablation table.
@@ -231,3 +235,14 @@ Key project files:
 - `notes/agent_workflow_log.md`: detailed agent task reports.
 - `notes/workflow_reproducibility_audit.md`: workflow restartability audit.
 - `AGENTS.md`: agent rules and project guardrails.
+
+Primary provenance records:
+
+| Topic | Main result or record file | Supporting config / command records |
+|---|---|---|
+| Supervised short baseline | `results/tables/short_baseline_results.md` | `experiments/exp11_supervised_short_baseline.md`, `experiments/exp15_supervised_short_eval.md`, `configs/cifar10_supervised_short.yaml`, `configs/evaluate_supervised_short.yaml` |
+| SimCLR short + linear probe baseline | `results/tables/short_baseline_results.md` | `experiments/exp12_simclr_short_pretrain.md`, `experiments/exp13_linear_probe_short.md`, `experiments/exp16_linear_probe_short_eval.md`, `configs/cifar10_simclr_short.yaml`, `configs/cifar10_linear_probe_short.yaml`, `configs/evaluate_linear_probe_short.yaml` |
+| No-projection ablation | `results/tables/no_projection_ablation_results.md` | `experiments/exp21_no_projection_short_pretrain.md`, `experiments/exp22_no_projection_linear_probe_short.md`, `experiments/exp23_no_projection_linear_probe_eval.md`, `experiments/exp24_no_projection_ablation_analysis.md` |
+| Weak-augmentation ablation | `results/tables/augmentation_ablation_results.md` | `experiments/exp26_weak_augmentation_short_pretrain.md`, `experiments/exp27_weak_augmentation_linear_probe_short.md`, `experiments/exp28_weak_augmentation_linear_probe_eval.md`, `experiments/exp29_augmentation_ablation_analysis.md` |
+| Batch64 ablation | `results/tables/batch_size_ablation_results.md` | `experiments/exp31_batch64_simclr_short_pretrain.md`, `experiments/exp32_batch64_linear_probe_short.md`, `experiments/exp33_batch64_linear_probe_eval.md`, `experiments/exp34_batch_size_ablation_analysis.md` |
+| Combined ablation summary | `results/tables/combined_ablation_results.md` | `experiments/exp35_combined_ablation_summary.md` |
