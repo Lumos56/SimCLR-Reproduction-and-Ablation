@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Project Retrospective |
-| Current Task | Task 64 project retrospective |
-| Last Completed Task | Task 63 reusable workflow playbook finalized and merged to main |
-| Git State | working on branch `docs/project-retrospective` |
-| Branch | `docs/project-retrospective` |
-| Next Gate | Task 65 release checkpoint / course-project handoff |
-| Do Not Start Yet | release checkpoint, additional experiments, long runs |
-| Blockers | none for Task 64 |
-| Next Owner Decision | review Task 64 before starting Task 65 release checkpoint / course-project handoff |
+| Current Stage | Release Checkpoint / Course-Project Handoff |
+| Current Task | Task 65 release checkpoint and course-project handoff |
+| Last Completed Task | Task 64 project retrospective merged to main |
+| Git State | working on branch `release/course-project-handoff` |
+| Branch | `release/course-project-handoff` |
+| Next Gate | optional GitHub render check, optional release tag, or future project planning |
+| Do Not Start Yet | additional experiments, long runs, new project setup unless owner approves |
+| Blockers | none for Task 65 |
+| Next Owner Decision | review Task 65 before optional GitHub render check, release tag, or future project planning |
 
 ## Gate 0 Status
 
@@ -108,4 +108,5 @@
 - [x] README/GitHub presentation check has been drafted.
 - [x] Workflow playbook finalization has been drafted for Task 63.
 - [x] Project retrospective has been drafted for Task 64.
-- [ ] Release checkpoint, long runs, and additional ablations have not been started.
+- [x] Release checkpoint / course-project handoff has been drafted for Task 65.
+- [ ] Long runs, additional ablations, and new project setup have not been started.

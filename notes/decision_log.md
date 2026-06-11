@@ -36,6 +36,7 @@ This file records project workflow decisions.
 | 2026-06-11 | Treat Task 62 as a local README/GitHub presentation check before workflow playbook finalization. | Task 62 updates README links and next-step wording after final report polish, checks local result/figure/report references and the remote URL, and leaves GitHub rendered UI validation until after review/merge/push if needed. | Active |
 | 2026-06-11 | Finalize the reusable AI research project workflow playbook after README/report polish and project checkpoint review. | Task 63 distills the SimCLR collaboration workflow into `notes/reusable_ai_research_project_workflow.md` for future AI research coding projects while keeping it adaptable and non-universal. | Active |
 | 2026-06-11 | Create a project retrospective after the reusable workflow guide. | Task 64 reflects on completed implementation, short baselines, ablations, reporting, and workflow lessons before the release checkpoint / course-project handoff. | Active |
+| 2026-06-11 | Treat the project as ready for course-project handoff after Task 65 review. | Task 65 records the release checkpoint state, exact short-run metrics, artifact policy, Git/GitHub state, and remaining optional next steps without creating a tag or GitHub release. | Active |
 
 ## Guardrails Carried Into Gate 1
 

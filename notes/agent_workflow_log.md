@@ -5487,3 +5487,184 @@ Note: `git diff --stat` does not include the new untracked
 
 - Review Task 64. If approved, Task 65 should handle the release checkpoint /
   course-project handoff without starting additional experiments or long runs.
+
+---
+
+## Task 65 - Release checkpoint and course-project handoff
+
+### Task
+
+Finalize the documentation-only release checkpoint and course-project handoff.
+
+### Issue
+
+Task 65: Release checkpoint and course-project handoff.
+
+### Branch
+
+`release/course-project-handoff`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+- Added the final course-project handoff note.
+- Added the Task 65 release checkpoint experiment record.
+- Updated project tracking metadata for the handoff state.
+- Recorded the project-level decision that the repository is ready for
+  course-project handoff review.
+- Did not run training, evaluation, or tests.
+- Did not edit code, configs, result tables, README, final report, AGENTS.md,
+  or workflow guide files.
+- Did not create Git tags, GitHub releases, PRs, issues, checkpoints, or
+  figures.
+
+### Files Changed
+
+- `notes/course_project_handoff.md`
+  - Added the release handoff summary, included artifacts, exact final metrics,
+    limitations, repository policy, reproducibility notes, GitHub/release state,
+    recommended next options, and handoff verdict.
+- `experiments/exp43_release_checkpoint.md`
+  - Added the Task 65 checkpoint record documenting source docs, final metrics,
+    validation boundaries, GitHub state, and release decisions.
+- `PROJECT_STATUS.md`
+  - Updated the current stage, task, branch, git state, next gate, blockers,
+    owner decision, and immediate status checklist for the release handoff.
+- `notes/task_registry.md`
+  - Marked Task 64 completed with commit `d5f8714` and added Task 65 as
+    completed pending owner review.
+- `notes/decision_log.md`
+  - Recorded the decision to treat the project as ready for course-project
+    handoff after Task 65 review.
+- `notes/agent_workflow_log.md`
+  - Added this Task 65 work-log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\a700012c-6ca9-4a8f-b94f-96168a8ff480\pasted-text.txt'`
+- `Get-Content -Raw '.\AGENTS.md'`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation branch --show-current`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation status --short`
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|release checkpoint|course-project|Task 65|handoff' -CaseSensitive:$false`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git log --oneline --decorate -10`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git remote -v`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git rev-parse HEAD main origin/main`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status -sb`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,260p' README.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,320p' report/final_report.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,360p' notes/project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,380p' notes/reusable_ai_research_project_workflow.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' results/tables/short_baseline_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' results/tables/combined_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' results/tables/no_projection_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' results/tables/augmentation_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,190p' results/tables/batch_size_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' experiments/exp35_combined_ablation_summary.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' experiments/exp39_final_report_polish.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' experiments/exp41_workflow_playbook_finalization.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' experiments/exp42_project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,120p' notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,120p' notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,300p' notes/course_project_handoff.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' experiments/exp43_release_checkpoint.md`
+- `wsl -d Ubuntu-24.04 --% bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n '0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53' notes/course_project_handoff.md"`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation status --short`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git log --oneline --decorate -10`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git remote -v`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short -- src configs tests results README.md report/final_report.md AGENTS.md notes/reusable_ai_research_project_workflow.md notes/project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation find . -type f -size +10M -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'test -f README.md && test -f report/final_report.md && test -f results/tables/combined_ablation_results.md && test -f notes/reusable_ai_research_project_workflow.md && test -f notes/project_retrospective.md'`
+- `wsl -d Ubuntu-24.04 --% bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n '0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53' notes/course_project_handoff.md"`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation diff --stat`
+
+An initial combined `sed ... && sed ...` command failed under PowerShell
+parsing during source review. The same file reads were rerun successfully as
+separate commands.
+
+### Validation
+
+- Confirmed branch is `release/course-project-handoff`.
+- Confirmed local remote is
+  `git@github.com:Lumos56/SimCLR-Reproduction-and-Ablation.git`.
+- Confirmed Task 64 commit `d5f8714` was the shared `HEAD`, `main`, and
+  `origin/main` commit before Task 65 edits.
+- Confirmed `notes/course_project_handoff.md` exists and includes the required
+  exact metric strings: `0.873700`, `0.621400`, `0.594500`, `0.356600`,
+  `0.596100`, `-2.69`, `-26.48`, and `-2.53`.
+- Confirmed `experiments/exp43_release_checkpoint.md` exists.
+- Confirmed required source documents exist: `README.md`,
+  `report/final_report.md`, `results/tables/combined_ablation_results.md`,
+  `notes/reusable_ai_research_project_workflow.md`, and
+  `notes/project_retrospective.md`.
+- `git diff --check` reported no whitespace errors.
+- Forbidden/protected-path status check reported no changes under `src`,
+  `configs`, `tests`, `results`, `README.md`, `report/final_report.md`,
+  `AGENTS.md`, `notes/reusable_ai_research_project_workflow.md`, or
+  `notes/project_retrospective.md`.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not check GitHub rendered UI.
+- Codex did not create a Git tag.
+- Codex did not create a GitHub release.
+- Codex did not create a PR or GitHub Issue.
+- The handoff has not yet been reviewed by the Human Owner.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? experiments/exp43_release_checkpoint.md
+?? notes/course_project_handoff.md
+```
+
+### Git Diff Stat
+
+```text
+PROJECT_STATUS.md           |  21 +++---
+notes/agent_workflow_log.md | 181 ++++++++++++++++++++++++++++++++++++++++++++
+notes/decision_log.md       |   1 +
+notes/task_registry.md      |   9 +-
+4 files changed, 198 insertions(+), 14 deletions(-)
+```
+
+Note: `git diff --stat` does not include the new untracked
+`experiments/exp43_release_checkpoint.md` or
+`notes/course_project_handoff.md` files.
+
+### Known Issues
+
+- This task is a documentation and project-management checkpoint only.
+- The metrics are copied from existing records; no new experimental evidence was
+  generated.
+- GitHub rendered UI was not checked.
+- No tag or release was created.
+
+### Next Step
+
+- Owner should review Task 65 and decide whether to stop at course-project
+  handoff, request an optional GitHub render check, create a release tag/release,
+  or begin future project planning as a separate approved task.
