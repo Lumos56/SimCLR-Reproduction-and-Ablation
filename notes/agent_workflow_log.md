@@ -5151,3 +5151,171 @@ Note: `git diff --stat` does not include the new untracked
 - Review Task 62. If approved, Task 63 should finalize the reusable workflow
   playbook without starting retrospective, release checkpoint, long runs, or
   additional ablations.
+
+---
+
+## Task 63: Finalize reusable workflow playbook
+
+### Issue
+
+Task 63: Finalize reusable workflow playbook.
+
+### Branch
+
+`docs/finalize-workflow-playbook`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Finalized the reusable AI research project workflow playbook after README/report
+polish, project checkpoint review, and workflow reproducibility audit. The new
+guide distills the SimCLR collaboration process into a reusable but adaptable
+workflow for future AI research coding projects.
+
+No training, evaluation, tests, code edits, config edits, result edits, README
+edits, final-report edits, figure generation, checkpoint creation, or Task 64
+work were performed.
+
+### Files Changed
+
+- `notes/reusable_ai_research_project_workflow.md`: created the finalized
+  reusable workflow guide with purpose, principles, minimum file set, Day 0/Day
+  1 checklist, task lifecycle, run-task template, Codex prompt template,
+  completion-report template, review rules, result-interpretation rules,
+  storage policy, log-display rule, Git/GitHub workflow, restart package, agent
+  roles, common failure modes, project-specific boundaries, limitations,
+  recommended improvements, and verdict.
+- `notes/workflow_playbook_draft.md`: added a short top-level historical note
+  pointing to the finalized guide while preserving the draft.
+- `experiments/exp41_workflow_playbook_finalization.md`: recorded Task 63 as a
+  documentation/workflow finalization record and stated that no training,
+  evaluation, tests, code/config/result/report edits, figures, or checkpoints
+  were performed.
+- `PROJECT_STATUS.md`: moved the project to Workflow Playbook Finalization,
+  set Task 63 as current, recorded Task 62 as last completed, and set Task 64
+  project retrospective as the next gate.
+- `notes/task_registry.md`: marked Task 62 with commit `e8e7c71` and added Task
+  63 as completed pending review.
+- `notes/decision_log.md`: recorded the durable decision to finalize the
+  reusable workflow playbook after README/report polish and checkpoint review.
+- `notes/agent_workflow_log.md`: appended this Task 63 work log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\5e7b84da-993a-41b7-b2f3-12380c0eb85e\pasted-text.txt'`
+- `Get-Content -Raw '.\AGENTS.md'`
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|workflow|playbook|agent_workflow|finalize' -CaseSensitive:$false`
+- `git branch --show-current`
+- `git status --short`
+- `git log --oneline -8`
+- `Get-ChildItem -Force`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git log --oneline -8`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation wc -l README.md PROJECT_STATUS.md report/final_report.md notes/project_checkpoint_review.md notes/task_registry.md notes/decision_log.md notes/agent_workflow_log.md notes/workflow_playbook_draft.md notes/workflow_reproducibility_audit.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,260p' README.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,280p' report/final_report.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' notes/workflow_playbook_draft.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' notes/workflow_reproducibility_audit.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' notes/project_checkpoint_review.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,140p' notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,120p' notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation tail -n 320 notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git show --stat --oneline --name-only e8e7c71`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation ls -l experiments/exp41_workflow_playbook_finalization.md notes/reusable_ai_research_project_workflow.md`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation branch --show-current`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation status --short`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,320p' notes/reusable_ai_research_project_workflow.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,120p' experiments/exp41_workflow_playbook_finalization.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation grep -n -e 'reusable_ai_research_project_workflow' -e 'Task 63' notes/workflow_playbook_draft.md PROJECT_STATUS.md notes/task_registry.md notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '300,420p' notes/reusable_ai_research_project_workflow.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation grep -n '^## ' notes/reusable_ai_research_project_workflow.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short -- src configs tests results README.md report/final_report.md AGENTS.md notes/workflow_reproducibility_audit.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation find . -type f -size +10M -print`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation test -f notes/reusable_ai_research_project_workflow.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation grep -n "reusable_ai_research_project_workflow" notes/workflow_playbook_draft.md`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation diff --stat`
+
+### Validation
+
+- Confirmed branch is `docs/finalize-workflow-playbook`.
+- Confirmed `notes/reusable_ai_research_project_workflow.md` exists.
+- Confirmed `notes/workflow_playbook_draft.md` points to the finalized guide.
+- Confirmed the new guide contains all required major sections.
+- `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`,
+  `tests`, `results`, `README.md`, `report/final_report.md`, `AGENTS.md`, or
+  `notes/workflow_reproducibility_audit.md`.
+- The first repository checkpoint search command was parsed incorrectly by
+  PowerShell and failed before Linux `find` received the expression.
+- The checkpoint search was rerun through `bash -lc` and reported no `.pt`,
+  `.pth`, `.ckpt`, or `.onnx` files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not edit code, configs, results, README, `report/final_report.md`,
+  `AGENTS.md`, or `notes/workflow_reproducibility_audit.md`.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not start Task 64.
+- The workflow guide was reviewed for required sections and internal consistency,
+  but it has not yet been reviewed by the Human Owner or ChatGPT Pro.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+ M notes/workflow_playbook_draft.md
+?? experiments/exp41_workflow_playbook_finalization.md
+?? notes/reusable_ai_research_project_workflow.md
+```
+
+### Git Diff Stat
+
+```text
+PROJECT_STATUS.md                |  21 ++---
+notes/agent_workflow_log.md      | 168 +++++++++++++++++++++++++++++++++++++++
+notes/decision_log.md            |   1 +
+notes/task_registry.md           |   9 ++-
+notes/workflow_playbook_draft.md |   4 +
+5 files changed, 189 insertions(+), 14 deletions(-)
+```
+
+Note: `git diff --stat` does not include the new untracked
+`experiments/exp41_workflow_playbook_finalization.md` or
+`notes/reusable_ai_research_project_workflow.md` files.
+
+### Known Issues
+
+- The workflow guide is reusable as a starting template, not a universal recipe.
+- The workflow remains manual and should be adapted after future projects.
+- GitHub PR/issue workflow is still not fully mature.
+- Task 64 project retrospective has not been started.
+
+### Next Step
+
+- Review Task 63. If approved, Task 64 should handle the project retrospective
+  without starting release checkpoint work, long runs, or additional
+  experiments.

@@ -1,5 +1,9 @@
 # Workflow Playbook Draft
 
+Historical note: Task 63 finalized the reusable workflow into
+`notes/reusable_ai_research_project_workflow.md`. This draft remains as
+historical development material.
+
 Date: 2026-06-03
 
 ## Purpose
