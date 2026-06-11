@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Final Report Drafting |
-| Current Task | Task 59 final report first draft |
-| Last Completed Task | Task 58 final report scaffold merged to main |
-| Git State | working on branch `report/final-report-first-draft` |
-| Branch | `report/final-report-first-draft` |
-| Next Gate | Task 60 project checkpoint review |
-| Do Not Start Yet | final polish, long runs, additional ablations |
-| Blockers | none for Task 59 |
-| Next Owner Decision | review Task 59 before starting Task 60 project checkpoint review |
+| Current Stage | Project Checkpoint Review |
+| Current Task | Task 60 project checkpoint review |
+| Last Completed Task | Task 59 final report first draft merged to main |
+| Git State | working on branch `review/project-checkpoint` |
+| Branch | `review/project-checkpoint` |
+| Next Gate | Task 61 final report revision / polish |
+| Do Not Start Yet | final report polish, README/GitHub presentation check, workflow playbook finalization, release checkpoint |
+| Blockers | none for Task 60 |
+| Next Owner Decision | review Task 60 before starting Task 61 final report revision / polish |
 
 ## Gate 0 Status
 
@@ -103,4 +103,5 @@
 - [x] README v0.3 has been drafted from completed short baseline and ablation records.
 - [x] Final report scaffold has been drafted.
 - [x] Final report first draft has been drafted.
-- [ ] Final polish, long runs, and additional ablations have not been started.
+- [x] Project checkpoint review has been drafted.
+- [ ] Final report polish, README/GitHub presentation check, workflow playbook finalization, release checkpoint, long runs, and additional ablations have not been started.

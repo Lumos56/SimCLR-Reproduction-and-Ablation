@@ -31,6 +31,7 @@ This file records project workflow decisions.
 | 2026-06-11 | Use README v0.3 as the first project-display README including completed short ablations. | Task 57 updates README after short baseline, no-projection, weak-augmentation, batch-size, and combined-ablation records are complete, while keeping results preliminary and avoiding paper-scale benchmark claims. | Active |
 | 2026-06-11 | Start `report/final_report.md` as a scaffold before full drafting. | Task 58 creates only the final report structure, known-metric placeholders, limitations, and file index so Task 59 can write the first full draft without mixing scaffold setup with narrative drafting. | Active |
 | 2026-06-11 | Treat `report/final_report.md` as a first draft after Task 59, not the final polished report. | Task 59 applies the Human Owner-provided first draft while preserving conservative interpretation; final polish and checkpoint review remain separate later tasks. | Active |
+| 2026-06-11 | Proceed from first-draft deliverable to final-report polish after checkpoint review. | Task 60 found no blocker for Task 61, but identified README presentation, report provenance polish, possible embedding visualization, and workflow playbook finalization as separate later tasks. | Active |
 
 ## Guardrails Carried Into Gate 1
 
