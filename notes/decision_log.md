@@ -35,6 +35,7 @@ This file records project workflow decisions.
 | 2026-06-11 | Treat `report/final_report.md` as a Task 61 polished draft, not the release-final report. | Task 61 revises the report for clarity, provenance, and limitation language while leaving README presentation, workflow playbook finalization, retrospective, and release checkpoint to later tasks. | Active |
 | 2026-06-11 | Treat Task 62 as a local README/GitHub presentation check before workflow playbook finalization. | Task 62 updates README links and next-step wording after final report polish, checks local result/figure/report references and the remote URL, and leaves GitHub rendered UI validation until after review/merge/push if needed. | Active |
 | 2026-06-11 | Finalize the reusable AI research project workflow playbook after README/report polish and project checkpoint review. | Task 63 distills the SimCLR collaboration workflow into `notes/reusable_ai_research_project_workflow.md` for future AI research coding projects while keeping it adaptable and non-universal. | Active |
+| 2026-06-11 | Create a project retrospective after the reusable workflow guide. | Task 64 reflects on completed implementation, short baselines, ablations, reporting, and workflow lessons before the release checkpoint / course-project handoff. | Active |
 
 ## Guardrails Carried Into Gate 1
 

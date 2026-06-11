@@ -2,15 +2,15 @@
 
 | 字段 | 当前内容 |
 |---|---|
-| Current Stage | Workflow Playbook Finalization |
-| Current Task | Task 63 finalize reusable workflow playbook |
-| Last Completed Task | Task 62 README/GitHub presentation check merged to main |
-| Git State | working on branch `docs/finalize-workflow-playbook` |
-| Branch | `docs/finalize-workflow-playbook` |
-| Next Gate | Task 64 project retrospective |
-| Do Not Start Yet | project retrospective, release checkpoint, additional experiments |
-| Blockers | none for Task 63 |
-| Next Owner Decision | review Task 63 before starting Task 64 project retrospective |
+| Current Stage | Project Retrospective |
+| Current Task | Task 64 project retrospective |
+| Last Completed Task | Task 63 reusable workflow playbook finalized and merged to main |
+| Git State | working on branch `docs/project-retrospective` |
+| Branch | `docs/project-retrospective` |
+| Next Gate | Task 65 release checkpoint / course-project handoff |
+| Do Not Start Yet | release checkpoint, additional experiments, long runs |
+| Blockers | none for Task 64 |
+| Next Owner Decision | review Task 64 before starting Task 65 release checkpoint / course-project handoff |
 
 ## Gate 0 Status
 
@@ -107,4 +107,5 @@
 - [x] Final report polish has been drafted.
 - [x] README/GitHub presentation check has been drafted.
 - [x] Workflow playbook finalization has been drafted for Task 63.
-- [ ] Project retrospective, release checkpoint, long runs, and additional ablations have not been started.
+- [x] Project retrospective has been drafted for Task 64.
+- [ ] Release checkpoint, long runs, and additional ablations have not been started.

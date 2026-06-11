@@ -5319,3 +5319,171 @@ Note: `git diff --stat` does not include the new untracked
 - Review Task 63. If approved, Task 64 should handle the project retrospective
   without starting release checkpoint work, long runs, or additional
   experiments.
+
+---
+
+## Task 64: Project retrospective
+
+### Issue
+
+Task 64: Project retrospective.
+
+### Branch
+
+`docs/project-retrospective`
+
+### Agent
+
+Codex
+
+### Date
+
+2026-06-11
+
+### Summary
+
+Created a project retrospective after implementation, smoke validation, short
+baselines, three core short ablations, README v0.3, final report polish, and
+reusable workflow playbook finalization.
+
+No training, evaluation, tests, code edits, config edits, result edits, README
+edits, final-report edits, workflow-guide edits, figure generation, checkpoint
+creation, or Task 65 work were performed.
+
+### Files Changed
+
+- `notes/project_retrospective.md`: created the Task 64 retrospective with
+  completed-work summary, exact short-run metrics, technical and workflow
+  lessons, risks, limitations, future-project lessons, transfer toward audio /
+  AVI work, recommended remaining tasks, and retrospective verdict.
+- `experiments/exp42_project_retrospective.md`: recorded Task 64 as a
+  documentation/reflection task, listed source documents, exact referenced
+  metrics, scope controls, and Task 65 as the next step.
+- `PROJECT_STATUS.md`: moved the project to Project Retrospective, set Task 64
+  as current, recorded Task 63 as last completed, and set Task 65 release
+  checkpoint / course-project handoff as the next gate.
+- `notes/task_registry.md`: marked Task 63 with commit `ae82a19` and added Task
+  64 as completed pending review.
+- `notes/decision_log.md`: recorded the retrospective decision after reusable
+  workflow guide finalization.
+- `notes/agent_workflow_log.md`: appended this Task 64 work log entry.
+
+### Commands Run
+
+- `Get-Content -Raw 'C:\Users\ye\.codex\attachments\7b673b70-6cd8-4b08-a79a-2677677af9d0\pasted-text.txt'`
+- `Get-Content -Raw '.\AGENTS.md'`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation branch --show-current`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation status --short`
+- `Select-String -Path 'C:\Users\ye\.codex\memories\MEMORY.md' -Pattern 'SimCLR|retrospective|Task 64|workflow|project retrospective' -CaseSensitive:$false`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git log --oneline -10`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,190p' PROJECT_STATUS.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,260p' README.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,320p' report/final_report.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,240p' notes/project_checkpoint_review.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,380p' notes/reusable_ai_research_project_workflow.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' notes/workflow_reproducibility_audit.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' notes/workflow_playbook_draft.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,120p' notes/task_registry.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,120p' notes/decision_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation tail -n 260 notes/agent_workflow_log.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' results/tables/short_baseline_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' results/tables/combined_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' results/tables/no_projection_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' results/tables/augmentation_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,190p' results/tables/batch_size_ablation_results.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' experiments/exp35_combined_ablation_summary.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' experiments/exp37_final_report_first_draft.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,220p' experiments/exp39_final_report_polish.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' experiments/exp41_workflow_playbook_finalization.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,360p' notes/project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation sed -n '1,180p' experiments/exp42_project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation grep -n "0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53" notes/project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'grep -n "0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53" notes/project_retrospective.md'`
+- `wsl -d Ubuntu-24.04 --% bash -lc "cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation && grep -n '0.873700\|0.621400\|0.594500\|0.356600\|0.596100\|-2.69\|-26.48\|-2.53' notes/project_retrospective.md"`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git branch --show-current`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git diff --check`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation git status --short -- src configs tests results README.md report/final_report.md AGENTS.md notes/reusable_ai_research_project_workflow.md notes/workflow_playbook_draft.md notes/workflow_reproducibility_audit.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'find . -type f \( -name "*.pt" -o -name "*.pth" -o -name "*.ckpt" -o -name "*.onnx" \) -print'`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation find . -type f -size +10M -print`
+- `git -c safe.directory=//wsl.localhost/Ubuntu-24.04/home/yeyee/projects/SimCLR-Reproduction-and-Ablation diff --stat`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation test -f notes/project_retrospective.md && test -f experiments/exp42_project_retrospective.md`
+- `wsl -d Ubuntu-24.04 --cd /home/yeyee/projects/SimCLR-Reproduction-and-Ablation bash -lc 'test -f notes/project_retrospective.md && test -f experiments/exp42_project_retrospective.md'`
+
+### Validation
+
+- Confirmed branch is `docs/project-retrospective`.
+- Confirmed `notes/project_retrospective.md` exists.
+- Confirmed `experiments/exp42_project_retrospective.md` exists.
+- Confirmed exact metric strings appear in `notes/project_retrospective.md`:
+  `0.873700`, `0.621400`, `0.594500`, `0.356600`, `0.596100`, `-2.69`,
+  `-26.48`, and `-2.53`.
+- `git diff --check` reported no whitespace errors.
+- Forbidden-path status check reported no changes under `src`, `configs`,
+  `tests`, `results`, `README.md`, `report/final_report.md`, `AGENTS.md`,
+  `notes/reusable_ai_research_project_workflow.md`,
+  `notes/workflow_playbook_draft.md`, or
+  `notes/workflow_reproducibility_audit.md`.
+- Repository checkpoint search reported no `.pt`, `.pth`, `.ckpt`, or `.onnx`
+  files inside the repository.
+- Repository large-file search reported no files over 10 MB inside the
+  repository.
+
+Two initial metric-grep attempts failed because the `\|` pattern was parsed by
+the intermediate shell. The same grep was rerun successfully with PowerShell
+stop-parsing `--%`.
+
+An extra combined `test -f ... && test -f ...` existence check failed under
+PowerShell parsing. It was rerun successfully through `bash -lc`.
+
+### Not Validated
+
+- Codex did not run training.
+- Codex did not run evaluation.
+- Codex did not run tests.
+- Codex did not edit code, configs, results, README, `report/final_report.md`,
+  `AGENTS.md`, `notes/reusable_ai_research_project_workflow.md`,
+  `notes/workflow_playbook_draft.md`, or
+  `notes/workflow_reproducibility_audit.md`.
+- Codex did not create figures.
+- Codex did not create checkpoints.
+- Codex did not start Task 65.
+- The retrospective has not yet been reviewed by the Human Owner or ChatGPT Pro.
+
+### Git Status
+
+```text
+ M PROJECT_STATUS.md
+ M notes/agent_workflow_log.md
+ M notes/decision_log.md
+ M notes/task_registry.md
+?? experiments/exp42_project_retrospective.md
+?? notes/project_retrospective.md
+```
+
+### Git Diff Stat
+
+```text
+PROJECT_STATUS.md           |  21 +++---
+notes/agent_workflow_log.md | 168 ++++++++++++++++++++++++++++++++++++++++++++
+notes/decision_log.md       |   1 +
+notes/task_registry.md      |   9 +--
+4 files changed, 185 insertions(+), 14 deletions(-)
+```
+
+Note: `git diff --stat` does not include the new untracked
+`experiments/exp42_project_retrospective.md` or
+`notes/project_retrospective.md` files.
+
+### Known Issues
+
+- The retrospective is a reflection artifact, not new experimental evidence.
+- The experimental conclusions remain preliminary and short-run.
+- Optional GitHub rendered UI checks and any long-run/repeated-seed experiments
+  remain outside this task.
+- Task 65 release checkpoint / course-project handoff has not been started.
+
+### Next Step
+
+- Review Task 64. If approved, Task 65 should handle the release checkpoint /
+  course-project handoff without starting additional experiments or long runs.
